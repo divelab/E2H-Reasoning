@@ -1,0 +1,14 @@
+mode: ???
+defaults:
+  - model: ???
+  - task: ???
+  - algorithm: grpo
+  - _self_
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+
+hydra: 
+  output_subdir: null  
+  run:  
+    dir: .

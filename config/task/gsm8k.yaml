@@ -1,0 +1,18 @@
+name: Gsm8K
+
+args:
+
+  path: TheBlackCat22/gsm8k
+ 
+  system_content: "You are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.\n"
+  user_content: "Solve the following math problem\n{question}\n\n Show your work in <think> </think> tags. And return the final answer in <answer> </answer> tags, for example <answer> 500 </answer>."
+  assistant_content: "Let me solve this step by step.\n<think>"
+
+  format_reward: 0.1
+  format_reward_fn: FormatReward
+  correctness_reward: 0.9
+  correctness_reward_fn: Gsm8kCorrectnessReward
+
+  max_steps: 1600
+  max_prompt_length: 1600
+  max_completion_length: 512

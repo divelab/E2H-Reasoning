@@ -1,0 +1,17 @@
+name: Qwen-1.5B
+
+args:
+
+  model_name_or_path: Qwen/Qwen2.5-1.5B-Instruct
+  dtype: bfloat16
+  trust_remote_code: true
+  attn_implementation: flash_attention_2
+
+  use_peft: true
+  lora_r: 32
+  lora_alpha: 64
+  lora_dropout: 0.1
+  lora_target_modules:
+    - q_proj
+    - v_proj
+  lora_task_type: CAUSAL_LM
