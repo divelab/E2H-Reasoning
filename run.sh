@@ -41,11 +41,12 @@ trl vllm-serve \
 --dtype bfloat16 \
 --max_model_len 2048 \
 --trust_remote_code true \
+--log_level warning \
 &
 SERVER_PID=$!
 
 
-sleep 360
+sleep 300
 
 
 CUDA_VISIBLE_DEVICES=1,2 \
@@ -72,6 +73,7 @@ wait $SERVER_PID 2>/dev/null
 
 CUDA_VISIBLE_DEVICES=1,2 \
 accelerate launch \
+--mixed_precision bf16 \
 --num_machines 1 \
 --num_processes 1 \
 --dynamo_backend no \

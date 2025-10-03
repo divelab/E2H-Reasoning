@@ -54,6 +54,7 @@ dependencies:
       - compressed-tensors==0.9.3
       - cupy-cuda12x==13.6.0
       - datasets==4.1.1
+      - deepspeed==0.17.6
       - deprecated==1.2.18
       - depyf==0.18.0
       - dill==0.4.0
@@ -76,6 +77,7 @@ dependencies:
       - grpcio==1.75.1
       - h11==0.16.0
       - hf-xet==1.1.10
+      - hjson==3.1.0
       - httpcore==1.0.9
       - httptools==0.6.4
       - httpx==0.28.1
@@ -187,7 +189,7 @@ dependencies:
       - tqdm==4.67.1
       - transformers==4.56.2
       - triton==3.2.0
-      - trl==0.23.0
+      - trl==0.23.1
       - typer==0.19.2
       - typing-extensions==4.15.0
       - typing-inspection==0.4.1

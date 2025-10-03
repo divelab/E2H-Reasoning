@@ -16,9 +16,9 @@ def get_reward_fn(
     reward_fn = partial(
         base_reward_fn,
         format_reward=cfg.format_reward,
-        format_reward_fn=globals()[cfg.format_reward_fn], 
+        format_reward_fn=globals()[cfg.format_reward_fn](), 
         correctness_reward=cfg.correctness_reward,
-        correctness_reward_fn=globals()[cfg.correctness_reward_fn]
+        correctness_reward_fn=globals()[cfg.correctness_reward_fn]()
     )
     update_wrapper(reward_fn, base_reward_fn)
 
