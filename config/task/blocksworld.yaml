@@ -1,0 +1,31 @@
+name: Blocksworld
+
+args:
+
+  path: divelab/blocksworld
+  train_size: ???
+  test_size: ???
+  train_levels: 
+    - 0
+    - 1
+    - 2
+    - 3
+  test_levels:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+
+  system_content: ???
+  user_content: ???
+  assistant_content: ???
+
+  format_reward: 0.1
+  format_reward_fn: FormatReward
+  correctness_reward: 0.9
+  correctness_reward_fn: BlocksworldCorrectnessReward
+
+  max_steps: ???
+  max_prompt_length: ???
+  max_completion_length: ???
