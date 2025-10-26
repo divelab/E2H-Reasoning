@@ -5,10 +5,8 @@ import torch
 from pprint import pprint
 from omegaconf import OmegaConf
 from transformers import set_seed
-
 from src.datasets import get_dataset
 from src.rewards import get_reward_fn
-
 
 @hydra.main(version_base=None, config_path="config", config_name="config")
 def main(cfg):
@@ -23,6 +21,7 @@ def train(cfg):
     from accelerate import Accelerator
     from trl import ModelConfig, get_peft_config
     from transformers import AutoTokenizer, AutoModelForCausalLM
+    from src.trainer import CurriculumGRPOTrainer
     # from src.trainer import CurriculumGRPOConfig, CurriculumGRPOTrainer
     from trl import GRPOConfig, GRPOTrainer
 
@@ -40,7 +39,8 @@ def train(cfg):
     print("\n\nModel:")
     model = AutoModelForCausalLM.from_pretrained(
         cfg.model.args.model_name_or_path,
-        dtype=cfg.model.args.dtype,
+        torch_dtype=cfg.model.args.torch_dtype,
+        # dtype=cfg.model.args.dtype,
         trust_remote_code=cfg.model.args.trust_remote_code,
         attn_implementation=cfg.model.args.attn_implementation
     )
@@ -48,6 +48,7 @@ def train(cfg):
         cfg.model.args.model_name_or_path,
         trust_remote_code=cfg.model.args.trust_remote_code
     )
+    
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -65,15 +66,28 @@ def train(cfg):
 
     print("\n\nTraining:")
     if cfg.algorithm.name == "GRPO":
-        trainer = GRPOTrainer(
+        trainer = CurriculumGRPOTrainer(
             model=model,
-            reward_funcs=get_reward_fn(cfg.task.args),
-            args=GRPOConfig(**OmegaConf.to_container(cfg.algorithm.args, resolve=True)),
             train_dataset=dataset["train"],
             eval_dataset=dataset["test"],
             processing_class=tokenizer,
-            peft_config=get_peft_config(ModelConfig(**OmegaConf.to_container(cfg.model.args, resolve=True)))
+            peft_config=get_peft_config(ModelConfig(**OmegaConf.to_container(cfg.model.args, resolve=True))),
+            num_tasks=len(cfg.task.args.train_levels),
+            total_iterations=cfg.task.args.max_steps,
+            data_schedule=cfg.algorithm.e2h_args.curriculum_schedule,
+            scheduler_params=cfg.algorithm.e2h_args.scheduler_args,
+            reward_funcs=get_reward_fn(cfg.task.args)
         )
+        
+        # trainer = GRPOTrainer(
+        #     model=model,
+        #     reward_funcs=get_reward_fn(cfg.task.args),
+        #     args=GRPOConfig(**OmegaConf.to_container(cfg.algorithm.args, resolve=True)),
+        #     train_dataset=dataset["train"],
+        #     eval_dataset=dataset["test"],
+        #     processing_class=tokenizer,
+        #     peft_config=get_peft_config(ModelConfig(**OmegaConf.to_container(cfg.model.args, resolve=True)))
+        # )
     else:
         raise f"{cfg.alogorithm.name} Trainer not Implemented"
     trainer.train()
@@ -147,7 +161,8 @@ def test(cfg):
     rewards = np.array(
         reward_fn(
             completions=dataset['output'],
-            answer=dataset['answer']
+            answer=dataset['answer'],
+            question=dataset['question']
         )
     )
     dataset = dataset.add_column('reward', rewards.tolist())

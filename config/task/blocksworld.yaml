@@ -3,8 +3,6 @@ name: Blocksworld
 args:
 
   path: divelab/blocksworld
-  train_size: ???
-  test_size: ???
   train_levels: 
     - 0
     - 1
@@ -17,15 +15,44 @@ args:
     - 3
     - 4
 
-  system_content: ???
-  user_content: ???
-  assistant_content: ???
+  system_content: You are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.
+  user_content: |-
+    I am playing with a set of blocks where I need to arrange the blocks into stacks. Here are the actions I can do
 
-  format_reward: 0.1
+    Pick up a block
+    Unstack a block from on top of another block
+    Put down a block
+    Stack a block on top of another block
+
+    I have the following restrictions on my actions:
+    I can only pick up or unstack one block at a time.\nI can only pick up or unstack a block if my hand is empty.
+    I can only pick up a block if the block is on the table and the block is clear.
+    A block is clear if the block has no other blocks on top of it and if the block is not picked up.
+    I can only unstack a block from on top of another block if the block I am unstacking was really on top of the other block.
+    I can only unstack a block from on top of another block if the block I am unstacking is clear.
+    Once I pick up or unstack a block, I am holding the block.
+    I can only put down a block that I am holding.\nI can only stack a block on top of another block if I am holding the block being stacked.
+    I can only stack a block on top of another block if the block onto which I am stacking the block is clear.
+    Once I put down or stack a block, my hand becomes empty.
+    
+    Here is the format of the actions: 
+    pick up the [block_name] block
+    unstack the [block_name] block from on top of the [another_block_name] block
+    put down the [block_name] block
+    stack the [block_name] block on top of the [another_block_name] block
+
+    [Problem]
+    Here is the initial state of the blocks: {question}
+    Here is the goal state of the blocks: {answer}. Show your work in <think> </think> tags. After that, provide the final answer in <answer> </answer> tags, for example <answer>
+    unstack the cyan block from on top of the emerald block
+    put down the cyan block</answer>
+  assistant_content: Let me solve this step by step.\n<think>
+
+  format_reward: 1.0
   format_reward_fn: FormatReward
-  correctness_reward: 0.9
+  correctness_reward: 2.0
   correctness_reward_fn: BlocksworldCorrectnessReward
 
-  max_steps: ???
-  max_prompt_length: ???
-  max_completion_length: ???
+  max_steps: 1200
+  max_prompt_length: 1600
+  max_completion_length: 512

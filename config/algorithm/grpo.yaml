@@ -33,9 +33,17 @@ args:
   overwrite_output_dir: true
   per_device_train_batch_size: 16
   report_to:
-    - tensorboard
+    # - tensorboard
+    - wandb
   save_strategy: "no"
   seed: 42
   tf32: true
   output_dir: outputs/${model.name}_${task.name}
   logging_dir: ${algorithm.args.output_dir}
+
+e2h_args:
+  curriculum_schedule: "cosine" # cosine, gaussian, balanced (GRPO), classical (traditional curriculum learning)
+  scheduler_args:
+    mu_exp: 0.5 # If using Gaussian schedule, this is the mean
+    sigma: 0.5 # If using Gaussian schedule, this is the standard deviation
+    min_prob: true # Whether to use min probability for sampling tasks

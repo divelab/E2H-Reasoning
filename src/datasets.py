@@ -16,10 +16,10 @@ def get_dataset(
             raise f"{split} split not in Dataset!!"
         dataset = data[split]
 
-        if cfg.get(f"{split}_size") is not None:
-            dataset = dataset.select(range(cfg[f"{split}_size"]))
         if cfg.get(f"{split}_levels") is not None:
             dataset = dataset.filter(lambda example: example["level"] in cfg[f"{split}_levels"])
+        if cfg.get(f"{split}_size") is not None:
+            dataset = dataset.select(range(cfg[f"{split}_size"]))
 
         dataset = dataset.shuffle(seed=seed)
 
