@@ -9,7 +9,7 @@ args:
   shuffle_dataset: false
   steps_per_generation: 1
   use_vllm: true
-  vllm_mode: colocate
+  vllm_mode: server
   beta: 0.001
   log_completions: true
   wandb_log_unique_prompts: true
