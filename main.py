@@ -76,7 +76,8 @@ def train(cfg):
             total_iterations=cfg.task.args.max_steps,
             data_schedule=cfg.algorithm.e2h_args.curriculum_schedule,
             scheduler_params=cfg.algorithm.e2h_args.scheduler_args,
-            reward_funcs=get_reward_fn(cfg.task.args)
+            reward_funcs=get_reward_fn(cfg.task.args),
+            args=GRPOConfig(**OmegaConf.to_container(cfg.algorithm.args, resolve=True)),
         )
         
         # trainer = GRPOTrainer(

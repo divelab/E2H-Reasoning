@@ -44,7 +44,8 @@ def base_reward_fn(
             reward = 0.0
             if format_reward_fn("<think>" + sample['completions']):
                 reward += format_reward
-                predicted_answer = re.findall(r'<answer>\s*(.*?)\s*</answer>', sample['completions'], re.DOTALL)[-1].strip()
+                predicted_answer = re.findall(r'<answer>\s*(.*?)\s*</answer>', sample['completions'], re.DOTALL)[-1].strip()   
+                
                 result = correctness_reward_fn(predicted_answer, **sample)
                 if isinstance(result, bool) and result: # Works for countdown and arithmetic tasks.
                     reward += correctness_reward
@@ -55,9 +56,8 @@ def base_reward_fn(
             rewards.append(reward)
 
         except Exception as e:
-            print(e)
             rewards.append(0.0)
-
+    print('Returned Rewards - ', rewards)
     return rewards
 
 class timeout:
@@ -421,9 +421,6 @@ class BlocksworldCorrectnessReward:
                 return action_fn(m)
         raise ValueError("Action not recognized or unsupported.")
     
-    @classmethod
-    def check_goal(self, state: str, goal: str):
-        return self.states_equal(state, goal)
 
     @classmethod
     def simulate_action(cls, state: dict, hand: str, blocks_order: list, action_tuple: tuple):
@@ -562,7 +559,6 @@ class BlocksworldCorrectnessReward:
                  if line.strip() and "[plan end]" not in line.lower()]
         state = init_state
         for action_line in lines:
-            # action_tuple = self.parse_action(action_line)
             state = cls.simulate_step(state, action_line)
         final_state_str = state
         if simplify:
@@ -596,8 +592,8 @@ class BlocksworldCorrectnessReward:
         return equal, differences
     
     @classmethod
-    def check_goal(self, state: str):
-        return self.states_equal(state, self.goal)
+    def check_goal(cls, state: str, goal: str):
+        return cls.states_equal(state, goal)
     
     
     @classmethod
@@ -610,7 +606,7 @@ class BlocksworldCorrectnessReward:
         if not plan_lines:
             print("Empty plan.")
             return 0.0
-        parsed_goal = cls.simulate_plan(true_plan)
+        parsed_goal = cls.simulate_plan(init_state=init_state, plan=true_plan)
         goal_state, goal_hand, _ = cls.parse_initial_state(parsed_goal)
         goal_set = {(block, loc) for block, loc in goal_state.items()}
 
@@ -649,9 +645,12 @@ class BlocksworldCorrectnessReward:
     
     @classmethod
     def __call__(cls, predicted_plan, **kwargs):
-        init_state = kwargs['question']
-        _ = kwargs['answer'] # Goal State 
-        true_plan = kwargs['solution']
-        
-        reward = cls.simulate_plan_with_reward(init_state=init_state, predicted_plan=predicted_plan, true_plan=true_plan)
-        return reward
+        try:
+            init_state = kwargs['question']
+            _ = kwargs['answer'] # Goal State 
+            true_plan = kwargs['solution']
+            reward = cls.simulate_plan_with_reward(init_state=init_state, predicted_plan=predicted_plan, true_plan=true_plan)
+            return reward
+        except Exception as e:
+            print(f'Error in computing BW verifier reward - {e}')
+            return 0.0

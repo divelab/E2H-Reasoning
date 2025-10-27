@@ -9,10 +9,9 @@ args:
   shuffle_dataset: false
   steps_per_generation: 1
   use_vllm: true
-  vllm_mode: server
+  vllm_mode: colocate
   beta: 0.001
   log_completions: true
-  num_completions_to_print: 3
   wandb_log_unique_prompts: true
 
   # Trainer Config
@@ -47,3 +46,4 @@ e2h_args:
     mu_exp: 0.5 # If using Gaussian schedule, this is the mean
     sigma: 0.5 # If using Gaussian schedule, this is the standard deviation
     min_prob: true # Whether to use min probability for sampling tasks
+    beta: 1.0
