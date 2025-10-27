@@ -12,7 +12,6 @@ This repository implements a curriculum learning framework for training large la
 
 ## Table of Contents
 
-- [Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](#curriculum-reinforcement-learning-from-easy-to-hard-tasks-improves-llm-reasoning)
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
