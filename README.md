@@ -152,9 +152,9 @@ config/
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{curriculum2025,
+@article{parashar2025curriculum,
   title={Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning},
-  author={Your Name and Others},
+  author={Parashar, Shubham and Gui, Shurui and Li, Xiner and Ling, Hongyi and Vemuri, Sushil and Olson, Blake and Li, Eric and Zhang, Yu and Caverlee, James and Kalathil, Dileep and Ji, Shuiwang},
   journal={arXiv preprint arXiv:2506.06632},
   year={2025}
 }
