@@ -1,68 +1,91 @@
-from trl import GRPOConfig, GRPOTrainer
 import torch
 import numpy as np
-from functools import partial
-from accelerate import Accelerator
-import logging
-import math 
 from typing import Union
-
-log = logging.getLogger(__name__)
-accelerator = Accelerator()
-def log_on_main(text):
-    if accelerator.is_main_process:
-        log.info(text)
+from trl import GRPOTrainer
+from functools import partial
 
 
 class TaskSampler(torch.utils.data.Sampler):
-    def __init__(self, 
-                 dataset, 
-                 num_tasks, 
-                 total_iterations, 
-                 data_schedule, 
-                 batch_size, 
-                 mini_repeat_count, 
-                 repeat_count, 
-                 scheduler_params, 
-                 seed=0, 
-                 trainer=None):
-        """
-        Args:
-          dataset: a HF dataset; each sample is assumed to be a dict including "task" (an integer 0 to num_tasks-1)
-          num_tasks: total number of task categories (e.g. 4)
-          total_iterations: total training iterations (T)
-          current_iter_fn: callable that returns current iteration (t)
-          trainer: reference to the trainer for VREx logging
-        """
-        self.dataset = dataset
-        self.batch_size = batch_size
+    def __init__(
+        self, 
+        data_source, 
+        mini_repeat_count, 
+        batch_size, 
+        repeat_count, 
+        seed,
+        total_iterations, 
+        scheduler_params, 
+    ):
+        self.dataset = data_source
+        assert 'level' in self.dataset.column_names
         self.mini_repeat_count = mini_repeat_count
+        self.batch_size = batch_size
         self.repeat_count = repeat_count
-        self.max_dataset_len = len(self.dataset)
-        self.num_tasks = num_tasks
-        self.total_iterations = total_iterations
-        self.data_schedule = data_schedule
-        self.trainer = trainer
         self.rng = np.random.default_rng(int(seed))
+        self.total_iterations = total_iterations
+        self.schedule_func = {
+            'balanced': self._balanced_schedule,
+            'cosine': self._cosine_schedule,
+            'gaussian': partial(self._gaussian_schedule, **scheduler_params['scheduler_args']),
+            'classic': self._step_schedule,
+        }[scheduler_params['curriculum_schedule']]
+
+        self.num_tasks = len(set(self.dataset['level']))
         task_col = np.asarray(self.dataset['level'])
         self.indices_by_task = {
             t: self.rng.permutation(np.where(task_col == t)[0])
             for t in range(self.num_tasks)
         }
-        self.schedule_funcs = {
-            'balanced': self._balanced_schedule,
-            'cosine': self._cosine_schedule,
-            'gaussian': partial(self._gaussian_schedule, **scheduler_params),
-            'classic': self._step_schedule,
-        }
-        log_on_main(f"Data Schedule: {data_schedule}")
-        self.schedule_func = self.schedule_funcs[data_schedule]
-    
+        self.max_dataset_len = len(self.dataset)
+
     # Classical Curriculum Learning
     @staticmethod    
     def _step_schedule(t, T, num_tasks):
         active_task = min(int(t * num_tasks / T), num_tasks - 1)
         return dict(enumerate(np.eye(num_tasks)[active_task].tolist()))
+
+    @staticmethod
+    def _balanced_schedule(t, T, num_tasks):
+        return {i: 1. / num_tasks for i in range(num_tasks)}
+
+    @staticmethod
+    def _cosine_schedule(t, T, num_tasks):
+        total = num_tasks * (num_tasks + 1) / 2.0
+        early = {i: (num_tasks - i) / total for i in range(num_tasks)}
+        late = {i: (i + 1) / total for i in range(num_tasks)}
+        alpha = 0.5 * (1 + np.cos(np.pi * t / T))
+        probs = {i: alpha * early[i] + (1 - alpha) * late[i] for i in range(num_tasks)}
+        # Enforce symmetric floor equal to the minimum probability in early/late.
+        p_min = 2 / (num_tasks * (num_tasks + 1))
+        for i in range(num_tasks):
+            probs[i] = max(probs[i], p_min)
+        norm = sum(probs.values())
+        return {i: probs[i] / norm for i in probs}
+
+    @staticmethod
+    def _gaussian_schedule(t, T, num_tasks, mu_exp, sigma, min_prob: Union[bool, float]=False, **kwargs):
+        '''
+        Gaussian schedule for task sampling.
+        mu_exp: exponent for the mean, typically 1.0. Move faster at the beginning: < 1.0. Move slower at the beginning: > 1.0
+        sigma: standard deviation of the Gaussian distribution
+        min_prob: minimum probability for each task
+        '''
+        # Move mean from 0 to (num_tasks-1) as time progresses, Use sqrt(t / T) to boost the the speed at the beginning
+        mu = (t / T) ** mu_exp * (num_tasks - 1)
+        p_min = (2 / (num_tasks * (num_tasks + 1))) if (min_prob is True) else (min_prob if isinstance(min_prob, float) else None)
+        if p_min is None: raise ValueError("min_prob should be either a boolean or a float")
+        if num_tasks * p_min > 1: raise ValueError("num_tasks * p_min must not exceed 1")
+        
+        # Compute normalized Gaussian probabilities.
+        base = [np.exp(-((i - mu) ** 2) / (2 * sigma ** 2)) for i in range(num_tasks)]
+        total = sum(base)
+        q = [b / total for b in base]
+        
+        # Mix with uniform floor to guarantee each probability is at least p_min.
+        return {i: p_min + (1 - num_tasks * p_min) * q_i for i, q_i in enumerate(q)}
+
+    def __len__(self):
+        return self.total_iterations * self.batch_size * self.mini_repeat_count * self.repeat_count
 
     def __iter__(self):
         task_ptrs = {t: 0 for t in range(self.num_tasks)}
@@ -93,81 +116,25 @@ class TaskSampler(torch.utils.data.Sampler):
                         yield index
             # yield from batch_indices
 
-    def __len__(self):
-        return self.total_iterations * self.batch_size * self.mini_repeat_count * self.repeat_count
-    @staticmethod
-    def _balanced_schedule(t, T, num_tasks):
-        return {i: 1. / num_tasks for i in range(num_tasks)}
-
-    @staticmethod
-    def _cosine_schedule(t, T, num_tasks):
-        total = num_tasks * (num_tasks + 1) / 2.0
-        early = {i: (num_tasks - i) / total for i in range(num_tasks)}
-        late = {i: (i + 1) / total for i in range(num_tasks)}
-        alpha = 0.5 * (1 + math.cos(math.pi * t / T))
-        probs = {i: alpha * early[i] + (1 - alpha) * late[i] for i in range(num_tasks)}
-        # Enforce symmetric floor equal to the minimum probability in early/late.
-        p_min = 2 / (num_tasks * (num_tasks + 1))
-        for i in range(num_tasks):
-            probs[i] = max(probs[i], p_min)
-        norm = sum(probs.values())
-        return {i: probs[i] / norm for i in probs}
-
-    @staticmethod
-    def _gaussian_schedule(t, T, num_tasks, mu_exp, sigma, min_prob: Union[bool, float]=False, **kwargs):
-        '''
-        Gaussian schedule for task sampling.
-        mu_exp: exponent for the mean, typically 1.0. Move faster at the beginning: < 1.0. Move slower at the beginning: > 1.0
-        sigma: standard deviation of the Gaussian distribution
-        min_prob: minimum probability for each task
-        '''
-        # Move mean from 0 to (num_tasks-1) as time progresses, Use sqrt(t / T) to boost the the speed at the beginning
-        mu = (t / T) ** mu_exp * (num_tasks - 1)
-        p_min = (2 / (num_tasks * (num_tasks + 1))) if (min_prob is True) else (min_prob if isinstance(min_prob, float) else None)
-        if p_min is None: raise ValueError("min_prob should be either a boolean or a float")
-        if num_tasks * p_min > 1: raise ValueError("num_tasks * p_min must not exceed 1")
-        
-        # Compute normalized Gaussian probabilities.
-        base = [math.exp(-((i - mu) ** 2) / (2 * sigma ** 2)) for i in range(num_tasks)]
-        total = sum(base)
-        q = [b / total for b in base]
-        
-        # Mix with uniform floor to guarantee each probability is at least p_min.
-        return {i: p_min + (1 - num_tasks * p_min) * q_i for i, q_i in enumerate(q)}
-
 
 class CurriculumGRPOTrainer(GRPOTrainer):
-    def __init__(self, 
-                 num_tasks=4, 
-                 total_iterations=1200, 
-                 data_schedule='balanced', 
-                 scheduler_params: dict=None, *args, **kwargs):
-        self.num_tasks = num_tasks
-        self.total_iterations = total_iterations
-        self.data_schedule = data_schedule
-        self.scheduler_params=scheduler_params
+    def __init__(
+        self, 
+        scheduler_params, 
+        *args, **kwargs
+    ):
         super().__init__(*args, **kwargs)
+        self.scheduler_params = scheduler_params
 
-    def _get_train_sampler(self):
-        # The parent class passes the dataset as an argument, but we use self.train_dataset
-
-        # generation_batch_size = self.accelerator.num_processes (num_device) * self.args.per_device_train_batch_size (including num_generation)
-        return TaskSampler(self.train_dataset,
-                           num_tasks=self.num_tasks,
-                           total_iterations=self.total_iterations,
-                           data_schedule=self.data_schedule,
-                           scheduler_params=self.scheduler_params,
-                           batch_size= self.args.generation_batch_size * self.args.gradient_accumulation_steps // self.num_generations,
-                           mini_repeat_count=self.num_generations,
-                           repeat_count=self.num_iterations, # * self.args.steps_per_generation, #num_iterations=1 is a GRPO param.
-                           trainer=self)
-
-    def training_step(self, model, inputs, num_items_in_batch=None):
-        # Extract task IDs from the batch before processing
-        if 'task' in inputs[0]:
-            self._current_batch_task_ids = [inp['task'] for inp in inputs]
-        
-        # Call parent training step
-        result = super().training_step(model, inputs, num_items_in_batch)
-        
-        return result
+    def _get_train_sampler(self, dataset=None):
+        if dataset is None:
+            dataset = self.train_dataset
+        return TaskSampler(
+            data_source=dataset,
+            mini_repeat_count=self.num_generations,
+            batch_size=self.args.generation_batch_size * self.args.gradient_accumulation_steps // self.num_generations,
+            repeat_count=self.num_iterations,
+            seed=self.args.seed,
+            total_iterations=self.args.max_steps,
+            scheduler_params=self.scheduler_params
+        )

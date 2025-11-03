@@ -57,7 +57,7 @@ def base_reward_fn(
 
         except Exception as e:
             rewards.append(0.0)
-    print('Returned Rewards - ', rewards)
+
     return rewards
 
 class timeout:

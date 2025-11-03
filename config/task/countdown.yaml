@@ -2,7 +2,7 @@ name: Countdown
 
 args:
 
-  path: TheBlackCat22/countdown
+  path: divelab/countdown
   train_size: 327680
   test_size: 1024
   train_levels: 

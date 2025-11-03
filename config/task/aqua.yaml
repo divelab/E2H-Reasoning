@@ -2,7 +2,7 @@ name: Aqua
 
 args:
 
-  path: TheBlackCat22/aqua
+  path: divelab/aqua
 
   system_content: "You are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.\n"
   user_content: "Solve the following math problem and choose an answer from the given options\n{question}\n\n Show your work in <think> </think> tags. And return the final answer in <answer> </answer> tags, for example <answer> C </answer>."

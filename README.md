@@ -23,12 +23,14 @@ This repository implements a curriculum learning framework for training large la
     - [3. Cosine](#3-cosine)
     - [4. Gaussian](#4-gaussian)
   - [Configuration](#configuration)
-  - [Training](#training)
-    - [VLLM server setup](#vllm-server-setup)
-    - [Training](#training-1)
-  - [Evaluation](#evaluation)
-  - [Project Structure](#project-structure)
+    - [Project Structure](#project-structure)
     - [Configuration Structure](#configuration-structure)
+  - [Training](#training)
+    - [Default Args](#default-args)
+    - [Custom Args](#custom-args)
+      - [VLLM server setup](#vllm-server-setup)
+      - [Training](#training-1)
+      - [Evaluation](#evaluation)
   - [Citation](#citation)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
@@ -45,21 +47,20 @@ This repository implements a curriculum learning framework for training large la
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/curriculum-reasoning.git
-cd curriculum-reasoning
+git clone https://github.com/divelab/E2H-Reasoning.git
+cd E2H-Reasoning
 ```
 
 2. Create the conda environment:
 ```bash
-conda env create -f env/environment.yml
-conda activate reasoning_env
+bash env/build_env.sh
 ```
 
 ## Curriculum Schedules
 
 The framework supports four curriculum learning schedules:
 
-### 1. Classical
+### 1. Classic
 Simple linear progression through tasks based on training progress.
 
 ### 2. Balanced
@@ -75,41 +76,19 @@ Gaussian distribution with a moving center, transitioning from easy to hard task
 ```yaml
 algorithm:
   e2h_args:
-    curriculum_schedule: gaussian  # Options: classical, balanced, cosine, gaussian
+    curriculum_schedule: gaussian  # Options: classic, balanced, cosine, gaussian
     scheduler_params:
       mu_exp: 0.5
       sigma: 0.5
 ```
 
 ## Configuration
-
 The project uses [Hydra](https://hydra.cc/) for configuration management. Configuration files are located in [config/](config/).
 
-## Training
-
-If using VLLM server, the execute the following command before training.
-### VLLM server setup
-```bash
-CUDA_VISIBLE_DEVICES=4 trl vllm-serve --model Qwen/Qwen2.5-1.5B-Instruct --dtype bfloat16 --max_model_len 4096 --trust_remote_code true 
-```
-
-or, VLLM can be run in colocate mode, by changing the configs in `algorithm/grpo.yaml` 
-### Training
-
-```bash
-WANDB_PROJECT=e2h CUDA_VISIBLE_DEVICES=0,1 accelerate launch --num_processes 1 --config_file config/deep_speed.yaml main.py mode=train model=qwen1.5b task=blocksworld
-```
-## Evaluation
-
-```bash
-CUDA_VISIBLE_DEVICES=1,2  accelerate launch  --mixed_precision bf16 --num_processes 1 --dynamo_backend no main.py mode=test model=$model task=$task
-```
-
-## Project Structure
-
+### Project Structure
 ```
 curriculum-reasoning/
-├── config/                # Hydra configuration files
+├── config/               # Hydra configuration files
 │   ├── algorithm/        # Algorithm configs (GRPO)
 │   ├── model/            # Model configs (Qwen, Llama)
 │   ├── task/             # Task configs (GSM8K, MATH, etc.)
@@ -126,10 +105,8 @@ curriculum-reasoning/
 ```
 
 ### Configuration Structure
-
 ```
 config/
-├── config.yaml           # Base configuration
 ├── algorithm/
 │   └── grpo.yaml        # GRPO training parameters
 ├── model/
@@ -142,9 +119,69 @@ config/
 │   ├── aqua.yaml        # AQUA task config
 │   ├── blocksworld.yaml # Blocksworld task config
 │   └── countdown.yaml   # Countdown task config
-└── deep_speed.yaml      # DeepSpeed configuration
+└── config.yaml          # Base configuration
 ```
 
+## Training
+
+### Default Args
+If want to just run our code without modifying any args.
+```bash
+bash runs.sh \
+--model=<qwen1.5b,qwen3b,llama3b> \
+--task=<aqua,blocksworld,countdown,gsm8k,math> \
+--curriculum_schedule=<classic,balanced,cosine,gaussian>
+```
+
+### Custom Args
+#### VLLM server setup
+If using VLLM server, then execute the following command before training.
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+trl vllm-serve \
+--model Qwen/Qwen2.5-1.5B-Instruct \
+--dtype bfloat16 \
+--max_model_len 4096 \
+--trust_remote_code true\
+--log_level warning \
+&
+```
+or, VLLM can be run in colocate mode, by changing the configs in `algorithm/grpo.yaml` 
+
+#### Training
+```bash
+CUDA_VISIBLE_DEVICES=1,2 \
+accelerate launch \
+--mixed_precision bf16 \
+--num_processes 2 \
+--dynamo_backend no \
+--use_deepspeed \
+--zero_stage 3 \
+--gradient_accumulation_steps 4 \
+--gradient_clipping 1 \
+--zero3_init_flag true \
+--zero3_save_16bit_model true \
+main.py \
+mode=train \
+model=qwen1.5b \
+task=blocksworld \
+<ARG Overides>
+```
+
+#### Evaluation
+```bash
+CUDA_VISIBLE_DEVICES=1,2 \
+accelerate launch \
+--mixed_precision bf16 \
+--num_machines 1 \
+--num_processes 1 \
+--dynamo_backend no \
+main.py \
+mode=test \
+model=qwen1.5b \
+task=blocksworld \
+<ARG Overides>
+```
 
 ## Citation
 

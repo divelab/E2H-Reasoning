@@ -11,6 +11,7 @@ args:
   use_vllm: true
   vllm_mode: server
   beta: 0.001
+  loss_type: grpo
   log_completions: true
   wandb_log_unique_prompts: true
 
@@ -32,16 +33,16 @@ args:
   overwrite_output_dir: true
   per_device_train_batch_size: 16
   report_to:
-    # - tensorboard
-    - wandb
+    - tensorboard
+    # - wandb
   save_strategy: "no"
   seed: 42
   tf32: true
-  output_dir: outputs/${model.name}_${task.name}
+  output_dir: outputs/${model.name}_${task.name}_${algorithm.e2h_args.curriculum_schedule}
   logging_dir: ${algorithm.args.output_dir}
 
 e2h_args:
-  curriculum_schedule: "cosine" # cosine, gaussian, balanced (GRPO), classical (traditional curriculum learning)
+  curriculum_schedule: "cosine" # cosine, gaussian, balanced (GRPO), classic (traditional curriculum learning)
   scheduler_args:
     mu_exp: 0.5 # If using Gaussian schedule, this is the mean
     sigma: 0.5 # If using Gaussian schedule, this is the standard deviation

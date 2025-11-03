@@ -2,7 +2,7 @@ name: Math
 
 args:
 
-  path: TheBlackCat22/math
+  path: divelab/math
   train_levels:
     - 0
     - 1

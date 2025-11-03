@@ -2,7 +2,7 @@ name: Gsm8K
 
 args:
 
-  path: TheBlackCat22/gsm8k
+  path: divelab/gsm8k
  
   system_content: "You are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.\n"
   user_content: "Solve the following math problem\n{question}\n\n Show your work in <think> </think> tags. And return the final answer in <answer> </answer> tags, for example <answer> 500 </answer>."
