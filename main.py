@@ -39,7 +39,7 @@ def train(cfg):
     print("\n\nModel:")
     model = AutoModelForCausalLM.from_pretrained(
         cfg.model.args.model_name_or_path,
-        dtype=cfg.model.args.dtype,
+        dtype=cfg.model.args.torch_dtype,
         trust_remote_code=cfg.model.args.trust_remote_code,
         attn_implementation=cfg.model.args.attn_implementation
     )
@@ -103,7 +103,7 @@ def test(cfg):
         model=cfg.model.args.model_name_or_path,
         trust_remote_code=cfg.model.args.trust_remote_code,
         tensor_parallel_size=torch.cuda.device_count(),
-        dtype=cfg.model.args.dtype,
+        dtype=cfg.model.args.torch_dtype,
         seed=cfg.algorithm.args.seed,
         max_model_len=cfg.task.args.max_prompt_length+cfg.task.args.max_completion_length,
         task='generate',

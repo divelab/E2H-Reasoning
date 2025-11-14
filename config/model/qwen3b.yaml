@@ -3,7 +3,7 @@ name: Qwen-3B
 args:
   
   model_name_or_path: Qwen/Qwen2.5-3B-Instruct
-  dtype: bfloat16
+  torch_dtype: bfloat16
   trust_remote_code: true
   attn_implementation: flash_attention_2
   
