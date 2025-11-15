@@ -51,11 +51,10 @@ def base_reward_fn(
                     reward += correctness_reward
                 else:
                     reward += result
-                # if correctness_reward_fn(predicted_answer, **sample):
-                #     reward += correctness_reward
             rewards.append(reward)
 
         except Exception as e:
+            print(f'Error in computing base reward - {e}')
             rewards.append(0.0)
 
     return rewards
@@ -650,6 +649,7 @@ class BlocksworldCorrectnessReward:
             _ = kwargs['answer'] # Goal State 
             true_plan = kwargs['solution']
             reward = cls.simulate_plan_with_reward(init_state=init_state, predicted_plan=predicted_plan, true_plan=true_plan)
+            print(f'BW verifier reward: {reward}, Predicted Plan: {predicted_plan}')
             return reward
         except Exception as e:
             print(f'Error in computing BW verifier reward - {e}')
