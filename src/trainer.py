@@ -14,7 +14,8 @@ class TaskSampler(torch.utils.data.Sampler):
         repeat_count, 
         seed,
         total_iterations, 
-        scheduler_params, 
+        scheduler_params,
+        resample_size 
     ):
         self.dataset = data_source
         assert 'level' in self.dataset.column_names
@@ -29,6 +30,7 @@ class TaskSampler(torch.utils.data.Sampler):
             'gaussian': partial(self._gaussian_schedule, **scheduler_params['scheduler_args']),
             'classic': self._step_schedule,
         }[scheduler_params['curriculum_schedule']]
+        self.resample_size = resample_size
 
         self.num_tasks = len(set(self.dataset['level']))
         task_col = np.asarray(self.dataset['level'])
@@ -93,6 +95,7 @@ class TaskSampler(torch.utils.data.Sampler):
         # Don't reset variance regularized state here - it's done once in trainer init
         
         for i in range(self.total_iterations):
+            self.current_iteration = i
             probs_dict = self.schedule_func(i, self.total_iterations, self.num_tasks)
             probs = np.array([probs_dict[j] for j in range(self.num_tasks)])
             # Sample a task for each slot in the batch using the probabilities.
@@ -136,5 +139,21 @@ class CurriculumGRPOTrainer(GRPOTrainer):
             repeat_count=self.num_iterations,
             seed=self.args.seed,
             total_iterations=self.args.max_steps,
-            scheduler_params=self.scheduler_params
+            scheduler_params=self.scheduler_params,
+            resample_size=self.args.generation_batch_size // (self.accelerator.num_processes * self.num_generations)
         )
+
+    def _compute_loss(self, model, inputs):
+        dapo_iter = 0
+
+        while dapo_iter < self.scheduler_params.max_dapo_iter:
+            grouped_advantages = inputs["advantages"].reshape(-1, self.num_generations)
+            if not torch.any(torch.all(torch.abs(grouped_advantages) < 1e-6, dim=-1)):
+                break
+            
+            dapo_iter += 1
+            print("Dapo Iter: ", dapo_iter)
+            # generation_batch = [self.callback_handler.train_dataloader.dataset[idx] for idx in self.callback_handler.train_dataloader.batch_sampler.batch_sampler.sampler.resample()]
+            generation_batch = [self.callback_handler.train_dataloader.dataset[idx] for idx in range(8)]
+            inputs = self._prepare_inputs(generation_batch)
+        return super()._compute_loss(model, inputs)

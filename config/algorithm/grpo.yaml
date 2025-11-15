@@ -43,6 +43,7 @@ args:
 
 e2h_args:
   curriculum_schedule: "cosine" # cosine, gaussian, balanced (GRPO), classic (traditional curriculum learning)
+  max_dapo_iter: 8
   scheduler_args:
     mu_exp: 0.5 # If using Gaussian schedule, this is the mean
     sigma: 0.5 # If using Gaussian schedule, this is the standard deviation
