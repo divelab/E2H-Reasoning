@@ -1,0 +1,24 @@
+name: sys2bench
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+    - python=3.10
+    - pip
+    - pytorch==2.5.1
+    - pytorch-cuda=12.1
+    - torchaudio==2.5.1
+    - torchvision==0.20.1
+    - nvidia/label/cuda-12.1.1::cuda-compiler
+    - conda-forge::trl=0.14.0
+    - conda-forge::deepspeed=0.15.4
+    - pip:
+        - hf-transfer
+        - vllm==0.7.0
+        - flash_attn
+        - hydra-core
+        - tarski
+        - pddl==0.2.0
+        - peft

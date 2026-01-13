@@ -1,0 +1,3 @@
+{
+  "o1_prompt": "- Do not include any additional formatting, such as markdown code blocks\nFollow the same type of format as this example:\nunstack the blue block from on top of the yellow block\nstack the blue block on top of the orange block\nunstack the yellow block from on top of the red block\nput down the yellow block\nunstack the blue block from on top of the orange block\nstack the blue block on top of the red block\npick up the orange block\nstack the orange block on top of the yellow block\n[PLAN END]\n"
+}

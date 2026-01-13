@@ -1,0 +1,1975 @@
+Generation 0: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = {block.split()[0]: block.split()[1:] for block in initial_state.split(', ')}
+    final_blocks = {block.split()[0]: block.split()[1:] for block in final_state.split(', ')}
+
+    misplaced_count = 0
+    unclear_count = 0
+
+    for block in final_blocks:
+        if block in initial_blocks:
+            if initial_blocks[block] != final_blocks[block]:
+                misplaced_count += 1
+            if 'clear' not in initial_blocks[block]:
+                unclear_count += 1
+        else:
+            misplaced_count += 1
+
+    heuristic_val = misplaced_count + unclear_count
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(", ")
+    final_blocks = final_state.split(", ")
+    
+    heuristic_val = 0
+    
+    # Create dictionaries to track block positions and clear status
+    initial_positions = {}
+    final_positions = {}
+    
+    for block in initial_blocks:
+        block_name = block.split()[0]
+        if "on top of" in block:
+            position = block.split("on top of ")[1]
+            initial_positions[block_name] = position
+        elif "on the table" in block:
+            initial_positions[block_name] = "table"
+        if "clear" in block:
+            initial_positions[block_name + "_clear"] = True
+        else:
+            initial_positions[block_name + "_clear"] = False
+            
+    for block in final_blocks:
+        block_name = block.split()[0]
+        if "on top of" in block:
+            position = block.split("on top of ")[1]
+            final_positions[block_name] = position
+        elif "on the table" in block:
+            final_positions[block_name] = "table"
+        if "clear" in block:
+            final_positions[block_name + "_clear"] = True
+        else:
+            final_positions[block_name + "_clear"] = False
+            
+    # Compute heuristic by comparing positions and clear status
+    for block in final_positions.keys():
+        if block in initial_positions:
+            if initial_positions[block] != final_positions[block]:
+                heuristic_val += 1
+            if initial_positions.get(block + "_clear", False) != final_positions.get(block + "_clear", False):
+                heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.11764705882352941 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final:
+            misplaced_count += 1
+            
+    heuristic_val = misplaced_count
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    
+    # Create dictionaries to track block status
+    initial_dict = {block.split(' ')[0]: block for block in initial_blocks}
+    final_dict = {block.split(' ')[0]: block for block in final_blocks}
+    
+    for block in final_dict:
+        if block in initial_dict:
+            if initial_dict[block] != final_dict[block]:
+                heuristic_val += 1  # Block is in the wrong position
+        else:
+            heuristic_val += 1  # Block is missing in initial state
+
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Generation 1: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final or 'clear' not in initial:
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heurisitic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final or 'clear' not in initial:
+            misplaced_count += 1
+            
+    heuristic_val = misplaced_count
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final or 'clear' not in initial:
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    for i in range(len(initial_blocks)):
+        if initial_blocks[i] != final_blocks[i]:
+            misplaced_count += 1
+    
+    # Additional calculation for blocks stacked incorrectly
+    incorrect_stacks = sum(1 for block in initial_blocks if block in final_state and initial_blocks.index(block) > final_blocks.index(block))
+    
+    heuristic_val = misplaced_count + incorrect_stacks
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for i, block in enumerate(initial_blocks):
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            heuristic_val += abs(i - final_index)
+    
+    return heuristic_val
+Accuracy: 0.29411764705882354 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for i in range(len(initial_blocks)):
+        if initial_blocks[i] != final_blocks[i]:
+            heuristic_val += i + 1  # i + 1 represents the height of the block in this position
+            
+    return heuristic_val
+Accuracy: 0.5294117647058824 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    blocked_count = 0
+    
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final:
+            misplaced_count += 1
+            
+    for block in initial_blocks:
+        if block not in final_blocks:
+            blocked_count += 1
+            
+    heuristic_val = misplaced_count + blocked_count
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    covered_count = 0
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial == final:
+            covered_count += 1
+            
+    heuristic_val = len(final_blocks) - covered_count
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    clear_penalty = 0
+    
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final:
+            misplaced_count += 1
+            if "clear" not in initial:
+                clear_penalty += 1
+                
+    heuristic_val = misplaced_count + clear_penalty
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Generation 2: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in final_blocks:
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            # Check if the block is clear in the initial state
+            if initial_index > 0 and initial_blocks[initial_index - 1] != 'clear':
+                heuristic_val += 1
+            # Check if the block is in the correct position
+            if initial_blocks[initial_index] != block:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1  # Block not present at all
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in final_blocks:
+        if block not in initial_blocks:
+            heuristic_val += 1  # Count blocks not present
+        else:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                heuristic_val += 1  # Count blocks in wrong position
+
+            # Check if block is obstructed
+            if initial_index < len(initial_blocks) - 1:
+                if initial_blocks[initial_index + 1] != 'clear':
+                    heuristic_val += 1  # Add penalty for being obstructed
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_stacks = {}
+    final_stacks = {}
+    
+    for block in initial_blocks:
+        if block not in initial_stacks:
+            initial_stacks[block] = []
+        if block == 'clear':
+            continue
+        initial_stacks[block].append(block)
+    
+    for block in final_blocks:
+        if block not in final_stacks:
+            final_stacks[block] = []
+        if block == 'clear':
+            continue
+        final_stacks[block].append(block)
+
+    for block in final_stacks:
+        if block in initial_stacks:
+            if initial_stacks[block] != final_stacks[block]:
+                heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for i, block in enumerate(initial_blocks):
+        if block in final_blocks and block != final_blocks[i]:
+            heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_positions = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for final_index, block in enumerate(final_blocks):
+        if block in initial_positions:
+            initial_index = initial_positions[block]
+            if initial_index != final_index:
+                heuristic_val += abs(initial_index - final_index) + 1  # +1 for height penalty
+        else:
+            heuristic_val += 1  # Penalty for missing blocks in initial state
+    
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    on_top_or_below_count = 0
+    
+    for block in initial_blocks:
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            if initial_blocks.index(block) != final_index:
+                misplaced_count += 1
+                # Check if the block is on top of or below other blocks
+                if final_index > 0 and final_blocks[final_index - 1] in initial_blocks:
+                    on_top_or_below_count += 1
+
+    heuristic_val = misplaced_count + on_top_or_below_count
+    return heuristic_val
+Accuracy: 0.23529411764705882 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            if initial_blocks.index(block) != final_index:
+                heuristic_val += 1
+                if final_index > 0 and initial_blocks[initial_index - 1] != final_blocks[final_index - 1]:
+                    heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    
+    for block in final_blocks:
+        if block not in initial_blocks:
+            heuristic_val += 1
+        else:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    max_distance = 0
+    
+    for i, block in enumerate(initial_blocks):
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            if i != final_index:
+                misplaced_count += 1
+                max_distance = max(max_distance, abs(i - final_index))
+    
+    heuristic_val = misplaced_count * max_distance
+    return heuristic_val
+Accuracy: 0.23529411764705882 
+Generation 3: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in final_blocks:
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            heuristic_val += abs(initial_index - final_index)
+    
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: (i, initial_blocks[i+1:i+len(initial_blocks)]) for i, block in enumerate(initial_blocks) if block in final_blocks}
+    
+    for block, (initial_index, below_blocks) in block_positions.items():
+        final_index = final_blocks.index(block)
+        if initial_index != final_index:
+            heuristic_val += 1  # Block is in the wrong position
+            if any(below_blocks) and final_index < len(final_blocks) - 1:
+                heuristic_val += 1  # Block is obstructing another block
+    
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            if initial_blocks.index(block) != final_index:
+                heuristic_val += 1
+                for below_block in initial_blocks[:initial_blocks.index(block)]:
+                    if below_block not in final_blocks[:final_index]:
+                        heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.23529411764705882 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in final_blocks:
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            heuristic_val += abs(initial_index - final_index)  # Adding the distance moved
+            # Adding penalty if the block is incorrectly stacked
+            if final_index > 0 and initial_blocks[initial_index - 1] != final_blocks[final_index - 1]:
+                heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            final_index = final_blocks.index(block)
+            if initial_blocks.index(block) != final_index:
+                heuristic_val += 1
+                # Check if the block is above another misplaced block
+                if final_index > 0 and initial_blocks[initial_index - 1] not in final_blocks[:final_index]:
+                    heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for i in range(len(final_blocks)):
+        if i >= len(initial_blocks) or final_blocks[i] != initial_blocks[i]:
+            heuristic_val += 1
+        if i > 0 and initial_blocks[i] in final_blocks and final_blocks.index(initial_blocks[i]) != i:
+            heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx < len(initial_blocks) and block in initial_blocks:
+            if block_position[block] != idx:
+                heuristic_val += 1
+        elif idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Generation 4: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+
+    for idx, block in enumerate(final_blocks):
+        if block in initial_block_positions:
+            if initial_block_positions[block] != idx:
+                heuristic_val += 1
+            # Check if the block is not clear above
+            if idx > 0 and final_blocks[idx - 1] != block and final_blocks[idx - 1] in initial_block_positions:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    for block in final_blocks:
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                heuristic_val += 1
+            if initial_index < len(initial_blocks) - 1 and initial_blocks[initial_index + 1] in final_blocks[final_index + 1:]:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_positions = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in initial_positions:
+            heuristic_val += abs(initial_positions[block] - i)
+        else:
+            heuristic_val += len(initial_blocks)  # Block is not in initial state
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    level_map = {}
+    
+    for index, block in enumerate(final_blocks):
+        level_map[block] = index  # Map each block to its final level
+    
+    for index, block in enumerate(initial_blocks):
+        if block in level_map:
+            if level_map[block] != index:
+                heuristic_val += 1  # Count the misplaced block
+            # Check if the block is correctly supported
+            if index > 0 and initial_blocks[index - 1] not in final_blocks[:level_map[block]]:
+                heuristic_val += 1  # Penalty for being incorrectly supported
+    
+    return heuristic_val
+Accuracy: 0.4117647058823529 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx < len(initial_blocks) and block in initial_blocks:
+            if block_position[block] != idx:
+                heuristic_val += 1
+        elif idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+            heuristic_val += 1
+            
+    clear_blocks_initial = sum(1 for block in initial_blocks if "clear" in block)
+    clear_blocks_final = sum(1 for block in final_blocks if "clear" in block)
+    heuristic_val += (len(initial_blocks) - clear_blocks_initial) - (len(final_blocks) - clear_blocks_final)
+
+    return heuristic_val
+Accuracy: 0.5294117647058824 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(final_blocks)}
+
+    for idx, block in enumerate(initial_blocks):
+        if block in block_position:
+            final_index = block_position[block]
+            if idx != final_index:
+                heuristic_val += 1
+                # Check if the block has a correct supporting block beneath it
+                if final_index > 0 and (final_blocks[final_index - 1] not in initial_blocks[:idx]):
+                    heuristic_val += 1
+        else:
+            heuristic_val += 1  # Block is completely misplaced
+    
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_stack = {}
+    
+    for block in initial_blocks:
+        if block not in initial_stack:
+            initial_stack[block] = []
+        initial_stack[block].append(block)
+    
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or final_blocks[idx] not in initial_blocks:
+            heuristic_val += 1
+        elif idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+            heuristic_val += 1
+            
+    # Adding fixed penalties for incorrect stacks
+    for block in initial_blocks:
+        if block in final_blocks and initial_blocks.index(block) != final_blocks.index(block):
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    hand_held_block = [block for block in initial_blocks if 'in the hand' in block]
+    
+    for i in range(len(final_blocks)):
+        if i >= len(initial_blocks) or final_blocks[i] != initial_blocks[i]:
+            heuristic_val += 1
+            
+    heuristic_val += len(hand_held_block)
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    misplaced_blocks = set(initial_blocks) - set(final_blocks)
+    heuristic_val += len(misplaced_blocks)
+    
+    for block in initial_blocks:
+        if block in final_blocks and initial_blocks.index(block) != final_blocks.index(block):
+            heuristic_val += 2  # Penalty for being in the wrong position
+    
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if block in initial_blocks:
+            if block_position[block] != idx:
+                heuristic_val += 1
+            if idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for idx, block in enumerate(initial_blocks):
+        if block in block_position:
+            final_index = block_position[block]
+            if idx != final_index:
+                heuristic_val += 1
+                if idx > 0 and initial_blocks[idx - 1] not in final_blocks[:final_index]:
+                    heuristic_val += 1
+        else:
+            heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_stack = {block: [] for block in initial_blocks}
+    
+    for block in initial_blocks:
+        if block not in final_blocks:
+            heuristic_val += 1
+            
+    for idx, block in enumerate(final_blocks):
+        if idx < len(initial_blocks) and block in initial_blocks:
+            if initial_blocks.index(block) != idx:
+                heuristic_val += 1
+        elif idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+            heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_clear = {block: True for block in initial_blocks}
+    
+    for block in final_blocks:
+        if block in initial_blocks:
+            if initial_blocks.index(block) != final_blocks.index(block):
+                heuristic_val += 1
+            if block_clear.get(block, False) is False:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1  # Block is not in initial state
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Generation 5: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for idx, block in enumerate(initial_blocks):
+        if block in block_positions:
+            target_idx = block_positions[block]
+            heuristic_val += abs(target_idx - idx)  # Distance from target position
+            if idx < len(initial_blocks) - 1 and initial_blocks[idx + 1] != block:  # Not clear
+                heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_clear = {block.split(' ')[0]: 'clear' in block for block in initial_blocks}
+    
+    for i, block in enumerate(final_blocks):
+        block_name = block.split(' ')[0]
+        if block_name in initial_blocks:
+            initial_index = initial_blocks.index(block_name)
+            if initial_index != i:  # Check if block is in the right position
+                heuristic_val += 1
+            if not block_clear.get(block_name, False):  # Check if block is clear when it should be
+                heuristic_val += 1
+        else:
+            heuristic_val += 1  # Block is not in initial state
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for idx, block in enumerate(initial_blocks):
+        if block in position_map:
+            if position_map[block] != idx:
+                heuristic_val += 1  # Count block in wrong position
+        else:
+            heuristic_val += 1  # Block not in final state
+            
+    # Counting blocks that would need to be moved based on their final positions
+    misplaced_blocks = [block for block in initial_blocks if block in position_map and position_map[block] != initial_blocks.index(block)]
+    heuristic_val += len(misplaced_blocks)  # Add penalty for needing to move
+    
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = len(final_blocks)  # Start with total number of blocks
+    
+    for block in final_blocks:
+        if block in initial_blocks and initial_blocks.index(block) == final_blocks.index(block):
+            heuristic_val -= 1  # Correctly placed block
+    
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_clear = {block: True for block in initial_blocks}
+    
+    for i, block in enumerate(final_blocks):
+        if i < len(initial_blocks) and block in initial_blocks:
+            if initial_blocks.index(block) != i:
+                heuristic_val += 1  # Block is in the wrong position
+            if block_clear.get(block, False) is False:
+                heuristic_val += 1  # Block is not clear when it should be
+        else:
+            heuristic_val += 1  # Block is missing in initial state
+    
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    positions = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for idx, block in enumerate(initial_blocks):
+        if block in positions:
+            target_pos = positions[block]
+            if idx != target_pos:
+                heuristic_val += 1 + abs(idx - target_pos)  # Extra weight for distance
+        else:
+            heuristic_val += 1  # Block is not in final state
+    
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_clear = {block: True for block in initial_blocks}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or block not in initial_blocks:
+            heuristic_val += 1  # Block is missing or extra
+        elif initial_blocks.index(block) != idx:
+            heuristic_val += 1  # Block is in the wrong position
+            
+        # Check if the current block should be clear
+        if not block_clear.get(block, False):
+            heuristic_val += 1  # Block is not clear when it should be
+    
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or block not in initial_blocks:
+            heuristic_val += 1  # Block is missing or misplaced
+        elif idx > 0 and final_blocks[idx - 1] not in initial_blocks:
+            heuristic_val += 1  # Previous block is missing, hence this one is blocked
+        
+        # Penalty for blocks that should be on top of others
+        if idx > 0 and block_positions.get(block, -1) != block_positions.get(final_blocks[idx - 1], -1) + 1:
+            heuristic_val += 2  # Penalty for not being on the right block above
+    
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if block in block_positions:
+            # Calculate the distance from the current position to the target position
+            heuristic_val += abs(block_positions[block] - idx)
+        else:
+            heuristic_val += 1  # Block is not present in the initial state
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    clear_blocks = {block: False for block in final_blocks}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx < len(initial_blocks):
+            if block != initial_blocks[idx]:
+                heuristic_val += 1  # Block is in the wrong position
+                if initial_blocks[idx] in final_blocks:
+                    heuristic_val += 1  # Block should be clear but is not
+        else:
+            heuristic_val += 1  # Extra block in the initial state
+
+    for block in initial_blocks:
+        if block not in final_blocks:
+            heuristic_val += 1  # Block is not in the final state
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_clear = {block: True for block in initial_blocks}
+    
+    for i, block in enumerate(final_blocks):
+        if block in initial_blocks:
+            if initial_blocks.index(block) != i:
+                heuristic_val += 1
+            if block_clear.get(block, False) is False:
+                heuristic_val += 1
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+        # Check if the block below is clear
+        if i > 0 and final_blocks[i - 1] in initial_blocks and initial_blocks.index(final_blocks[i - 1]) > initial_blocks.index(block):
+            heuristic_val += 1  # Block below is not clear when it should be
+    
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    clear_blocks = {block: True for block in initial_blocks}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or final_blocks[idx] not in initial_blocks:
+            heuristic_val += 1  # Block is not in initial state
+        elif idx > 0 and final_blocks[idx - 1] in initial_blocks:
+            if initial_blocks.index(final_blocks[idx]) != idx:
+                heuristic_val += 1  # Misplaced block
+        if block in clear_blocks and not clear_blocks[block]:
+            heuristic_val += 1  # Block is not clear
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Generation 6: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_positions:
+            if block_positions[block] != i:
+                heuristic_val += 1  # Block is in the wrong position
+            # Check if the block should be clear
+            if i > 0 and final_blocks[i - 1] in initial_blocks and block_positions[final_blocks[i - 1]] < block_positions[block]:
+                heuristic_val += 1  # Block is obstructed when it should be clear
+        else:
+            heuristic_val += 1  # Block is not in initial state
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    
+    for i, block in enumerate(final_blocks):
+        if block in initial_blocks:
+            index_initial = initial_blocks.index(block)
+            if index_initial != i:
+                heuristic_val += 1  # Block is in the wrong position
+            if i > 0 and final_blocks[i - 1] in initial_blocks:
+                index_below = initial_blocks.index(final_blocks[i - 1])
+                if index_below < index_initial:
+                    heuristic_val += 1  # Block below is not where it should be
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_positions:
+            if block_positions[block] != i:
+                heuristic_val += 1
+                if block_positions[block] < len(initial_blocks) - 1 and initial_blocks[block_positions[block] + 1] not in final_blocks[i:]:
+                    heuristic_val += 1  # Block is blocking another block in the wrong position
+        else:
+            heuristic_val += 1  # Block is not in initial state
+    
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    
+    for block in final_blocks:
+        if block in initial_blocks:
+            if initial_blocks.index(block) != final_blocks.index(block):
+                heuristic_val += 1  # Block is misplaced
+            
+            # Check nearest neighbors in the final state
+            current_index = initial_blocks.index(block)
+            if current_index > 0 and initial_blocks[current_index - 1] not in final_blocks:
+                heuristic_val += 1  # Left neighbor is not in the final position
+            if current_index < len(initial_blocks) - 1 and initial_blocks[current_index + 1] not in final_blocks:
+                heuristic_val += 1  # Right neighbor is not in the final position
+        else:
+            heuristic_val += 1  # Block is missing from the initial state
+            
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    hand_block = None
+    
+    for block in initial_blocks:
+        if 'in the hand' in block:
+            hand_block = block.split()[0]  # Get the block held in hand
+            
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or block not in initial_blocks:
+            heuristic_val += 1  # Block is missing or extra
+        elif initial_blocks.index(block) != idx:
+            heuristic_val += 1  # Block is in the wrong position
+            
+    if hand_block and hand_block not in final_blocks:
+        heuristic_val += 1  # Penalize if the block in hand is not in the final state
+    
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if block not in block_positions:
+            heuristic_val += 1  # Block is missing in the initial state
+        else:
+            if block_positions[block] != idx:
+                heuristic_val += 1  # Block is in the wrong position
+    
+    # Check for blocks that should be clear but are not
+    for block in initial_blocks:
+        if block in final_blocks:
+            final_idx = final_blocks.index(block)
+            if initial_blocks.index(block) != final_idx:  # If the block is not at its final position
+                heuristic_val += 1  # Penalty for being in the wrong position
+    
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for final_idx, block in enumerate(final_blocks):
+        if block in position_map:
+            initial_idx = position_map[block]
+            if initial_idx != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+                # Check if obstructing blocks are also in the wrong order
+                for i in range(initial_idx + 1, len(initial_blocks)):
+                    if initial_blocks[i] in final_blocks:
+                        if final_blocks.index(initial_blocks[i]) < final_idx:
+                            heuristic_val += 1  # Obstructing block is incorrectly ordered
+                            break
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+    block_clear = {block: True for block in initial_blocks}
+    
+    for idx, block in enumerate(final_blocks):
+        if block in block_positions:
+            if block_positions[block] != idx:
+                heuristic_val += 1  # Block is in the wrong position
+            if not block_clear.get(block, False):
+                heuristic_val += 1  # Block is not clear
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+        # Check if the block below is clear
+        if idx > 0 and final_blocks[idx - 1] in block_positions:
+            if block_positions[final_blocks[idx - 1]] > block_positions[block]:
+                heuristic_val += 1  # Block below is not clear when it should be
+    
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1
+            if i > 0 and final_blocks[i - 1] in block_position and block_position[final_blocks[i - 1]] != i - 1:
+                heuristic_val += 1  # Block above is misplaced
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_positions = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if block in block_positions:
+            current_pos = block_positions[block]
+            if current_pos != idx:
+                heuristic_val += abs(current_pos - idx)  # Penalty for distance
+            if current_pos < idx:  # Block is lower than desired
+                heuristic_val += 1  # Add penalty if the block is not clear
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for idx, block in enumerate(initial_blocks):
+        if block not in position_map or position_map[block] != idx:
+            heuristic_val += 1  # Block is misplaced
+            
+    # Count the number of blocks that should be clear but are not
+    clear_blocks = [block for block in final_blocks if final_blocks.index(block) == idx]
+    for block in clear_blocks:
+        if block in initial_blocks and initial_blocks.index(block) != idx:
+            heuristic_val += 1  # Block is not clear when it should be
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if idx >= len(initial_blocks) or block not in block_position:
+            heuristic_val += 1  # Block is missing or extra
+        elif block_position[block] != idx:
+            heuristic_val += 1  # Block is in the wrong position
+            
+        # Check if the block should be clear
+        if block in block_position and initial_blocks[block_position[block]] != block:
+            heuristic_val += 1  # Block is not clear when it should be
+    
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Generation 7: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_height = {}
+    position_map = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for block in initial_blocks:
+        if block not in final_blocks:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            final_idx = final_blocks.index(block)
+            initial_idx = position_map[block]
+            if initial_idx != final_idx:
+                heuristic_val += abs(initial_idx - final_idx)  # Penalize for incorrect position
+            
+            # Penalizing for blocks that are above their target position
+            if initial_idx > final_idx:
+                heuristic_val += initial_idx - final_idx  # Height penalty
+    
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    heuristic_val = 0
+    final_position_map = {block: i for i, block in enumerate(final_blocks)}
+
+    for idx, block in enumerate(initial_blocks):
+        if block in final_position_map:
+            final_idx = final_position_map[block]
+            if idx != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+                # Check for hierarchy issues
+                if idx > 0 and initial_blocks[idx - 1] in final_position_map:
+                    above_block_final_idx = final_position_map[initial_blocks[idx - 1]]
+                    if above_block_final_idx < final_idx:
+                        heuristic_val += 1  # Above block is misplaced in hierarchy
+        else:
+            heuristic_val += 1  # Block is not in final state
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1  # Block is in the wrong position
+                # Check for obstructing blocks
+                if i > 0 and final_blocks[i - 1] in block_position and block_position[final_blocks[i - 1]] != i - 1:
+                    heuristic_val += 1  # Block above is misplaced
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for final_idx, block in enumerate(final_blocks):
+        if block in position_map:
+            initial_idx = position_map[block]
+            if initial_idx != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+                # Penalty for blocks that are obstructed
+                for i in range(initial_idx + 1, len(initial_blocks)):
+                    if initial_blocks[i] in final_blocks and position_map[initial_blocks[i]] != final_blocks.index(initial_blocks[i]):
+                        heuristic_val += 1  # Increment penalty for obstructed misplaced block
+                        break
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1  # Block is misplaced
+                if i > 0 and final_blocks[i - 1] in block_position and block_position[final_blocks[i - 1]] != i - 1:
+                    heuristic_val += 2  # Additional penalty for incorrect stacking
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for final_idx, block in enumerate(final_blocks):
+        if block in position_map:
+            initial_idx = position_map[block]
+            # Count as out of place if the index is different
+            if initial_idx != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+        else:
+            heuristic_val += 1  # Block is not in initial state
+
+    # Check for incorrectly stacked blocks
+    for i in range(len(final_blocks) - 1):
+        if final_blocks[i] in position_map and final_blocks[i + 1] in position_map:
+            if position_map[final_blocks[i]] > position_map[final_blocks[i + 1]]:
+                heuristic_val += 1  # Incorrect stacking order
+                
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block not in position_map:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            final_idx = position_map[block]
+            if i != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+                # Check for obstructing blocks
+                for j in range(i + 1, len(initial_blocks)):
+                    if initial_blocks[j] in position_map:
+                        if position_map[initial_blocks[j]] < final_idx:
+                            heuristic_val += 1  # Obstructing block is incorrectly positioned
+                            break
+
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1  # Block is not in the final position
+                # Check for obstructing blocks
+                for j in range(i + 1, len(final_blocks)):
+                    if final_blocks[j] in block_position and block_position[final_blocks[j]] < i:
+                        heuristic_val += 1  # Obstructing block
+                        break
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for final_idx, block in enumerate(final_blocks):
+        if block in position_map:
+            initial_idx = position_map[block]
+            if initial_idx != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(initial_blocks)}
+    
+    for idx, block in enumerate(final_blocks):
+        if block in position_map:
+            if position_map[block] != idx:
+                heuristic_val += 1  # Block is in the wrong position
+            # Add penalty if block is not on the table or is obstructed
+            if idx > 0 and final_blocks[idx - 1] in position_map and position_map[final_blocks[idx - 1]] > idx - 1:
+                heuristic_val += 1  # Block is obstructed
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Generation 8: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    clear_map = {block: (block not in initial_blocks) or (initial_blocks.index(block) == 0) for block in final_blocks}
+    
+    for i, block in enumerate(initial_blocks):
+        if block not in position_map:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            final_idx = position_map[block]
+            if i != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+
+    for block in final_blocks:
+        if clear_map[block] == False and block in initial_blocks:
+            heuristic_val += 1  # Block is not clear when it should be
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block in position_map:
+            final_idx = position_map[block]
+            heuristic_val += abs(final_idx - i)  # Add the distance from the current index to the final index
+            
+    return heuristic_val
+Accuracy: 0.17647058823529413 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block in position_map:
+            desired_pos = position_map[block]
+            heuristic_val += abs(i - desired_pos)  # Add distance to target position
+        else:
+            heuristic_val += len(final_blocks)  # Heavy penalty for blocks not in final state
+
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    final_depth_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for block in initial_blocks:
+        if block in final_depth_map:
+            if final_depth_map[block] != initial_blocks.index(block):
+                heuristic_val += 1  # Block is misplaced
+        else:
+            heuristic_val += 1  # Block is not in final state
+            
+    return len(final_blocks) - (len(final_blocks) - heuristic_val)
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    final_block_positions = {block: idx for idx, block in enumerate(final_blocks)}
+    
+    for block in final_blocks:
+        if block in block_position:
+            if block_position[block] != final_block_positions[block]:
+                heuristic_val += 1  # Block is not in the final position
+                # Check for blocks stacked on top of it in the initial state
+                for other_block in initial_blocks:
+                    if block_position[other_block] < block_position[block] and other_block in final_blocks:
+                        heuristic_val += 1  # Block is stacked on top of the misplaced block
+                        break
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block in position_map:
+            final_idx = position_map[block]
+            if i != final_idx:
+                heuristic_val += abs(i - final_idx)  # Add the distance to the target position
+        else:
+            heuristic_val += len(final_blocks)  # Penalty for block not in final state
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            distance = abs(block_position[block] - i)
+            heuristic_val += distance  # Distance from the final position
+            
+            # Count obstructing blocks
+            for j in range(i + 1, len(final_blocks)):
+                if final_blocks[j] in block_position and block_position[final_blocks[j]] < block_position[block]:
+                    heuristic_val += 1  # Obstructing block
+                    break
+        else:
+            heuristic_val += len(initial_blocks)  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        expected_position = position_map.get(block, -1)
+        if expected_position == -1 or expected_position != i:
+            heuristic_val += 1  # Block is either not in final state or misplaced
+            # Check for obstructing blocks
+            for j in range(i + 1, len(initial_blocks)):
+                if initial_blocks[j] in position_map and position_map[initial_blocks[j]] < expected_position:
+                    heuristic_val += 1  # Obstructing block is incorrectly positioned
+                    break
+
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += abs(block_position[block] - i)  # Distance from final position
+        else:
+            heuristic_val += len(initial_blocks)  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    heuristic_val = 0
+    initial_position_map = {block: i for i, block in enumerate(initial_blocks)}
+    final_position_map = {block: i for i, block in enumerate(final_blocks)}
+
+    for i, block in enumerate(final_blocks):
+        if block not in initial_position_map:
+            heuristic_val += 1  # Block is missing in the initial state
+        else:
+            initial_idx = initial_position_map[block]
+            if initial_idx != i:
+                heuristic_val += 1  # Block is in the wrong position
+            
+            # Count blocks above the block in the initial state
+            blocks_above = sum(1 for j in range(initial_idx + 1, len(initial_blocks)) if initial_blocks[j] in final_position_map and final_position_map[initial_blocks[j]] < i)
+            heuristic_val += blocks_above  # Add penalty for blocks above
+
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block not in position_map:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            final_idx = position_map[block]
+            if i != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+            # Check for wrong blocks underneath
+            if i > 0 and initial_blocks[i-1] in position_map:
+                if position_map[initial_blocks[i-1]] != final_idx - 1:
+                    heuristic_val += 1  # Wrong block underneath
+        
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block not in position_map:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            final_idx = position_map[block]
+            if i != final_idx:
+                heuristic_val += 1  # Block is in the wrong position
+                # Count blocks above this misplaced block
+                for j in range(i + 1, len(initial_blocks)):
+                    if initial_blocks[j] in position_map:
+                        if position_map[initial_blocks[j]] < final_idx:
+                            heuristic_val += 1  # Count height of obstructing blocks
+                        
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Generation 9: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_stacks = {}
+    final_stacks = {}
+
+    for block in initial_blocks:
+        stack = block.split(' on ')[0]
+        if stack not in initial_stacks:
+            initial_stacks[stack] = []
+        initial_stacks[stack].append(block)
+    
+    for block in final_blocks:
+        stack = block.split(' on ')[0]
+        if stack not in final_stacks:
+            final_stacks[stack] = []
+        final_stacks[stack].append(block)
+
+    for stack in initial_stacks:
+        if stack in final_stacks:
+            heuristic_val += abs(len(initial_stacks[stack]) - len(final_stacks[stack]))
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    initial_stacks = {}
+    final_stacks = {}
+    
+    for block in initial_blocks:
+        if block not in initial_stacks:
+            initial_stacks[block] = []
+        initial_stacks[block].append(block)
+    
+    for block in final_blocks:
+        if block not in final_stacks:
+            final_stacks[block] = []
+        final_stacks[block].append(block)
+
+    for block in final_blocks:
+        if block in initial_stacks:
+            if initial_stacks[block] != final_stacks[block]:
+                heuristic_val += len(initial_stacks[block]) - 1  # Count blocks above in the same stack
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    correct_position_count = 0
+    
+    for i, block in enumerate(final_blocks):
+        if i < len(initial_blocks) and initial_blocks[i] == block:
+            correct_position_count += 1
+        else:
+            heuristic_val += 1  # Count misplaced blocks
+            
+    return heuristic_val - correct_position_count
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        expected_position = position_map.get(block, -1)
+        if expected_position == -1:
+            heuristic_val += len(final_blocks)  # Penalize for blocks not in final state
+        else:
+            heuristic_val += abs(expected_position - i)  # Add position difference
+            
+            # Order penalty
+            if i > 0 and expected_position < position_map.get(initial_blocks[i - 1], -1):
+                heuristic_val += 1  # Penalize for incorrect order
+
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for block in initial_blocks:
+        if block not in position_map:
+            heuristic_val += 1  # Block is not in final state
+        else:
+            expected_position = position_map[block]
+            if initial_blocks[expected_position] != block:
+                heuristic_val += 1  # Block is misplaced
+            if initial_blocks[expected_position] == block and 'clear' not in block:  # If block is not clear
+                heuristic_val += 1  # Penalize for not being clear
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += abs(block_position[block] - i)  # Distance from final position
+                
+                # Check if the block is blocked by another block
+                above_block = [b for b in initial_blocks if block_position[b] < block_position[block] and block_position[b] < i]
+                heuristic_val += len(above_block)  # Increase penalty for being blocked
+        else:
+            heuristic_val += len(initial_blocks)  # Block is not in initial state
+            
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 2  # Misplaced blocks incur a penalty
+        else:
+            heuristic_val += 5  # Blocks not in initial state incur a larger penalty
+            
+        if i > 0 and final_blocks[i-1] != block and final_blocks[i] in block_position:
+            heuristic_val += 3  # Incorrect stacking incurs an additional penalty
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1  # Count misplaced blocks
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+        # Check if the block is clear in the initial state
+        if i > 0 and initial_blocks[i-1] not in final_blocks:  # Previous block is not in final state
+            heuristic_val += 1  # Block is blocked
+
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    final_position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block in final_position_map:
+            expected_position = final_position_map[block]
+            if expected_position != i:
+                heuristic_val += 1  # Block is not in the correct position
+                # Check for blocks below this block
+                for j in range(i + 1, len(initial_blocks)):
+                    if initial_blocks[j] in final_position_map and final_position_map[initial_blocks[j]] < expected_position:
+                        heuristic_val += 1  # Block is obstructed by another misplaced block
+                        break
+        else:
+            heuristic_val += 1  # Block is not in the final state
+            
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    position_map = {block: i for i, block in enumerate(final_blocks)}
+    
+    for i, block in enumerate(initial_blocks):
+        if block not in position_map or position_map[block] != i:
+            heuristic_val += 1  # Block is either not in final state or misplaced
+            
+            # Count the number of blocks above this misplaced block
+            for j in range(i + 1, len(initial_blocks)):
+                if initial_blocks[j] in position_map:
+                    heuristic_val += 1  # Count obstructing blocks above
+            
+    return heuristic_val
+Accuracy: 0.29411764705882354 
+Test the best heuristic in the last generation: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    heuristic_val = 0
+    block_position = {block: idx for idx, block in enumerate(initial_blocks)}
+    
+    for i, block in enumerate(final_blocks):
+        if block in block_position:
+            if block_position[block] != i:
+                heuristic_val += 1  # Count misplaced blocks
+        else:
+            heuristic_val += 1  # Block is not in initial state
+            
+        # Check if the block is clear in the initial state
+        if i > 0 and initial_blocks[i-1] not in final_blocks:  # Previous block is not in final state
+            heuristic_val += 1  # Block is blocked
+
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Test the best heuristic in all the generations: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    misplaced_count = 0
+    for initial, final in zip(initial_blocks, final_blocks):
+        if initial != final:
+            misplaced_count += 1
+            
+    heuristic_val = misplaced_count
+    return heuristic_val
+Accuracy: 0.9111111111111111 

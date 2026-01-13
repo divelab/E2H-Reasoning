@@ -1,0 +1,15 @@
+# GRPO configuration with variance regularized scheduler
+defaults:
+  - grpo
+
+training:
+  curriculum: true
+  curriculum_schedule: variance_regularized
+  scheduler_params:
+    min_prob: 0.1
+    temperature: 0.5           # Sharp focus
+    beta: 0.8  # Higher beta = more adaptive, lower = more uniform
+    warmup_steps: 100
+    vrex_penalty_weight: 2.0  # High emphasis on variance
+    groupdro_alpha: 0.0  # Disable GroupDRO
+    window_size: 100  # Window for computing performance statistics

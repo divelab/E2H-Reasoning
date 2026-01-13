@@ -1,0 +1,7 @@
+# conf/model/qwen.yaml
+family: "Qwen"
+trim: "Qwen2.5-0.5B-Instruct"
+name: ${model.family}/${model.trim}
+trust_remote_code: true
+torch_dtype: "bfloat16"
+attn_implementation: "flash_attention_2"

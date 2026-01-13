@@ -1,0 +1,628 @@
+[
+  {
+    "init": "the I block is clear, the S block is clear, the hand is empty, the Y block is on the table, the I block is on top of the Y block and the S block is on the table",
+    "plan": "pick up the S block",
+    "goal": "the hand is holding the S block",
+    "mapping": {
+      "2": "I",
+      "3": "S",
+      "1": "Y"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the A block is clear, the M block is clear, the D block is clear, the hand is empty, the A block is on the table, the M block is on the table, the B block is on the table and the D block is on top of the B block",
+    "plan": "pick up the A block",
+    "goal": "the hand is holding the A block",
+    "mapping": {
+      "1": "A",
+      "2": "M",
+      "4": "D",
+      "3": "B"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the F block is clear, the A block is clear, the C block is clear, the hand is empty, the T block is on the table, the F block is on top of the T block, the Z block is on the table, the K block is on top of the Z block, the A block is on top of the K block and the C block is on the table",
+    "plan": "unstack the F block from on top of the T block",
+    "goal": "the hand is holding the F block",
+    "mapping": {
+      "2": "F",
+      "5": "A",
+      "6": "C",
+      "1": "T",
+      "3": "Z",
+      "4": "K"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the red block is clear, the cyan block is clear, the hand is empty, the pink block is on the table, the yellow block is on top of the pink block, the red block is on top of the yellow block, the magenta block is on the table and the cyan block is on top of the magenta block",
+    "plan": "unstack the red block from on top of the yellow block",
+    "goal": "the hand is holding the red block",
+    "mapping": {
+      "3": "red",
+      "5": "cyan",
+      "1": "pink",
+      "2": "yellow",
+      "4": "magenta"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the 1st block is clear, the 5th block is clear, the 4th block is clear, the 3rd block is clear, the hand is empty, the 2nd block is on the table, the 1st block is on the table, the 5th block is on top of the 2nd block, the 4th block is on the table and the 3rd block is on the table",
+    "plan": "unstack the 5th block from on top of the 2nd block",
+    "goal": "the hand is holding the 5th block",
+    "mapping": {
+      "2": "1st",
+      "3": "5th",
+      "4": "4th",
+      "5": "3rd",
+      "1": "2nd"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the 3rd block is clear, the 4th block is clear, the 6th block is clear, the hand is empty, the 3rd block is on the table, the 1st block is on the table, the 2nd block is on top of the 1st block, the 5th block is on top of the 2nd block, the 4th block is on top of the 5th block and the 6th block is on the table",
+    "plan": "unstack the 4th block from on top of the 5th block",
+    "goal": "the hand is holding the 4th block",
+    "mapping": {
+      "1": "3rd",
+      "5": "4th",
+      "6": "6th",
+      "2": "1st",
+      "3": "2nd",
+      "4": "5th"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the U block is clear, the W block is clear, the D block is clear, the hand is empty, the U block is on the table, the W block is on the table and the D block is on the table",
+    "plan": "pick up the W block",
+    "goal": "the hand is holding the W block",
+    "mapping": {
+      "1": "U",
+      "2": "W",
+      "3": "D"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the S block is clear, the E block is clear, the hand is empty, the S block is on the table, the H block is on the table and the E block is on top of the H block",
+    "plan": "pick up the S block",
+    "goal": "the hand is holding the S block",
+    "mapping": {
+      "1": "S",
+      "3": "E",
+      "2": "H"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the S block is clear, the D block is clear, the hand is empty, the N block is on the table, the V block is on top of the N block, the S block is on the table and the D block is on top of the V block",
+    "plan": "pick up the S block",
+    "goal": "the hand is holding the S block",
+    "mapping": {
+      "3": "S",
+      "4": "D",
+      "1": "N",
+      "2": "V"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the orange block is clear, the blue block is clear, the magenta block is clear, the hand is empty, the pink block is on the table, the orange block is on top of the pink block, the yellow block is on the table, the blue block is on the table and the magenta block is on top of the yellow block",
+    "plan": "pick up the blue block",
+    "goal": "the hand is holding the blue block",
+    "mapping": {
+      "2": "orange",
+      "4": "blue",
+      "5": "magenta",
+      "1": "pink",
+      "3": "yellow"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the 1st block is clear, the 3rd block is clear, the hand is holding the 2nd block, the 1st block is on the table and the 3rd block is on the table",
+    "plan": "put down the 2nd block",
+    "goal": "the 2nd block is on the table",
+    "mapping": {
+      "1": "1st",
+      "2": "3rd",
+      "3": "2nd"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the B block is clear, the G block is clear, the P block is clear, the hand is holding the Q block, the B block is on the table, the G block is on the table and the P block is on the table",
+    "plan": "stack the Q block on top of the G block",
+    "goal": "the Q block is on top of the G block",
+    "mapping": {
+      "1": "B",
+      "3": "G",
+      "4": "P",
+      "2": "Q"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the T block is clear, the K block is clear, the L block is clear, the N block is clear, the hand is empty, the Y block is on the table, the B block is on the table, the T block is on top of the Y block, the K block is on the table, the L block is on the table and the N block is on top of the B block",
+    "plan": "unstack the N block from on top of the B block",
+    "goal": "the hand is holding the N block",
+    "mapping": {
+      "3": "T",
+      "4": "K",
+      "5": "L",
+      "6": "N",
+      "1": "Y",
+      "2": "B"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the emerald block is clear, the gray block is clear, the purple block is clear, the orange block is clear, the hand is empty, the red block is on the table, the emerald block is on top of the red block, the gray block is on the table, the brown block is on the table, the purple block is on top of the brown block and the orange block is on the table",
+    "plan": "pick up the gray block",
+    "goal": "the hand is holding the gray block",
+    "mapping": {
+      "2": "emerald",
+      "3": "gray",
+      "5": "purple",
+      "6": "orange",
+      "1": "red",
+      "4": "brown"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the gamma block is clear, the delta block is clear, the hand is empty, the alpha block is on the table, the iota block is on top of the alpha block, the gamma block is on the table and the delta block is on top of the iota block",
+    "plan": "pick up the gamma block",
+    "goal": "the hand is holding the gamma block",
+    "mapping": {
+      "3": "gamma",
+      "4": "delta",
+      "1": "alpha",
+      "2": "iota"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the Z block is clear, the H block is clear, the R block is clear, the hand is empty, the C block is on the table, the Z block is on the table, the O block is on top of the C block, the H block is on top of the O block and the R block is on the table",
+    "plan": "unstack the H block from on top of the O block",
+    "goal": "the hand is holding the H block",
+    "mapping": {
+      "2": "Z",
+      "4": "H",
+      "5": "R",
+      "1": "C",
+      "3": "O"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the 5th block is clear, the 4th block is clear, the 3rd block is clear, the hand is empty, the 6th block is on the table, the 1st block is on top of the 6th block, the 2nd block is on top of the 1st block, the 5th block is on the table, the 4th block is on the table and the 3rd block is on top of the 2nd block",
+    "plan": "pick up the 4th block",
+    "goal": "the hand is holding the 4th block",
+    "mapping": {
+      "4": "5th",
+      "5": "4th",
+      "6": "3rd",
+      "1": "6th",
+      "2": "1st",
+      "3": "2nd"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the X block is clear, the P block is clear, the L block is clear, the O block is clear, the R block is clear, the hand is empty, the X block is on the table, the P block is on the table, the L block is on the table, the G block is on the table, the O block is on the table and the R block is on top of the G block",
+    "plan": "pick up the X block",
+    "goal": "the hand is holding the X block",
+    "mapping": {
+      "1": "X",
+      "2": "P",
+      "3": "L",
+      "5": "O",
+      "6": "R",
+      "4": "G"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the chi block is clear, the gamma block is clear, the omega block is clear, the hand is empty, the chi block is on the table, the beta block is on the table, the gamma block is on the table and the omega block is on top of the beta block",
+    "plan": "unstack the omega block from on top of the beta block",
+    "goal": "the hand is holding the omega block",
+    "mapping": {
+      "1": "chi",
+      "3": "gamma",
+      "4": "omega",
+      "2": "beta"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the Z block is clear, the D block is clear, the hand is empty, the Z block is on the table, the Q block is on the table and the D block is on top of the Q block",
+    "plan": "unstack the D block from on top of the Q block",
+    "goal": "the hand is holding the D block",
+    "mapping": {
+      "1": "Z",
+      "3": "D",
+      "2": "Q"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the pi block is clear, the iota block is clear, the omicron block is clear, the tau block is clear, the hand is empty, the lambda block is on the table, the pi block is on the table, the iota block is on the table, the omicron block is on top of the lambda block and the tau block is on the table",
+    "plan": "pick up the pi block",
+    "goal": "the hand is holding the pi block",
+    "mapping": {
+      "2": "pi",
+      "3": "iota",
+      "4": "omicron",
+      "5": "tau",
+      "1": "lambda"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the 2nd block is clear, the 3rd block is clear, the hand is holding the 1st block, the 2nd block is on the table and the 3rd block is on the table",
+    "plan": "put down the 1st block",
+    "goal": "the 1st block is on the table",
+    "mapping": {
+      "1": "2nd",
+      "2": "3rd",
+      "3": "1st"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the 6th block is clear, the 1st block is clear, the 3rd block is clear, the 2nd block is clear, the 5th block is clear, the hand is empty, the 4th block is on the table, the 6th block is on the table, the 1st block is on top of the 4th block, the 3rd block is on the table, the 2nd block is on the table and the 5th block is on the table",
+    "plan": "pick up the 2nd block",
+    "goal": "the hand is holding the 2nd block",
+    "mapping": {
+      "2": "6th",
+      "3": "1st",
+      "4": "3rd",
+      "5": "2nd",
+      "6": "5th",
+      "1": "4th"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the yellow block is clear, the brown block is clear, the pink block is clear, the hand is empty, the red block is on the table, the purple block is on top of the red block, the yellow block is on top of the purple block, the brown block is on the table and the pink block is on the table",
+    "plan": "unstack the yellow block from on top of the purple block",
+    "goal": "the hand is holding the yellow block",
+    "mapping": {
+      "3": "yellow",
+      "4": "brown",
+      "5": "pink",
+      "1": "red",
+      "2": "purple"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the iota block is clear, the hand is empty, the phi block is on the table, the rho block is on top of the phi block, the epsilon block is on top of the rho block and the iota block is on top of the epsilon block",
+    "plan": "unstack the iota block from on top of the epsilon block",
+    "goal": "the hand is holding the iota block",
+    "mapping": {
+      "4": "iota",
+      "1": "phi",
+      "2": "rho",
+      "3": "epsilon"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the B block is clear, the Q block is clear, the hand is empty, the T block is on the table, the B block is on the table and the Q block is on top of the T block",
+    "plan": "pick up the B block",
+    "goal": "the hand is holding the B block",
+    "mapping": {
+      "2": "B",
+      "3": "Q",
+      "1": "T"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the 3rd block is clear, the 2nd block is clear, the hand is empty, the 1st block is on the table, the 3rd block is on top of the 1st block and the 2nd block is on the table",
+    "plan": "pick up the 2nd block",
+    "goal": "the hand is holding the 2nd block",
+    "mapping": {
+      "2": "3rd",
+      "3": "2nd",
+      "1": "1st"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the K block is clear, the X block is clear, the H block is clear, the T block is clear, the hand is empty, the K block is on the table, the P block is on the table, the X block is on the table, the D block is on top of the P block, the H block is on the table and the T block is on top of the D block",
+    "plan": "unstack the T block from on top of the D block",
+    "goal": "the hand is holding the T block",
+    "mapping": {
+      "1": "K",
+      "3": "X",
+      "5": "H",
+      "6": "T",
+      "2": "P",
+      "4": "D"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the red block is clear, the emerald block is clear, the gray block is clear, the pink block is clear, the cyan block is clear, the purple block is clear, the hand is empty, the red block is on the table, the emerald block is on the table, the gray block is on the table, the pink block is on the table, the cyan block is on the table and the purple block is on the table",
+    "plan": "pick up the red block",
+    "goal": "the hand is holding the red block",
+    "mapping": {
+      "1": "red",
+      "2": "emerald",
+      "3": "gray",
+      "4": "pink",
+      "5": "cyan",
+      "6": "purple"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the W block is clear, the R block is clear, the hand is empty, the W block is on the table and the R block is on the table",
+    "plan": "pick up the W block",
+    "goal": "the hand is holding the W block",
+    "mapping": {
+      "1": "W",
+      "2": "R"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the 5th block is clear, the 6th block is clear, the 3rd block is clear, the hand is empty, the 2nd block is on the table, the 4th block is on top of the 2nd block, the 5th block is on the table, the 6th block is on the table, the 1st block is on top of the 4th block and the 3rd block is on top of the 1st block",
+    "plan": "unstack the 3rd block from on top of the 1st block",
+    "goal": "the hand is holding the 3rd block",
+    "mapping": {
+      "3": "5th",
+      "4": "6th",
+      "6": "3rd",
+      "1": "2nd",
+      "2": "4th",
+      "5": "1st"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the I block is clear, the W block is clear, the hand is empty, the R block is on the table, the I block is on top of the R block, the A block is on the table and the W block is on top of the A block",
+    "plan": "unstack the W block from on top of the A block",
+    "goal": "the hand is holding the W block",
+    "mapping": {
+      "2": "I",
+      "4": "W",
+      "1": "R",
+      "3": "A"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the emerald block is clear, the hand is empty, the cyan block is on the table and the emerald block is on top of the cyan block",
+    "plan": "unstack the emerald block from on top of the cyan block",
+    "goal": "the hand is holding the emerald block",
+    "mapping": {
+      "2": "emerald",
+      "1": "cyan"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the 4th block is clear, the 1st block is clear, the 2nd block is clear, the 3rd block is clear, the hand is empty, the 5th block is on the table, the 4th block is on the table, the 1st block is on top of the 5th block, the 2nd block is on the table and the 3rd block is on the table",
+    "plan": "unstack the 1st block from on top of the 5th block",
+    "goal": "the hand is holding the 1st block",
+    "mapping": {
+      "2": "4th",
+      "3": "1st",
+      "4": "2nd",
+      "5": "3rd",
+      "1": "5th"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the B block is clear, the S block is clear, the D block is clear, the N block is clear, the P block is clear, the hand is empty, the B block is on the table, the S block is on the table, the D block is on the table, the N block is on the table and the P block is on the table",
+    "plan": "pick up the D block",
+    "goal": "the hand is holding the D block",
+    "mapping": {
+      "1": "B",
+      "2": "S",
+      "3": "D",
+      "4": "N",
+      "5": "P"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the sigma block is clear, the upsilon block is clear, the hand is empty, the beta block is on the table, the sigma block is on top of the beta block, the zeta block is on the table and the upsilon block is on top of the zeta block",
+    "plan": "unstack the upsilon block from on top of the zeta block",
+    "goal": "the hand is holding the upsilon block",
+    "mapping": {
+      "2": "sigma",
+      "4": "upsilon",
+      "1": "beta",
+      "3": "zeta"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the sigma block is clear, the mu block is clear, the chi block is clear, the hand is empty, the beta block is on the table, the omicron block is on the table, the sigma block is on top of the beta block, the mu block is on top of the omicron block and the chi block is on the table",
+    "plan": "unstack the sigma block from on top of the beta block",
+    "goal": "the hand is holding the sigma block",
+    "mapping": {
+      "3": "sigma",
+      "4": "mu",
+      "5": "chi",
+      "1": "beta",
+      "2": "omicron"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the green block is clear, the hand is empty, the pink block is on the table and the green block is on top of the pink block",
+    "plan": "unstack the green block from on top of the pink block",
+    "goal": "the hand is holding the green block",
+    "mapping": {
+      "2": "green",
+      "1": "pink"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the B block is clear, the M block is clear, the K block is clear, the S block is clear, the hand is empty, the V block is on the table, the B block is on the table, the F block is on the table, the M block is on top of the V block, the K block is on top of the F block and the S block is on the table",
+    "plan": "unstack the M block from on top of the V block",
+    "goal": "the hand is holding the M block",
+    "mapping": {
+      "2": "B",
+      "4": "M",
+      "5": "K",
+      "6": "S",
+      "1": "V",
+      "3": "F"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the blue block is clear, the green block is clear, the brown block is clear, the hand is empty, the gray block is on the table, the purple block is on top of the gray block, the pink block is on top of the purple block, the blue block is on top of the pink block, the green block is on the table and the brown block is on the table",
+    "plan": "unstack the blue block from on top of the pink block",
+    "goal": "the hand is holding the blue block",
+    "mapping": {
+      "4": "blue",
+      "5": "green",
+      "6": "brown",
+      "1": "gray",
+      "2": "purple",
+      "3": "pink"
+    },
+    "augmentation_type": "colors"
+  },
+  {
+    "init": "the 6th block is clear, the 2nd block is clear, the 5th block is clear, the 4th block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 6th block is on the table, the 2nd block is on top of the 3rd block, the 5th block is on the table, the 4th block is on the table and the 1st block is on the table",
+    "plan": "unstack the 2nd block from on top of the 3rd block",
+    "goal": "the hand is holding the 2nd block",
+    "mapping": {
+      "2": "6th",
+      "3": "2nd",
+      "4": "5th",
+      "5": "4th",
+      "6": "1st",
+      "1": "3rd"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the upsilon block is clear, the tau block is clear, the alpha block is clear, the phi block is clear, the omicron block is clear, the hand is empty, the upsilon block is on the table, the tau block is on the table, the alpha block is on the table, the phi block is on the table and the omicron block is on the table",
+    "plan": "pick up the alpha block",
+    "goal": "the hand is holding the alpha block",
+    "mapping": {
+      "1": "upsilon",
+      "2": "tau",
+      "3": "alpha",
+      "4": "phi",
+      "5": "omicron"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the upsilon block is clear, the sigma block is clear, the gamma block is clear, the hand is empty, the upsilon block is on the table, the pi block is on the table, the sigma block is on the table and the gamma block is on top of the pi block",
+    "plan": "unstack the gamma block from on top of the pi block",
+    "goal": "the hand is holding the gamma block",
+    "mapping": {
+      "1": "upsilon",
+      "3": "sigma",
+      "4": "gamma",
+      "2": "pi"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the 6th block is clear, the 2nd block is clear, the 1st block is clear, the 3rd block is clear, the hand is empty, the 4th block is on the table, the 5th block is on top of the 4th block, the 6th block is on the table, the 2nd block is on top of the 5th block, the 1st block is on the table and the 3rd block is on the table",
+    "plan": "unstack the 2nd block from on top of the 5th block",
+    "goal": "the hand is holding the 2nd block",
+    "mapping": {
+      "3": "6th",
+      "4": "2nd",
+      "5": "1st",
+      "6": "3rd",
+      "1": "4th",
+      "2": "5th"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the 5th block is clear, the 1st block is clear, the hand is empty, the 4th block is on the table, the 5th block is on top of the 4th block, the 2nd block is on the table, the 3rd block is on top of the 2nd block and the 1st block is on top of the 3rd block",
+    "plan": "unstack the 1st block from on top of the 3rd block",
+    "goal": "the hand is holding the 1st block",
+    "mapping": {
+      "2": "5th",
+      "5": "1st",
+      "1": "4th",
+      "3": "2nd",
+      "4": "3rd"
+    },
+    "augmentation_type": "ordinal"
+  },
+  {
+    "init": "the A block is clear, the T block is clear, the Q block is clear, the L block is clear, the C block is clear, the hand is empty, the A block is on the table, the T block is on the table, the I block is on the table, the Q block is on top of the I block, the L block is on the table and the C block is on the table",
+    "plan": "unstack the Q block from on top of the I block",
+    "goal": "the hand is holding the Q block",
+    "mapping": {
+      "1": "A",
+      "2": "T",
+      "4": "Q",
+      "5": "L",
+      "6": "C",
+      "3": "I"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the upsilon block is clear, the hand is holding the tau block, the xi block is on the table and the upsilon block is on top of the xi block",
+    "plan": "stack the tau block on top of the upsilon block",
+    "goal": "the tau block is on top of the upsilon block",
+    "mapping": {
+      "2": "upsilon",
+      "3": "tau",
+      "1": "xi"
+    },
+    "augmentation_type": "greek"
+  },
+  {
+    "init": "the Y block is clear, the G block is clear, the C block is clear, the hand is empty, the U block is on the table, the R block is on the table, the Y block is on top of the R block, the G block is on the table and the C block is on top of the U block",
+    "plan": "pick up the G block",
+    "goal": "the hand is holding the G block",
+    "mapping": {
+      "3": "Y",
+      "4": "G",
+      "5": "C",
+      "1": "U",
+      "2": "R"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the N block is clear, the Y block is clear, the hand is holding the J block, the N block is on the table and the Y block is on the table",
+    "plan": "put down the J block",
+    "goal": "the J block is on the table",
+    "mapping": {
+      "1": "N",
+      "2": "Y",
+      "3": "J"
+    },
+    "augmentation_type": "alphabets"
+  },
+  {
+    "init": "the gray block is clear, the hand is empty, the cyan block is on the table, the green block is on top of the cyan block, the brown block is on top of the green block and the gray block is on top of the brown block",
+    "plan": "unstack the gray block from on top of the brown block",
+    "goal": "the hand is holding the gray block",
+    "mapping": {
+      "4": "gray",
+      "1": "cyan",
+      "2": "green",
+      "3": "brown"
+    },
+    "augmentation_type": "colors"
+  }
+]

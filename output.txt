@@ -1,0 +1,1808 @@
+#########################
+<think>First, the chi-block is on the table and needs to be picked up and stacked on the theta-block</think>
+<plan>
+pick up the chi block
+stack the chi block on top of the xi block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the chi block', 'stack the chi block on top of the xi block']
+pick up the chi block
+Physically Impossible Action - Precondition failed: chi block is not on the table.
+-----
+1.1
+the theta block is clear, the chi block is clear, the hand is empty, the theta block is on top of the mu block, the chi block is on top of the xi block, the xi block is on the table and the mu block is on the table
+the theta block is on top of the chi block and the chi block is on top of the xi block
+-----
+#########################
+#########################
+<think>
+                    The theta block needs to be unstacked from on top of the chi block in order to stack the theta block on top of the chi block</think>
+<plan>
+pick up the chi block
+stack the chi block on top of the theta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the chi block', 'stack the chi block on top of the theta block']
+pick up the chi block
+Physically Impossible Action - Precondition failed: chi block is not on the table.
+-----
+1.1
+the theta block is clear, the chi block is clear, the hand is empty, the theta block is on top of the mu block, the chi block is on top of the xi block, the xi block is on the table and the mu block is on the table
+the theta block is on top of the chi block and the chi block is on top of the xi block
+-----
+#########################
+#########################
+<think>It's clear that the magenta block is on the table and we can pick it up</think>
+<plan>
+pick up the magenta block
+stack the magenta block on top of the cyan block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the magenta block', 'stack the magenta block on top of the cyan block']
+pick up the magenta block
+stack the magenta block on top of the cyan block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the magenta block is clear, the hand is empty, the sapphire block is on top of the silver block, the cyan block is on top of the sapphire block, the silver block is on the table and the magenta block is on the table
+the sapphire block is on top of the silver block and the magenta block is on top of the cyan block
+-----
+#########################
+#########################
+<think>Let me pick up a magenta block and stack it on the cyan block</think>
+<plan>
+pick up the magenta block
+stack the magenta block on top of the cyan block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the magenta block', 'stack the magenta block on top of the cyan block']
+pick up the magenta block
+stack the magenta block on top of the cyan block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the magenta block is clear, the hand is empty, the sapphire block is on top of the silver block, the cyan block is on top of the sapphire block, the silver block is on the table and the magenta block is on the table
+the sapphire block is on top of the silver block and the magenta block is on top of the cyan block
+-----
+#########################
+#########################
+<think>My hand is on the table and the magenta block is on the table</think>
+<plan>
+pick up the magenta block
+stack the magenta block on top of the cyan block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the magenta block', 'stack the magenta block on top of the cyan block']
+pick up the magenta block
+stack the magenta block on top of the cyan block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the magenta block is clear, the hand is empty, the sapphire block is on top of the silver block, the cyan block is on top of the sapphire block, the silver block is on the table and the magenta block is on the table
+the sapphire block is on top of the silver block and the magenta block is on top of the cyan block
+-----
+#########################
+#########################
+<think>Here, you can think about how the magenta block needs to be on the table</think>
+<plan>
+pick up the magenta block
+stack the magenta block on top of the cyan block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the magenta block', 'stack the magenta block on top of the cyan block']
+pick up the magenta block
+stack the magenta block on top of the cyan block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the magenta block is clear, the hand is empty, the sapphire block is on top of the silver block, the cyan block is on top of the sapphire block, the silver block is on the table and the magenta block is on the table
+the sapphire block is on top of the silver block and the magenta block is on top of the cyan block
+-----
+#########################
+#########################
+<think>Here, only the 2nd block is on the table, clear</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 2nd block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on the table, the 3rd block is on the table and the 1st block is on the table
+the 3rd block is on top of the 2nd block
+-----
+#########################
+#########################
+<think>Since the 3rd block is on the table and clear, we can stack it on the 2nd block</think>
+<plan>
+pick up the 3rd block block
+ stack the 3rd block block on top of the 2nd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 2nd block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on the table, the 3rd block is on the table and the 1st block is on the table
+the 3rd block is on top of the 2nd block
+-----
+#########################
+#########################
+<think>Okay, we need to stack the 3rd block on the table on top of the 2nd block block</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 2nd block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on the table, the 3rd block is on the table and the 1st block is on the table
+the 3rd block is on top of the 2nd block
+-----
+#########################
+#########################
+<think>My hand already has the 2nd block on the table</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 2nd block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 2nd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on the table, the 3rd block is on the table and the 1st block is on the table
+the 3rd block is on top of the 2nd block
+-----
+#########################
+#########################
+<think>pick up the R block block</think>
+<plan>
+pick up the R block block
+stack the R block block on top of the X block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the R block block', 'stack the R block block on top of the X block block']
+pick up the r block block
+stack the r block block on top of the x block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the R block is clear, the X block is clear, the hand is empty, the X block is on top of the C block, the C block is on the table and the R block is on the table
+the R block is on top of the X block and the X block is on top of the C block
+-----
+#########################
+#########################
+<think>Let's pick up the R block and stack it on the table on the table</think>
+<plan>
+pick up the R block
+stack the R block on top of the X block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the R block', 'stack the R block on top of the X block']
+pick up the r block
+stack the r block on top of the x block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the R block is clear, the X block is clear, the hand is empty, the X block is on top of the C block, the C block is on the table and the R block is on the table
+the R block is on top of the X block and the X block is on top of the C block
+-----
+#########################
+#########################
+<think>Need to pick up the R block block</think>
+<plan>
+pick up the R block block
+stack the R block block on top of the X block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the R block block', 'stack the R block block on top of the X block block']
+pick up the r block block
+stack the r block block on top of the x block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the R block is clear, the X block is clear, the hand is empty, the X block is on top of the C block, the C block is on the table and the R block is on the table
+the R block is on top of the X block and the X block is on top of the C block
+-----
+#########################
+#########################
+<think>First, we need to pick up a block, which is on the table</think>
+<plan>
+pick up the R block block
+stack the R block block on top of the X block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the R block block', 'stack the R block block on top of the X block block']
+pick up the r block block
+stack the r block block on top of the x block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the R block is clear, the X block is clear, the hand is empty, the X block is on top of the C block, the C block is on the table and the R block is on the table
+the R block is on top of the X block and the X block is on top of the C block
+-----
+#########################
+#########################
+<think>First, we need to stack the final state state where the orange block is on top of the yellow block</think>
+<plan>
+pick up the orange block
+stack the orange block on top of the yellow block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the orange block', 'stack the orange block on top of the yellow block']
+pick up the orange block
+stack the orange block on top of the yellow block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the yellow block is clear, the orange block is clear, the hand is empty, the red block is on top of the blue block, the yellow block is on top of the red block, the blue block is on the table and the orange block is on the table
+the red block is on top of the blue block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>
+            It's clear that the final answer needs to have the orange block on the table, on the table</think>
+<plan>
+pick up the orange block
+stack the orange block on top of the yellow block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the orange block', 'stack the orange block on top of the yellow block']
+pick up the orange block
+stack the orange block on top of the yellow block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the yellow block is clear, the orange block is clear, the hand is empty, the red block is on top of the blue block, the yellow block is on top of the red block, the blue block is on the table and the orange block is on the table
+the red block is on top of the blue block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>Since the red block is on the table and on the table, we can pick up the orange block on the table and stack the orange block on top of the yellow block</think>
+<plan>
+pick up the orange block
+stack the orange block on top of the yellow block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the orange block', 'stack the orange block on top of the yellow block']
+pick up the orange block
+stack the orange block on top of the yellow block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the yellow block is clear, the orange block is clear, the hand is empty, the red block is on top of the blue block, the yellow block is on top of the red block, the blue block is on the table and the orange block is on the table
+the red block is on top of the blue block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>At this point the initial state has the blocks on the table, so we need to pick up the orange block</think>
+<plan>
+pick up the orange block
+stack the orange block on top of the yellow block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the orange block', 'stack the orange block on top of the yellow block']
+pick up the orange block
+stack the orange block on top of the yellow block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the yellow block is clear, the orange block is clear, the hand is empty, the red block is on top of the blue block, the yellow block is on top of the red block, the blue block is on the table and the orange block is on the table
+the red block is on top of the blue block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>First, the 3rd block block needs to be unstacked</think>
+<plan>
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 4th block block', 'stack the 4th block block on top of the 3rd block block']
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 4th block is clear, the 2nd block is clear, the hand is empty, the 3rd block is on top of the 1st block, the 1st block is on the table, the 4th block is on the table and the 2nd block is on the table
+the 4th block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Let's unstack the 3rd block block and pick up the 4th block block</think>
+<plan>
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 4th block block', 'stack the 4th block block on top of the 3rd block block']
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 4th block is clear, the 2nd block is clear, the hand is empty, the 3rd block is on top of the 1st block, the 1st block is on the table, the 4th block is on the table and the 2nd block is on the table
+the 4th block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>First, we check if the 3rd block block is on the table, making it on the table, which makes it on the table</think>
+<plan>
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 4th block block', 'stack the 4th block block on top of the 3rd block block']
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 4th block is clear, the 2nd block is clear, the hand is empty, the 3rd block is on top of the 1st block, the 1st block is on the table, the 4th block is on the table and the 2nd block is on the table
+the 4th block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>My hand must be on the table and on the table, so the 4th block is on the table and the 4th block is on the table</think>
+<plan>
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 4th block block', 'stack the 4th block block on top of the 3rd block block']
+pick up the 4th block block
+stack the 4th block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 4th block is clear, the 2nd block is clear, the hand is empty, the 3rd block is on top of the 1st block, the 1st block is on the table, the 4th block is on the table and the 2nd block is on the table
+the 4th block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Only the 2nd block is on the final state</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 4th block block']
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 1st block is clear, the 4th block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on the table, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>
+            1. The 1st block is already on the table and the for state to be valid, we need to pick up it</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 4th block block']
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 1st block is clear, the 4th block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on the table, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Figuring out which block is on the table and on the table</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 4th block block']
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 1st block is clear, the 4th block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on the table, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Check that the 1st block block is on the table and on the table, which means we can now stack it on the 4th block</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 4th block block']
+pick up the 2nd block block
+stack the 2nd block block on top of the 4th block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 2nd block is clear, the 1st block is clear, the 4th block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on the table, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>The lambda block is on the table and now needs to be picked up and stacked on the upsilon block</think>
+<plan>
+pick up the lambda block
+stack the lambda block on top of the upsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the lambda block', 'stack the lambda block on top of the upsilon block']
+pick up the lambda block
+Physically Impossible Action - Precondition failed: lambda block is not on the table.
+-----
+1.1
+the upsilon block is clear, the lambda block is clear, the hand is empty, the upsilon block is on top of the alpha block, the lambda block is on top of the chi block, the alpha block is on the table and the chi block is on the table
+the lambda block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>It needs to remove the lambda block on the table and stack the lambda block on</think>
+<plan>
+pick up the lambda block
+stack the lambda block on top of the upsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the lambda block', 'stack the lambda block on top of the upsilon block']
+pick up the lambda block
+Physically Impossible Action - Precondition failed: lambda block is not on the table.
+-----
+1.1
+the upsilon block is clear, the lambda block is clear, the hand is empty, the upsilon block is on top of the alpha block, the lambda block is on top of the chi block, the alpha block is on the table and the chi block is on the table
+the lambda block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>Firstly, the lambda block is already on the table and on a clearance state</think>
+<plan>
+pick up the lambda block
+stack the lambda block on top of the upsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the lambda block', 'stack the lambda block on top of the upsilon block']
+pick up the lambda block
+Physically Impossible Action - Precondition failed: lambda block is not on the table.
+-----
+1.1
+the upsilon block is clear, the lambda block is clear, the hand is empty, the upsilon block is on top of the alpha block, the lambda block is on top of the chi block, the alpha block is on the table and the chi block is on the table
+the lambda block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>
+                    We need to pick up the lambda block</think>
+<plan>
+pick up the lambda block
+stack the lambda block on top of the upsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the lambda block', 'stack the lambda block on top of the upsilon block']
+pick up the lambda block
+Physically Impossible Action - Precondition failed: lambda block is not on the table.
+-----
+1.1
+the upsilon block is clear, the lambda block is clear, the hand is empty, the upsilon block is on top of the alpha block, the lambda block is on top of the chi block, the alpha block is on the table and the chi block is on the table
+the lambda block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>Unstack the upsilon block from on top of the theta block</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the theta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the theta block']
+pick up the upsilon block
+stack the upsilon block on top of the theta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the theta block is clear, the upsilon block is clear, the gamma block is clear, the hand is empty, the theta block is on the table, the upsilon block is on the table and the gamma block is on the table
+the upsilon block is on top of the theta block
+-----
+#########################
+#########################
+<think>Knowing that the upsilon block is on the table and its on the table to be on the table</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the theta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the theta block']
+pick up the upsilon block
+stack the upsilon block on top of the theta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the theta block is clear, the upsilon block is clear, the gamma block is clear, the hand is empty, the theta block is on the table, the upsilon block is on the table and the gamma block is on the table
+the upsilon block is on top of the theta block
+-----
+#########################
+#########################
+<think>First, the upsilon block needs to be on the table, and clear</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the theta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the theta block']
+pick up the upsilon block
+stack the upsilon block on top of the theta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the theta block is clear, the upsilon block is clear, the gamma block is clear, the hand is empty, the theta block is on the table, the upsilon block is on the table and the gamma block is on the table
+the upsilon block is on top of the theta block
+-----
+#########################
+#########################
+<think>Find the upsilon block on the table and stack it on the theta block on the table</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the theta block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the theta block block']
+pick up the upsilon block
+stack the upsilon block on top of the theta block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the theta block is clear, the upsilon block is clear, the gamma block is clear, the hand is empty, the theta block is on the table, the upsilon block is on the table and the gamma block is on the table
+the upsilon block is on top of the theta block
+-----
+#########################
+100%|████████████████████████████████████████████████▊| 299/300 [7:50:36<00:44, 44.55s/it]#########################
+<think>My hand needs to be on an empty state</think>
+<plan>
+pick up the red block
+stack the red block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the red block', 'stack the red block on top of the orange block']
+pick up the red block
+stack the red block on top of the orange block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the orange block is clear, the red block is clear, the hand is empty, the orange block is on top of the blue block, the blue block is on the table and the red block is on the table
+the orange block is on top of the blue block and the red block is on top of the orange block
+-----
+#########################
+#########################
+<think>First I need to stack the orange block on the table on top of the blocks on the table</think>
+<plan>
+pick up the red block
+stack the red block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the red block', 'stack the red block on top of the orange block']
+pick up the red block
+stack the red block on top of the orange block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the orange block is clear, the red block is clear, the hand is empty, the orange block is on top of the blue block, the blue block is on the table and the red block is on the table
+the orange block is on top of the blue block and the red block is on top of the orange block
+-----
+#########################
+#########################
+<think>
+                        Thought: Pick up the red block block</think>
+<plan>
+pick up the red block block
+stack the red block block on top of the orange block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the red block block', 'stack the red block block on top of the orange block block']
+pick up the red block block
+stack the red block block on top of the orange block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the orange block is clear, the red block is clear, the hand is empty, the orange block is on top of the blue block, the blue block is on the table and the red block is on the table
+the orange block is on top of the blue block and the red block is on top of the orange block
+-----
+#########################
+#########################
+<think>Don't stack a block until it is on the table</think>
+<plan>
+pick up the red block
+stack the red block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the red block', 'stack the red block on top of the orange block']
+pick up the red block
+stack the red block on top of the orange block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the orange block is clear, the red block is clear, the hand is empty, the orange block is on top of the blue block, the blue block is on the table and the red block is on the table
+the orange block is on top of the blue block and the red block is on top of the orange block
+-----
+#########################
+#########################
+<think>First, the gold block is on the table, and we need to pick it up and stack it on the ruby block</think>
+<plan>
+pick up the gold block
+stack the gold block on top of the ruby block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gold block', 'stack the gold block on top of the ruby block']
+pick up the gold block
+stack the gold block on top of the ruby block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the gold block is clear, the ruby block is clear, the hand is empty, the cyan block is on the table, the gold block is on the table and the ruby block is on the table
+the gold block is on top of the ruby block
+-----
+#########################
+#########################
+<think>
+                - The gold block needs to be on the table and on the table, so it is on the table and on the table</think>
+<plan>
+pick up the gold block
+stack the gold block on top of the ruby block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gold block', 'stack the gold block on top of the ruby block']
+pick up the gold block
+stack the gold block on top of the ruby block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the gold block is clear, the ruby block is clear, the hand is empty, the cyan block is on the table, the gold block is on the table and the ruby block is on the table
+the gold block is on top of the ruby block
+-----
+#########################
+#########################
+<think>My hand needs to be on the table to pick up a block</think>
+<plan>
+pick up the gold block
+stack the gold block on top of the ruby block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gold block', 'stack the gold block on top of the ruby block']
+pick up the gold block
+stack the gold block on top of the ruby block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the gold block is clear, the ruby block is clear, the hand is empty, the cyan block is on the table, the gold block is on the table and the ruby block is on the table
+the gold block is on top of the ruby block
+-----
+#########################
+#########################
+<think>There should be a block on the table that is on the table and on the table</think>
+<plan>
+pick up the gold block
+stack the gold block on top of the ruby block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gold block', 'stack the gold block on top of the ruby block']
+pick up the gold block
+stack the gold block on top of the ruby block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the cyan block is clear, the gold block is clear, the ruby block is clear, the hand is empty, the cyan block is on the table, the gold block is on the table and the ruby block is on the table
+the gold block is on top of the ruby block
+-----
+#########################
+#########################
+<think>Alright, the gamma block needs to be on a table, on the table</think>
+<plan>
+pick up the gamma block
+stack the gamma block on top of the alpha block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gamma block', 'stack the gamma block on top of the alpha block']
+pick up the gamma block
+stack the gamma block on top of the alpha block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the rho block is clear, the alpha block is clear, the gamma block is clear, the hand is empty, the rho block is on top of the nu block, the alpha block is on the table, the nu block is on the table and the gamma block is on the table
+the gamma block is on top of the alpha block
+-----
+#########################
+#########################
+<think>Let's handle the state where the gamma block is on the table, and it needs to be stack on the table to the final state</think>
+<plan>
+pick up the gamma block
+stack the gamma block on top of the alpha block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gamma block', 'stack the gamma block on top of the alpha block']
+pick up the gamma block
+stack the gamma block on top of the alpha block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the rho block is clear, the alpha block is clear, the gamma block is clear, the hand is empty, the rho block is on top of the nu block, the alpha block is on the table, the nu block is on the table and the gamma block is on the table
+the gamma block is on top of the alpha block
+-----
+#########################
+#########################
+<think>1. Pick up the gamma block</think>
+<plan>
+pick up the gamma block
+stack the gamma block on top of the alpha block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gamma block', 'stack the gamma block on top of the alpha block']
+pick up the gamma block
+stack the gamma block on top of the alpha block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the rho block is clear, the alpha block is clear, the gamma block is clear, the hand is empty, the rho block is on top of the nu block, the alpha block is on the table, the nu block is on the table and the gamma block is on the table
+the gamma block is on top of the alpha block
+-----
+#########################
+#########################
+<think>First, the gamma block needs to be on the table and on the table to be on the table, on the table</think>
+<plan>
+pick up the gamma block
+stack the gamma block on top of the alpha block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the gamma block', 'stack the gamma block on top of the alpha block']
+pick up the gamma block
+stack the gamma block on top of the alpha block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the rho block is clear, the alpha block is clear, the gamma block is clear, the hand is empty, the rho block is on top of the nu block, the alpha block is on the table, the nu block is on the table and the gamma block is on the table
+the gamma block is on top of the alpha block
+-----
+#########################
+#########################
+<think>First, we need to pick up a block to unstack the G block</think>
+<plan>
+pick up the T block block
+stack the T block block on top of the I block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the T block block', 'stack the T block block on top of the I block block']
+pick up the t block block
+Physically Impossible Action - Precondition failed: t block is not on the table.
+-----
+1.1
+the G block is clear, the T block is clear, the hand is empty, the G block is on top of the Z block, the T block is on top of the I block, the I block is on the table and the Z block is on the table
+the G block is on top of the T block and the T block is on top of the I block
+-----
+#########################
+#########################
+<think>First, we pick up the G block block</think>
+<plan>
+pick up the T block block
+stack the T block block on top of the I block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the T block block', 'stack the T block block on top of the I block block']
+pick up the t block block
+Physically Impossible Action - Precondition failed: t block is not on the table.
+-----
+1.1
+the G block is clear, the T block is clear, the hand is empty, the G block is on top of the Z block, the T block is on top of the I block, the I block is on the table and the Z block is on the table
+the G block is on top of the T block and the T block is on top of the I block
+-----
+#########################
+#########################
+<think>Alright, the G block needs to be stacked on the T block on the table</think>
+<plan>
+pick up the T block
+stack the T block on top of the I block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the T block', 'stack the T block on top of the I block']
+pick up the t block
+Physically Impossible Action - Precondition failed: t block is not on the table.
+-----
+1.1
+the G block is clear, the T block is clear, the hand is empty, the G block is on top of the Z block, the T block is on top of the I block, the I block is on the table and the Z block is on the table
+the G block is on top of the T block and the T block is on top of the I block
+-----
+#########################
+#########################
+<think>
+            - Confirm that the G block is clearly on the table</think>
+<plan>
+pick up the T block
+stack the T block on top of the I block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the T block', 'stack the T block on top of the I block']
+pick up the t block
+Physically Impossible Action - Precondition failed: t block is not on the table.
+-----
+1.1
+the G block is clear, the T block is clear, the hand is empty, the G block is on top of the Z block, the T block is on top of the I block, the I block is on the table and the Z block is on the table
+the G block is on top of the T block and the T block is on top of the I block
+-----
+#########################
+#########################
+<think>First, the epsilon block is clear on the table</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the epsilon block']
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the epsilon block is clear, the upsilon block is clear, the hand is empty, the epsilon block is on top of the beta block, the upsilon block is on the table and the beta block is on the table
+the epsilon block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>Because the epsilon block is on the table and on the table and on the table</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the epsilon block']
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the epsilon block is clear, the upsilon block is clear, the hand is empty, the epsilon block is on top of the beta block, the upsilon block is on the table and the beta block is on the table
+the epsilon block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>My hand needs to stack the upsilon block on top of the epsilon block</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the epsilon block']
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the epsilon block is clear, the upsilon block is clear, the hand is empty, the epsilon block is on top of the beta block, the upsilon block is on the table and the beta block is on the table
+the epsilon block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>My hand needs to pick up the upsilon block since the epsilon block is on the table and on the table</think>
+<plan>
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the upsilon block', 'stack the upsilon block on top of the epsilon block']
+pick up the upsilon block
+stack the upsilon block on top of the epsilon block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the epsilon block is clear, the upsilon block is clear, the hand is empty, the epsilon block is on top of the beta block, the upsilon block is on the table and the beta block is on the table
+the epsilon block is on top of the upsilon block
+-----
+#########################
+#########################
+<think>Initially, the magenta block block needs to be unstacked</think>
+<plan>
+pick up the emerald block
+stack the emerald block on top of the magenta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the emerald block', 'stack the emerald block on top of the magenta block']
+pick up the emerald block
+stack the emerald block on top of the magenta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the magenta block is clear, the emerald block is clear, the hand is empty, the magenta block is on top of the sapphire block, the sapphire block is on top of the silver block, the silver block is on the table and the emerald block is on the table
+the magenta block is on top of the sapphire block and the emerald block is on top of the magenta block
+-----
+#########################
+#########################
+<think>Alright, we need to pick up the emerald block and stack the emerald block on top of the magenta block</think>
+<plan>
+pick up the emerald block
+stack the emerald block on top of the magenta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the emerald block', 'stack the emerald block on top of the magenta block']
+pick up the emerald block
+stack the emerald block on top of the magenta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the magenta block is clear, the emerald block is clear, the hand is empty, the magenta block is on top of the sapphire block, the sapphire block is on top of the silver block, the silver block is on the table and the emerald block is on the table
+the magenta block is on top of the sapphire block and the emerald block is on top of the magenta block
+-----
+#########################
+#########################
+<think>Since the magenta block is on the table and on the table</think>
+<plan>
+pick up the emerald block
+stack the emerald block on top of the magenta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the emerald block', 'stack the emerald block on top of the magenta block']
+pick up the emerald block
+stack the emerald block on top of the magenta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the magenta block is clear, the emerald block is clear, the hand is empty, the magenta block is on top of the sapphire block, the sapphire block is on top of the silver block, the silver block is on the table and the emerald block is on the table
+the magenta block is on top of the sapphire block and the emerald block is on top of the magenta block
+-----
+#########################
+#########################
+<think>First, the magenta block needs to be unstacked on the table, then we can stack the emerald block on the table on the magenta block</think>
+<plan>
+pick up the emerald block
+stack the emerald block on top of the magenta block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the emerald block', 'stack the emerald block on top of the magenta block']
+pick up the emerald block
+stack the emerald block on top of the magenta block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the magenta block is clear, the emerald block is clear, the hand is empty, the magenta block is on top of the sapphire block, the sapphire block is on top of the silver block, the silver block is on the table and the emerald block is on the table
+the magenta block is on top of the sapphire block and the emerald block is on top of the magenta block
+-----
+#########################
+#########################
+<think>It will stack the B block on top of the X block</think>
+<plan>
+pick up the B block
+stack the B block on top of the X block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the B block', 'stack the B block on top of the X block']
+pick up the b block
+stack the b block on top of the x block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the B block is clear, the X block is clear, the hand is empty, the X block is on top of the I block, the B block is on the table and the I block is on the table
+the B block is on top of the X block and the X block is on top of the I block
+-----
+#########################
+#########################
+<think>Need to pick up the final state state</think>
+<plan>
+pick up the B block block
+stack the B block block on top of the X block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the B block block', 'stack the B block block on top of the X block block']
+pick up the b block block
+stack the b block block on top of the x block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the B block is clear, the X block is clear, the hand is empty, the X block is on top of the I block, the B block is on the table and the I block is on the table
+the B block is on top of the X block and the X block is on top of the I block
+-----
+#########################
+#########################
+<think>
+                    The B block needs to be picked up and stack on the X block</think>
+<plan>
+pick up the B block
+stack the B block on top of the X block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the B block', 'stack the B block on top of the X block']
+pick up the b block
+stack the b block on top of the x block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the B block is clear, the X block is clear, the hand is empty, the X block is on top of the I block, the B block is on the table and the I block is on the table
+the B block is on top of the X block and the X block is on top of the I block
+-----
+#########################
+#########################
+<think>
+                The B block needs to be on the table, and we need to pick it up and stack it on the X block on the table</think>
+<plan>
+pick up the B block
+stack the B block on top of the X block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the B block', 'stack the B block on top of the X block']
+pick up the b block
+stack the b block on top of the x block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the B block is clear, the X block is clear, the hand is empty, the X block is on top of the I block, the B block is on the table and the I block is on the table
+the B block is on top of the X block and the X block is on top of the I block
+-----
+#########################
+#########################
+<think>Since the initial state has the orange block on the table, the goal state requires picking up the yellow block</think>
+<plan>
+pick up the yellow block
+stack the yellow block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the yellow block', 'stack the yellow block on top of the orange block']
+pick up the yellow block
+stack the yellow block on top of the orange block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the yellow block is clear, the orange block is clear, the hand is empty, the blue block is on top of the red block, the orange block is on top of the blue block, the yellow block is on the table and the red block is on the table
+the blue block is on top of the red block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>Let me stack the blocks one by one</think>
+<plan>
+pick up the yellow block
+stack the yellow block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the yellow block', 'stack the yellow block on top of the orange block']
+pick up the yellow block
+stack the yellow block on top of the orange block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the yellow block is clear, the orange block is clear, the hand is empty, the blue block is on top of the red block, the orange block is on top of the blue block, the yellow block is on the table and the red block is on the table
+the blue block is on top of the red block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>Think that we can now stack the yellow block on top of the orange block</think>
+<plan>
+pick up the yellow block
+stack the yellow block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the yellow block', 'stack the yellow block on top of the orange block']
+pick up the yellow block
+stack the yellow block on top of the orange block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the yellow block is clear, the orange block is clear, the hand is empty, the blue block is on top of the red block, the orange block is on top of the blue block, the yellow block is on the table and the red block is on the table
+the blue block is on top of the red block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>There is another block on the table which is on the table, therefore, we have the initial state/state</think>
+<plan>
+pick up the yellow block
+stack the yellow block on top of the orange block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the yellow block', 'stack the yellow block on top of the orange block']
+pick up the yellow block
+stack the yellow block on top of the orange block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the yellow block is clear, the orange block is clear, the hand is empty, the blue block is on top of the red block, the orange block is on top of the blue block, the yellow block is on the table and the red block is on the table
+the blue block is on top of the red block and the orange block is on top of the yellow block
+-----
+#########################
+#########################
+<think>First, we need to pick up the W block block</think>
+<plan>
+pick up the W block block
+stack the W block block on top of the T block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the W block block', 'stack the W block block on top of the T block block']
+pick up the w block block
+stack the w block block on top of the t block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the T block is clear, the D block is clear, the W block is clear, the hand is empty, the T block is on top of the M block, the M block is on the table, the D block is on the table and the W block is on the table
+the W block is on top of the T block
+-----
+#########################
+#########################
+<think>
+            * I need to pick up the W block block</think>
+<plan>
+pick up the W block
+stack the W block on top of the T block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the W block', 'stack the W block on top of the T block']
+pick up the w block
+stack the w block on top of the t block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the T block is clear, the D block is clear, the W block is clear, the hand is empty, the T block is on top of the M block, the M block is on the table, the D block is on the table and the W block is on the table
+the W block is on top of the T block
+-----
+#########################
+#########################
+<think>Let's pick up the W block and stack it on the table, on top of the T block</think>
+<plan>
+pick up the W block
+stack the W block on top of the T block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the W block', 'stack the W block on top of the T block']
+pick up the w block
+stack the w block on top of the t block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the T block is clear, the D block is clear, the W block is clear, the hand is empty, the T block is on top of the M block, the M block is on the table, the D block is on the table and the W block is on the table
+the W block is on top of the T block
+-----
+#########################
+#########################
+<think>First, the W block must be on the table</think>
+<plan>
+pick up the W block
+stack the W block on top of the T block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the W block', 'stack the W block on top of the T block']
+pick up the w block
+stack the w block on top of the t block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the T block is clear, the D block is clear, the W block is clear, the hand is empty, the T block is on top of the M block, the M block is on the table, the D block is on the table and the W block is on the table
+the W block is on top of the T block
+-----
+#########################
+#########################
+<think>My hand is on my favorite final state state, and we're ready to stack the 3rd block on top of the 1st block</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 1st block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on top of the 4th block, the 1st block is on top of the 2nd block, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Let's stack the final state state state state</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 1st block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on top of the 4th block, the 1st block is on top of the 2nd block, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>First, we need to pick up and stack the 3rd block on the table on top of the 1st block</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 1st block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on top of the 4th block, the 1st block is on top of the 2nd block, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Let's pick up the 3rd block block</think>
+<plan>
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 3rd block block', 'stack the 3rd block block on top of the 1st block block']
+pick up the 3rd block block
+stack the 3rd block block on top of the 1st block block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the 3rd block is clear, the 1st block is clear, the hand is empty, the 2nd block is on top of the 4th block, the 1st block is on top of the 2nd block, the 3rd block is on the table and the 4th block is on the table
+the 2nd block is on top of the 4th block and the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Since the 1st block is on the table and the 1st block is on the table</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 1st block block']
+pick up the 2nd block block
+Physically Impossible Action - Precondition failed: 2nd block is not on the table.
+-----
+1.1
+the 1st block is clear, the 2nd block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on top of the 4th block, the 4th block is on the table and the 3rd block is on the table
+the 1st block is on top of the 2nd block and the 2nd block is on top of the 4th block
+-----
+#########################
+#########################
+<think>There is only one clear block on the table</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 1st block block']
+pick up the 2nd block block
+Physically Impossible Action - Precondition failed: 2nd block is not on the table.
+-----
+1.1
+the 1st block is clear, the 2nd block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on top of the 4th block, the 4th block is on the table and the 3rd block is on the table
+the 1st block is on top of the 2nd block and the 2nd block is on top of the 4th block
+-----
+#########################
+#########################
+<think>First, we should pick up the 1st block block</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 1st block block']
+pick up the 2nd block block
+Physically Impossible Action - Precondition failed: 2nd block is not on the table.
+-----
+1.1
+the 1st block is clear, the 2nd block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on top of the 4th block, the 4th block is on the table and the 3rd block is on the table
+the 1st block is on top of the 2nd block and the 2nd block is on top of the 4th block
+-----
+#########################
+#########################
+<think>My hand is clear and ready to stack the 1st block block</think>
+<plan>
+pick up the 2nd block block
+stack the 2nd block block on top of the 1st block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 2nd block block', 'stack the 2nd block block on top of the 1st block block']
+pick up the 2nd block block
+Physically Impossible Action - Precondition failed: 2nd block is not on the table.
+-----
+1.1
+the 1st block is clear, the 2nd block is clear, the hand is empty, the 1st block is on top of the 3rd block, the 2nd block is on top of the 4th block, the 4th block is on the table and the 3rd block is on the table
+the 1st block is on top of the 2nd block and the 2nd block is on top of the 4th block
+-----
+#########################
+#########################
+<think>
+                    The indigo block needs to stack on the gold block, taking earlier gold block on the table</think>
+<plan>
+pick up the indigo block
+stack the indigo block on top of the gold block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the indigo block', 'stack the indigo block on top of the gold block']
+pick up the indigo block
+stack the indigo block on top of the gold block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the indigo block is clear, the gold block is clear, the silver block is clear, the hand is empty, the silver block is on top of the ruby block, the ruby block is on the table, the indigo block is on the table and the gold block is on the table
+the indigo block is on top of the gold block and the silver block is on top of the ruby block
+-----
+#########################
+#########################
+<think>
+            We need to stack the indigo block on top of the gold block</think>
+<plan>
+pick up the indigo block
+stack the indigo block on top of the gold block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the indigo block', 'stack the indigo block on top of the gold block']
+pick up the indigo block
+stack the indigo block on top of the gold block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the indigo block is clear, the gold block is clear, the silver block is clear, the hand is empty, the silver block is on top of the ruby block, the ruby block is on the table, the indigo block is on the table and the gold block is on the table
+the indigo block is on top of the gold block and the silver block is on top of the ruby block
+-----
+#########################
+#########################
+<think>Alright, let's stack the indigo block</think>
+<plan>
+pick up the indigo block
+stack the indigo block on top of the gold block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the indigo block', 'stack the indigo block on top of the gold block']
+pick up the indigo block
+stack the indigo block on top of the gold block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the indigo block is clear, the gold block is clear, the silver block is clear, the hand is empty, the silver block is on top of the ruby block, the ruby block is on the table, the indigo block is on the table and the gold block is on the table
+the indigo block is on top of the gold block and the silver block is on top of the ruby block
+-----
+#########################
+#########################
+<think>There is no silver block on the table, we need to pick up the indigo block</think>
+<plan>
+pick up the indigo block
+stack the indigo block on top of the gold block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the indigo block', 'stack the indigo block on top of the gold block']
+pick up the indigo block
+stack the indigo block on top of the gold block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the indigo block is clear, the gold block is clear, the silver block is clear, the hand is empty, the silver block is on top of the ruby block, the ruby block is on the table, the indigo block is on the table and the gold block is on the table
+the indigo block is on top of the gold block and the silver block is on top of the ruby block
+-----
+#########################
+#########################
+<think>Our initial state has the omega block on the table, so the omega block needs to be picked up and stack on the nu block</think>
+<plan>
+pick up the omega block
+stack the omega block on top of the nu block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the omega block', 'stack the omega block on top of the nu block']
+pick up the omega block
+stack the omega block on top of the nu block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the omega block is clear, the nu block is clear, the hand is empty, the omicron block is on top of the tau block, the nu block is on top of the omicron block, the omega block is on the table and the tau block is on the table
+the omicron block is on top of the tau block, the omega block is on top of the nu block and the nu block is on top of the omicron block
+-----
+#########################
+#########################
+<think>Ensure that the omega block is on the table and on a clear state</think>
+<plan>
+pick up the omega block
+stack the omega block on top of the nu block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the omega block', 'stack the omega block on top of the nu block']
+pick up the omega block
+stack the omega block on top of the nu block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the omega block is clear, the nu block is clear, the hand is empty, the omicron block is on top of the tau block, the nu block is on top of the omicron block, the omega block is on the table and the tau block is on the table
+the omicron block is on top of the tau block, the omega block is on top of the nu block and the nu block is on top of the omicron block
+-----
+#########################
+#########################
+<think>My hand is on the table, so the omega block is on the table</think>
+<plan>
+pick up the omega block
+stack the omega block on top of the nu block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the omega block', 'stack the omega block on top of the nu block']
+pick up the omega block
+stack the omega block on top of the nu block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the omega block is clear, the nu block is clear, the hand is empty, the omicron block is on top of the tau block, the nu block is on top of the omicron block, the omega block is on the table and the tau block is on the table
+the omicron block is on top of the tau block, the omega block is on top of the nu block and the nu block is on top of the omicron block
+-----
+#########################
+#########################
+<think>First we need to pick up the omega block</think>
+<plan>
+pick up the omega block
+stack the omega block on top of the nu block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the omega block', 'stack the omega block on top of the nu block']
+pick up the omega block
+stack the omega block on top of the nu block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the omega block is clear, the nu block is clear, the hand is empty, the omicron block is on top of the tau block, the nu block is on top of the omicron block, the omega block is on the table and the tau block is on the table
+the omicron block is on top of the tau block, the omega block is on top of the nu block and the nu block is on top of the omicron block
+-----
+#########################
+#########################
+<think>My hand is on the table and the xi block is clear on the table, ready to be picked up</think>
+<plan>
+pick up the eta block
+stack the eta block on top of the xi block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the eta block', 'stack the eta block on top of the xi block']
+pick up the eta block
+Physically Impossible Action - Precondition failed: eta block is not on the table.
+-----
+1.1
+the xi block is clear, the eta block is clear, the hand is empty, the xi block is on top of the gamma block, the eta block is on top of the delta block, the delta block is on the table and the gamma block is on the table
+the xi block is on top of the eta block
+-----
+#########################
+#########################
+<think>First, the xi block needs to be unstack from on top of the eta block</think>
+<plan>
+pick up the eta block
+stack the eta block on top of the xi block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the eta block', 'stack the eta block on top of the xi block']
+pick up the eta block
+Physically Impossible Action - Precondition failed: eta block is not on the table.
+-----
+1.1
+the xi block is clear, the eta block is clear, the hand is empty, the xi block is on top of the gamma block, the eta block is on top of the delta block, the delta block is on the table and the gamma block is on the table
+the xi block is on top of the eta block
+-----
+#########################
+#########################
+<think>First, we need to pick up the xi block block</think>
+<plan>
+pick up the eta block
+stack the eta block on top of the xi block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the eta block', 'stack the eta block on top of the xi block block']
+pick up the eta block
+Physically Impossible Action - Precondition failed: eta block is not on the table.
+-----
+1.1
+the xi block is clear, the eta block is clear, the hand is empty, the xi block is on top of the gamma block, the eta block is on top of the delta block, the delta block is on the table and the gamma block is on the table
+the xi block is on top of the eta block
+-----
+#########################
+#########################
+<think>Choose the xi block and stack it on the table and stack the xi block on top of the eta block</think>
+<plan>
+pick up the eta block
+stack the eta block on top of the xi block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the eta block', 'stack the eta block on top of the xi block']
+pick up the eta block
+Physically Impossible Action - Precondition failed: eta block is not on the table.
+-----
+1.1
+the xi block is clear, the eta block is clear, the hand is empty, the xi block is on top of the gamma block, the eta block is on top of the delta block, the delta block is on the table and the gamma block is on the table
+the xi block is on top of the eta block
+-----
+#########################
+#########################
+<think>Only once the red block on the table on a state where the red block is on the table, the red block will be on the table, and on the table</think>
+<plan>
+pick up the blue block
+stack the blue block on top of the red block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the blue block', 'stack the blue block on top of the red block']
+pick up the blue block
+stack the blue block on top of the red block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the red block is clear, the blue block is clear, the hand is empty, the red block is on top of the orange block, the orange block is on top of the yellow block, the yellow block is on the table and the blue block is on the table
+the red block is on top of the blue block
+-----
+#########################
+#########################
+<think>Pick up the blue block and stack it on the table</think>
+<plan>
+pick up the blue block
+stack the blue block on top of the red block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the blue block', 'stack the blue block on top of the red block']
+pick up the blue block
+stack the blue block on top of the red block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the red block is clear, the blue block is clear, the hand is empty, the red block is on top of the orange block, the orange block is on top of the yellow block, the yellow block is on the table and the blue block is on the table
+the red block is on top of the blue block
+-----
+#########################
+#########################
+<think>My hand needs to pick up the blue block from on the table</think>
+<plan>
+pick up the blue block
+stack the blue block on top of the red block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the blue block', 'stack the blue block on top of the red block']
+pick up the blue block
+stack the blue block on top of the red block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the red block is clear, the blue block is clear, the hand is empty, the red block is on top of the orange block, the orange block is on top of the yellow block, the yellow block is on the table and the blue block is on the table
+the red block is on top of the blue block
+-----
+#########################
+#########################
+<think>Starting with the red block on the table, pick it up and stack it on the red block</think>
+<plan>
+pick up the blue block
+stack the blue block on top of the red block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the blue block', 'stack the blue block on top of the red block']
+pick up the blue block
+stack the blue block on top of the red block
+Goal Not Reached. Correct Number of Steps. True Plan: 2, Extracted Plan: 2
+-----
+1.5
+the red block is clear, the blue block is clear, the hand is empty, the red block is on top of the orange block, the orange block is on top of the yellow block, the yellow block is on the table and the blue block is on the table
+the red block is on top of the blue block
+-----
+#########################
+#########################
+<think>First, the 1st block needs to move on the table to be on the table and on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Stacking the 1st block on the table on the table on the table on the table on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Here’s 1st block on the table, and the 1st block is on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Since the 1st block is on the table and on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+{'loss': 0.0015, 'grad_norm': 0.013941567637699848, 'learning_rate': 0.0, 'completion_length': 45.655625, 'rewards/reward_fn_wrapper': 2.306156254261732, 'reward': 2.306156254261732, 'reward_std': 0.0024375000037252905, 'kl': 1.5202880859375, 'epoch': 1.75}
+{'train_runtime': 28787.2469, 'train_samples_per_second': 0.167, 'train_steps_per_second': 0.01, 'train_loss': 25.704761992121735, 'epoch': 1.75}
+100%|█████████████████████████████████████████████████| 300/300 [7:59:47<00:00, 95.96s/it]
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Here’s 1st block on the table, and the 1st block is on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Since the 1st block is on the table and on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+{'loss': 0.0015, 'grad_norm': 0.013941567637699848, 'learning_rate': 0.0, 'completion_length': 45.655625, 'rewards/reward_fn_wrapper': 2.306156254261732, 'reward': 2.306156254261732, 'reward_std': 0.0024375000037252905, 'kl': 1.5202880859375, 'epoch': 1.75}
+{'train_runtime': 28787.2469, 'train_samples_per_second': 0.167, 'train_steps_per_second': 0.01, 'train_loss': 25.704761992121735, 'epoch': 1.75}
+100%|█████████████████████████████████████████████████| 300/300 [7:59:47<00:00, 95.96s/it]
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+<think>Here’s 1st block on the table, and the 1st block is on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Since the 1st block is on the table and on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+{'loss': 0.0015, 'grad_norm': 0.013941567637699848, 'learning_rate': 0.0, 'completion_length': 45.655625, 'rewards/reward_fn_wrapper': 2.306156254261732, 'reward': 2.306156254261732, 'reward_std': 0.0024375000037252905, 'kl': 1.5202880859375, 'epoch': 1.75}
+{'train_runtime': 28787.2469, 'train_samples_per_second': 0.167, 'train_steps_per_second': 0.01, 'train_loss': 25.704761992121735, 'epoch': 1.75}
+100%|█████████████████████████████████████████████████| 300/300 [7:59:47<00:00, 95.96s/it]
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S ./train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+#########################
+<think>Since the 1st block is on the table and on the table</think>
+<plan>
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block</plan>
+---- Simulating Plan Rewards ----
+Number of steps extracted: 2, true: 2
+['pick up the 1st block block', 'stack the 1st block block on top of the 3rd block block']
+pick up the 1st block block
+stack the 1st block block on top of the 3rd block block
+Goal Reached! Optimal Plan!
+-----
+3.0
+the 3rd block is clear, the 2nd block is clear, the 1st block is clear, the hand is empty, the 3rd block is on the table, the 2nd block is on the table and the 1st block is on the table
+the 1st block is on top of the 3rd block
+-----
+#########################
+{'loss': 0.0015, 'grad_norm': 0.013941567637699848, 'learning_rate': 0.0, 'completion_length': 45.655625, 'rewards/reward_fn_wrapper': 2.306156254261732, 'reward': 2.306156254261732, 'reward_std': 0.0024375000037252905, 'kl': 1.5202880859375, 'epoch': 1.75}
+{'train_runtime': 28787.2469, 'train_samples_per_second': 0.167, 'train_steps_per_second': 0.01, 'train_loss': 25.704761992121735, 'epoch': 1.75}
+100%|█████████████████████████████████████████████████| 300/300 [7:59:47<00:00, 95.96s/it]
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S ./train.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+
+(sys2bench) shubhamprshr@dive7:/mnt/data/shared/shparashar/Sys2Bench$ tmux capture-pane -p -S - > output.txt
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+tmux: /mnt/data/shared/shparashar/miniconda3/envs/sys2bench/bin/../lib/libtinfo.so.6: no version information available (required by tmux)
+

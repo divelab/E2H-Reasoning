@@ -1,0 +1,1 @@
+python -m torch.distributed.run --nproc_per_node 1 --master_port=25678 methods/IO/game24/inference.py --model_dir openai --temperature 0.8 --base_lm openai | tee game24.log

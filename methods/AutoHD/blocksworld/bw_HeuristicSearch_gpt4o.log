@@ -1,0 +1,1251 @@
+Generation 0: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_elements = set(initial_state.split(', '))
+    final_elements = set(final_state.split(', '))
+    
+    # Calculate the misplaced blocks by finding differences
+    misplaced_blocks = initial_elements.symmetric_difference(final_elements)
+    
+    # Heuristic value is the number of misplaced elements
+    heuristic_val = len(misplaced_blocks)
+    
+    return heuristic_val
+
+# Example test
+initial_state_example = "the red block is clear, the yellow block is clear, the hand is empty, the red block is on top of the blue block, the yellow block is on top of the orange block, the blue block is on the table and the orange block is on the table"
+final_state_example = "the orange block is clear, the yellow block is clear, the hand is empty, the orange block is on top of the red block, the red block is on top of the blue block, the blue block is on the table, and the yellow block is on the table"
+
+print(calc_heuristic(initial_state_example, final_state_example))  # Output should be the heuristic value
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate mismatches
+    mismatch_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = mismatch_count + hand_penalty
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Generation 1: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Extract block stacks
+    initial_stack = {b.split(' ')[-1]: i for i, b in enumerate(initial_blocks) if 'on the' in b or 'on top of' in b}
+    final_stack = {b.split(' ')[-1]: i for i, b in enumerate(final_blocks) if 'on the' in b or 'on top of' in b}
+
+    # Calculate distance of each block from its final position
+    distance_sum = sum(abs(initial_stack[block] - final_stack[block]) for block in initial_stack if block in final_stack)
+
+    # Penalty for each incorrectly placed stack
+    stack_penalty = sum(1 for block in initial_blocks if block not in final_blocks and ('on the' in block or 'on top of' in block))
+
+    heuristic_val = distance_sum + stack_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate mismatches
+    mismatch_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Double the mismatch count if hand is not empty
+    hand_penalty_multiplier = 2 if 'hand is empty' not in initial_state else 1
+
+    heuristic_val = mismatch_count * hand_penalty_multiplier
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Create a map of the current and final positions of blocks
+    initial_positions = {block.split(' ')[0]: position for position, block in enumerate(initial_blocks)}
+    final_positions = {block.split(' ')[0]: position for position, block in enumerate(final_blocks)}
+
+    # Calculate the sum of distances between initial and final positions
+    distance_sum = sum(abs(initial_positions[block] - final_positions[block]) for block in initial_positions if block in final_positions)
+
+    # Penalty: number of blocks being held
+    hand_penalty = len([x for x in initial_blocks if 'hand' in x])
+
+    heuristic_val = distance_sum + hand_penalty
+    return heuristic_val
+Accuracy: 0.058823529411764705 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Create a dictionary for block positions in initial and final states
+    initial_dict = {b.split(' ')[0]: b for b in initial_blocks if 'clear' not in b and 'hand' not in b}
+    final_dict = {b.split(' ')[0]: b for b in final_blocks if 'clear' not in b and 'hand' not in b}
+
+    # Calculate the Manhattan distance for each block
+    def block_position(block_desc):
+        if 'on top of' in block_desc:
+            return block_desc.split(' on top of ')[1]
+        elif 'on the table' in block_desc:
+            return 'table'
+        else:
+            return None
+
+    def manhattan_distance(block, initial_pos, final_pos):
+        if initial_pos == final_pos:
+            return 0
+        elif initial_pos == 'table' or final_pos == 'table':
+            return 1
+        else:
+            return 2
+
+    total_distance = sum(manhattan_distance(block, block_position(initial_dict[block]), block_position(final_dict.get(block, '')))
+                         for block in initial_dict)
+
+    # Penalty for hand actions
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = total_distance + hand_penalty
+    return heuristic_val
+Accuracy: 0.11764705882352941 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate mismatches
+    mismatch_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks in hand
+    hand_penalty = initial_state.count('hand is holding')
+
+    heuristic_val = mismatch_count + hand_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate mismatch in order
+    order_mismatch_count = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                order_mismatch_count += 1
+
+    # Penalty for blocks not on the table when they should be
+    table_penalty = 0
+    for block in final_blocks:
+        if 'on the table' in block and block not in initial_blocks:
+            table_penalty += 1
+
+    heuristic_val = order_mismatch_count + table_penalty
+    return heuristic_val
+Accuracy: 0.058823529411764705 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Extract block positions from the state descriptions
+    initial_positions = {block.split(' ')[0]: i for i, block in enumerate(initial_blocks) if 'on top of' in block}
+    final_positions = {block.split(' ')[0]: i for i, block in enumerate(final_blocks) if 'on top of' in block}
+
+    # Calculate the sum of distances for each block
+    total_distance = sum(abs(initial_positions[block] - final_positions[block]) for block in initial_positions if block in final_positions)
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = total_distance + hand_penalty
+    return heuristic_val
+Accuracy: 0.11764705882352941 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    def parse_state(state):
+        state_dict = {}
+        for desc in state.split(', '):
+            if ' on top of ' in desc:
+                block, below = desc.split(' on top of ')
+                state_dict[block] = below
+            elif ' on the table' in desc:
+                block = desc.split(' ')[0]
+                state_dict[block] = 'table'
+        return state_dict
+
+    initial_dict = parse_state(initial_state)
+    final_dict = parse_state(final_state)
+
+    distance_sum = 0
+
+    for block, initial_position in initial_dict.items():
+        final_position = final_dict.get(block, 'table')
+        if initial_position != final_position:
+            # Simple heuristic: 1 point for each move needed to correct the position
+            distance_sum += 1
+
+    # Penalty for each block being held or misplaced
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = distance_sum + hand_penalty
+    return heuristic_val
+Accuracy: 0.35294117647058826 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Count blocks that need moving
+    blocks_to_move = 0
+    for b in initial_blocks:
+        if b not in final_blocks:
+            blocks_to_move += 1
+
+    # Count incorrect block-on-block placements
+    incorrect_placements = 0
+    for b in initial_blocks:
+        if 'on top of' in b and b not in final_blocks:
+            incorrect_placements += 1
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = blocks_to_move + incorrect_placements + hand_penalty
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'hand' not in x]
+
+    # Calculate number of moves required to match the final state
+    move_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Determine penalty based on misplaced blocks
+    misplaced_penalty = sum(1 for b in initial_blocks if 'clear' not in b and b not in final_blocks)
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = move_count + misplaced_penalty + hand_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate mismatches
+    mismatch_count = sum(1 for b in initial_blocks if b not in final_blocks)
+    
+    # Calculate move penalties for blocks not in final positions
+    move_penalties = 0
+    for block in initial_blocks:
+        if 'on top of' in block and block not in final_blocks:
+            move_penalties += 1
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = mismatch_count + move_penalties + hand_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that need to be moved to their correct positions
+    move_needed_count = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that is in the hand
+    hand_penalty = initial_state.count('hand is holding')
+
+    heuristic_val = move_needed_count + hand_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Create dictionaries for initial and final block positions
+    initial_dict = {desc.split(' ')[0]: desc for desc in initial_blocks if 'clear' not in desc and 'hand' not in desc}
+    final_dict = {desc.split(' ')[0]: desc for desc in final_blocks if 'clear' not in desc and 'hand' not in desc}
+
+    # Calculate the number of transitions needed
+    transition_count = sum(1 for block, position in initial_dict.items() if final_dict.get(block) != position)
+
+    # Calculate penalty for blocks held by the hand
+    hand_penalty = sum(1 for desc in initial_blocks if 'hand' in desc and 'is holding' in desc)
+
+    heuristic_val = transition_count + hand_penalty
+    return heuristic_val
+Accuracy: 0.23529411764705882 
+Generation 2: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    block_positions = {}
+    final_positions = {}
+    hand_penalty = 0
+    
+    # Parse initial state
+    for statement in initial_blocks:
+        if 'is on top of' in statement:
+            block, _, _, on_block = statement.split(' ')
+            block_positions[block] = ('on', on_block)
+        elif 'is on the table' in statement:
+            block = statement.split(' ')[0]
+            block_positions[block] = ('table',)
+        elif 'hand is holding' in statement:
+            block = statement.split(' ')[-1]
+            hand_penalty += 1
+        if 'clear' in statement:
+            block = statement.split(' ')[0]
+            block_positions.setdefault(block, ('table',))
+    
+    # Parse final state
+    for statement in final_blocks:
+        if 'is on top of' in statement:
+            block, _, _, on_block = statement.split(' ')
+            final_positions[block] = ('on', on_block)
+        elif 'is on the table' in statement:
+            block = statement.split(' ')[0]
+            final_positions[block] = ('table',)
+    
+    # Calculate Manhattan distances
+    distance_sum = 0
+    for block, position in block_positions.items():
+        final_position = final_positions.get(block, ('table',))
+        if position != final_position:
+            if position[0] == 'on' and final_position[0] == 'on':
+                distance_sum += 1 if position[1] != final_position[1] else 0
+            elif position[0] == 'table' or final_position[0] == 'table':
+                distance_sum += 1
+    
+    heuristic_val = distance_sum + hand_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that are not in their final positions
+    incorrect_position_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for each incorrect block beneath another block
+    block_penalty = sum(1 for b in initial_blocks if 'on top of' in b and b not in final_blocks)
+
+    heuristic_val = incorrect_position_count + block_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of misplaced blocks
+    misplaced_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks needing relocation from table
+    table_penalty = sum(1 for b in initial_blocks if 'on the table' in b and b not in final_blocks)
+
+    heuristic_val = misplaced_count + table_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    def parse_state(state):
+        block_positions = {}
+        for desc in state.split(', '):
+            if 'on top of' in desc:
+                block, under = desc.split(' on top of ')
+                block_positions[block.strip()] = under.strip()
+            elif 'on the table' in desc:
+                block = desc.split(' ')[0]
+                block_positions[block.strip()] = 'table'
+        return block_positions
+
+    initial_positions = parse_state(initial_state)
+    final_positions = parse_state(final_state)
+
+    def manhattan_distance(block, initial_positions, final_positions):
+        if block not in initial_positions or block not in final_positions:
+            return 0
+        initial_pos = initial_positions[block]
+        final_pos = final_positions[block]
+        if initial_pos == final_pos:
+            return 0
+        return 1 + manhattan_distance(initial_pos, initial_positions, final_positions)
+
+    distance_sum = sum(manhattan_distance(block, initial_positions, final_positions) for block in final_positions)
+
+    hand_penalty = initial_state.count('hand is holding')
+
+    heuristic_val = distance_sum + hand_penalty
+    return heuristic_val
+Accuracy: 0.35294117647058826 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'hand' not in x]
+
+    # Create dictionaries to track block positions
+    initial_positions = {b.split(' is ')[0]: b for b in initial_blocks}
+    final_positions = {b.split(' is ')[0]: b for b in final_blocks}
+
+    # Weighted score based on block position
+    weighted_score = 0
+    for block, pos in initial_positions.items():
+        if block in final_positions:
+            if pos != final_positions[block]:
+                weighted_score += 2
+            if 'on top' in pos and 'on top' not in final_positions[block]:
+                weighted_score += 1
+
+    # Penalty if hand is not empty
+    hand_penalty = 2 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = weighted_score + hand_penalty
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Consider only blocks' positions
+    initial_blocks = [x for x in initial_blocks if 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'hand' not in x]
+
+    # Calculate discrepancies in stack order
+    stack_discrepancies = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks in the hand
+    hand_penalty = initial_state.count('hand is holding')
+
+    # Penalty for incorrectly clear blocks
+    initial_clear_count = initial_state.count('clear')
+    final_clear_count = final_state.count('clear')
+    clear_penalty = abs(initial_clear_count - final_clear_count)
+
+    heuristic_val = stack_discrepancies + hand_penalty + clear_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Create dictionaries to map blocks to their positions
+    initial_positions = {}
+    final_positions = {}
+
+    for block in initial_blocks:
+        if 'on top of' in block:
+            parts = block.split(' on top of ')
+            initial_positions[parts[0].strip()] = parts[1].strip()
+        elif 'on the table' in block:
+            parts = block.split(' ')
+            initial_positions[parts[0].strip()] = 'table'
+
+    for block in final_blocks:
+        if 'on top of' in block:
+            parts = block.split(' on top of ')
+            final_positions[parts[0].strip()] = parts[1].strip()
+        elif 'on the table' in block:
+            parts = block.split(' ')
+            final_positions[parts[0].strip()] = 'table'
+
+    # Calculate direct distances between block positions
+    distance_sum = 0
+    for block, initial_pos in initial_positions.items():
+        final_pos = final_positions.get(block, 'table')
+        if initial_pos != final_pos:
+            distance_sum += 1
+
+    # Penalty for each block that is in the hand or misplaced
+    hand_penalty = initial_state.count('hand is holding')
+    misplaced_penalty = sum(1 for block in initial_positions if initial_positions[block] != final_positions.get(block, 'table'))
+
+    heuristic_val = distance_sum + hand_penalty + misplaced_penalty
+    return heuristic_val
+Accuracy: 0.35294117647058826 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks_filtered = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks_filtered = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate direct differences in block positions
+    position_differences = sum(1 for b in initial_blocks_filtered if b not in final_blocks_filtered)
+
+    # Penalty for blocks stacked incorrectly or held in hand
+    stacking_penalty = sum(1 for b in initial_blocks_filtered if 'table' not in b and b not in final_blocks_filtered)
+    hand_penalty = initial_state.count('hand is holding')
+
+    heuristic_val = position_differences + stacking_penalty + hand_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Identify the stacks of blocks
+    initial_stack = [x for x in initial_blocks if 'on top of' in x or 'on the table' in x]
+    final_stack = [x for x in final_blocks if 'on top of' in x or 'on the table' in x]
+    
+    # Count correctly placed blocks
+    correct_placement_count = sum(1 for b in initial_stack if b in final_stack)
+
+    # Count blocks that need to be moved from the table to their final positions
+    table_to_stack_count = sum(1 for b in final_stack if b not in initial_stack and 'on the table' in b)
+
+    heuristic_val = len(final_stack) - correct_placement_count + table_to_stack_count
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that are not in their target stack
+    misplaced_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks misplaced in order within their stack
+    order_penalty = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                order_penalty += 1
+
+    heuristic_val = misplaced_count + order_penalty
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate discrepancies in block positions
+    discrepancy_count = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that blocks another required move
+    block_penalty = sum(1 for b in initial_blocks if b not in final_blocks and 'on top of' in b)
+
+    heuristic_val = discrepancy_count + block_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that are out of order
+    out_of_order_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Additional penalty for each block that is in the hand
+    hand_penalty = 2 * initial_state.count('hand is holding')
+
+    heuristic_val = out_of_order_count + hand_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the total distance each block needs to be moved
+    move_distance_sum = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that is incorrectly stacked or positioned
+    incorrect_position_penalty = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    heuristic_val = move_distance_sum + incorrect_position_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks_pos = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks_pos = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate misplaced blocks
+    misplaced_blocks = sum(1 for b in initial_blocks_pos if b not in final_blocks_pos)
+    
+    # Blocks not clear in the initial state
+    not_clear_penalty = sum(1 for b in initial_blocks if 'clear' in b and b not in final_blocks)
+    
+    heuristic_val = misplaced_blocks + not_clear_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that need to be moved to their correct positions
+    move_needed_count = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that is not contributing to the final stack order
+    misplaced_penalty = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    heuristic_val = move_needed_count + misplaced_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of misplaced blocks
+    misplaced_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks out of sequence according to the desired order
+    sequence_penalty = sum(1 for i, b in enumerate(initial_blocks) if i < len(final_blocks) and b != final_blocks[i])
+
+    heuristic_val = misplaced_count + sequence_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Generation 3: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the vertical distance each block needs to move
+    vertical_distance_sum = 0
+    for block in initial_blocks:
+        if block in final_blocks:
+            initial_position = initial_blocks.index(block)
+            final_position = final_blocks.index(block)
+            vertical_distance_sum += abs(initial_position - final_position)
+
+    # Penalty for each block that is not clear
+    unclear_penalty = len([x for x in initial_state.split(', ') if 'clear' not in x and 'block' in x])
+
+    heuristic_val = vertical_distance_sum + unclear_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Create dictionaries to hold the current and final position of blocks
+    current_positions = {block.split(' ')[0]: i for i, block in enumerate(initial_blocks)}
+    final_positions = {block.split(' ')[0]: i for i, block in enumerate(final_blocks)}
+
+    # Calculate the sum of moves required to reach each block in its final position
+    move_sum = sum(abs(current_positions[block.split(' ')[0]] - final_positions[block.split(' ')[0]]) 
+                   for block in initial_blocks if block in final_blocks)
+
+    heuristic_val = move_sum
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Filter out 'clear' and 'hand' states for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Create a map of block positions from the initial and final states
+    initial_positions = {x.split(' ')[0]: x for x in initial_blocks}
+    final_positions = {x.split(' ')[0]: x for x in final_blocks}
+
+    # Calculate the total number of individual block moves needed
+    move_count = sum(1 for block in final_positions if initial_positions.get(block) != final_positions[block])
+
+    heuristic_val = move_count
+    return heuristic_val
+Accuracy: 0.11764705882352941 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks_dict = {x.split(' ')[1]: x for x in initial_blocks if 'is on top of' in x}
+    final_blocks_dict = {x.split(' ')[1]: x for x in final_blocks if 'is on top of' in x}
+
+    # Calculate the distance each block needs to be moved
+    total_distance = sum(1 for block, position in final_blocks_dict.items() if initial_blocks_dict.get(block) != position)
+
+    # Penalty for each block that prevents another block from being moved
+    block_prevention_penalty = sum(1 for block in initial_blocks_dict if block in final_blocks_dict and initial_blocks_dict[block] != final_blocks_dict[block])
+
+    heuristic_val = total_distance + block_prevention_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_stack = [x for x in initial_blocks if 'on top of' in x]
+    final_stack = [x for x in final_blocks if 'on top of' in x]
+
+    # Calculate the sum of differences in stacking order
+    order_diff_sum = sum(1 for b in final_stack if b not in initial_stack)
+
+    # Penalty for blocks that require moving to the table before being stacked elsewhere
+    table_move_penalty = sum(1 for b in initial_stack if b.split(' ')[-1] == 'table' and b not in final_stack)
+
+    heuristic_val = order_diff_sum + table_move_penalty
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate the number of blocks that need to be moved to match the final stack order
+    move_needed_count = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each sequence of blocks that are out of order
+    out_of_order_sequences = 0
+    for i in range(len(initial_blocks) - 1):
+        if initial_blocks[i] != final_blocks[i]:
+            out_of_order_sequences += 1
+
+    heuristic_val = move_needed_count + out_of_order_sequences
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+    
+    # Calculate the sum of position differences for each block
+    position_diff_sum = sum(
+        abs(initial_blocks.index(b) - final_blocks.index(b)) 
+        for b in final_blocks if b in initial_blocks
+    )
+    
+    # Penalty for blocks that are part of the final stack but incorrectly stacked in the initial state
+    incorrect_stack_penalty = sum(
+        1 for b in final_blocks 
+        if b not in initial_blocks or 
+        (b in initial_blocks and initial_blocks.index(b) != final_blocks.index(b))
+    )
+    
+    heuristic_val = position_diff_sum + incorrect_stack_penalty
+    return heuristic_val
+Accuracy: 0.5294117647058824 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    move_penalty = 0
+    position_penalty = 0
+
+    for block in final_blocks:
+        if block not in initial_blocks:
+            move_penalty += 1 + initial_blocks.index(block) if block in initial_blocks else 1
+
+    for block in initial_blocks:
+        if block not in final_blocks:
+            position_penalty += 1
+
+    heuristic_val = move_penalty + position_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate total number of transitions needed
+    transitions_needed = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for blocks that need to be moved directly from the table to their final position
+    table_to_final_penalty = sum(1 for b in final_blocks if 'on the table' in b and b not in initial_blocks)
+
+    heuristic_val = transitions_needed + table_to_final_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate total moves required for current to reach final state
+    moves_required = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that is currently on the table but needs to be moved
+    table_movement_penalty = sum(1 for b in initial_blocks if 'on the table' in b and b not in final_blocks)
+
+    heuristic_val = moves_required + table_movement_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate blocks not in final position
+    misaligned_blocks = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks requiring multiple moves
+    multiple_move_penalty = sum(1 for b in initial_blocks if b in final_blocks and initial_blocks.index(b) != final_blocks.index(b))
+
+    heuristic_val = misaligned_blocks + multiple_move_penalty
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_positions = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_positions = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate base move count for discrepancies
+    move_count = sum(1 for b in final_positions if b not in initial_positions)
+
+    # Additional weight for multiple moves needed
+    multi_move_weight = sum(1 for b in initial_positions if b not in final_positions and 'on top of' in b)
+
+    heuristic_val = move_count + 2 * multi_move_weight
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate discrepancies in block positions
+    discrepancy_count = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for each block that blocks another required move
+    block_penalty = sum(1 for b in initial_blocks if b not in final_blocks and 'on top of' in b)
+
+    # Additional weight for bottom blocks in incorrectly stacked sequences
+    bottom_penalty = sum(2 for b in initial_blocks if 'on the table' in b and b not in final_blocks)
+
+    heuristic_val = discrepancy_count + block_penalty + bottom_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Generation 4: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Filter out 'clear' and 'hand' states
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Create block position dictionaries
+    initial_pos = {block.split(' ')[0]: block.split(' ')[-1] for block in initial_blocks}
+    final_pos = {block.split(' ')[0]: block.split(' ')[-1] for block in final_blocks}
+
+    # Calculate number of operations needed to transform initial to final state
+    operations_needed = 0
+    for block, final_position in final_pos.items():
+        if block in initial_pos:
+            if initial_pos[block] != final_position:
+                operations_needed += 1
+        else:
+            operations_needed += 1
+
+    heuristic_val = operations_needed
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_positions = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_positions = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate total number of misplaced blocks
+    misplaced_blocks = sum(1 for b in initial_positions if b not in final_positions)
+
+    # Penalty for blocks moving from the table to a stacked position
+    table_to_stack_penalty = sum(1 for b in final_positions if 'on the table' not in b and 'on the table' in initial_positions)
+
+    heuristic_val = misplaced_blocks + table_to_stack_penalty
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    correct_pair_count = 0
+
+    # Check for correct pairs in the initial state according to the final state
+    for i in range(len(final_blocks) - 1):
+        pair = (final_blocks[i], final_blocks[i + 1])
+        if pair in zip(initial_blocks, initial_blocks[1:]):
+            correct_pair_count += 1
+
+    total_blocks = len(final_blocks)
+    heuristic_val = total_blocks - correct_pair_count
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    misplaced_count = 0
+    depth_difference_penalty = 0
+    
+    for block in final_blocks:
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            final_index = final_blocks.index(block)
+            if initial_index != final_index:
+                misplaced_count += 1
+                # Add penalty based on depth difference
+                depth_difference_penalty += abs(initial_index - final_index)
+        else:
+            misplaced_count += 1
+
+    heuristic_val = misplaced_count + depth_difference_penalty
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+    
+    # Calculate number of misplaced blocks
+    misplaced_blocks = sum(
+        1 for b in final_blocks 
+        if b not in initial_blocks or 
+        (b in initial_blocks and initial_blocks.index(b) != final_blocks.index(b))
+    )
+    
+    # Additional penalty for each block not in the correct stack order
+    stack_order_penalty = sum(
+        abs(final_blocks.index(b) - initial_blocks.index(b)) 
+        for b in final_blocks if b in initial_blocks
+    )
+    
+    heuristic_val = misplaced_blocks + stack_order_penalty
+    return heuristic_val
+Accuracy: 0.5294117647058824 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Determine the number of blocks that need to be moved
+    blocks_to_move = sum(1 for b in final_blocks if b not in initial_blocks or 
+                         (b in initial_blocks and initial_blocks.index(b) != final_blocks.index(b)))
+
+    # Penalty for blocks that need to be moved more than once
+    multiple_move_penalty = sum(1 for b in final_blocks if initial_blocks.count(b) > 1)
+
+    heuristic_val = blocks_to_move + multiple_move_penalty
+    return heuristic_val
+Accuracy: 0.7647058823529411 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate incorrect placements
+    incorrect_placements = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks that need to be moved directly from the table to their final position
+    table_to_final_penalty = sum(1 for b in final_blocks if 'on the table' in b and b not in initial_blocks)
+
+    # Penalty for blocks that need to move from one stack to another
+    stack_to_stack_penalty = sum(1 for b in final_blocks if 'on top of' in b and b not in initial_blocks)
+
+    heuristic_val = incorrect_placements + table_to_final_penalty + stack_to_stack_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate total number of mismatches
+    mismatches = sum(1 for b in final_blocks if b not in initial_blocks)
+
+    # Penalty for blocks that need to be lifted from the table and placed on another block
+    lift_penalty = sum(1 for b in initial_blocks if 'on the table' in b and any(fb for fb in final_blocks if b.split(' on the ')[0] in fb and 'on the table' not in fb))
+
+    heuristic_val = mismatches + lift_penalty
+    return heuristic_val
+Accuracy: 0.9411764705882353 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    misplaced_pairs = 0
+    reposition_penalty = 0
+
+    for i, block in enumerate(final_blocks):
+        if block in initial_blocks:
+            initial_index = initial_blocks.index(block)
+            # Check if the block is misplaced in pairs
+            if i > 0 and initial_blocks[initial_index - 1] != final_blocks[i - 1]:
+                misplaced_pairs += 1
+            if i < len(final_blocks) - 1 and initial_blocks[initial_index + 1] != final_blocks[i + 1]:
+                misplaced_pairs += 1
+
+        if block not in initial_blocks:
+            reposition_penalty += 1
+
+    heuristic_val = misplaced_pairs + reposition_penalty
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    # Removing 'clear' and 'hand' state for comparison
+    initial_positions = [x for x in initial_blocks if 'on' in x]
+    final_positions = [x for x in final_blocks if 'on' in x]
+    
+    # Count misplaced blocks
+    misplaced_count = sum(
+        1 for b in final_positions if b not in initial_positions
+    )
+    
+    # Count 'hand' operations needed (pick up and put down)
+    hand_operations = 2 * misplaced_count
+
+    heuristic_val = misplaced_count + hand_operations
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+    
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+    
+    # Count blocks that are out of order
+    out_of_order = sum(1 for i, block in enumerate(final_blocks) if i < len(initial_blocks) and block != initial_blocks[i])
+    
+    # Count blocks that are not directly accessible to be moved
+    inaccessible_blocks = sum(1 for block in initial_blocks if 'on top of' in block and block not in final_blocks)
+    
+    heuristic_val = out_of_order + inaccessible_blocks
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Test the best heuristic in the last generation: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'clear' and 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'clear' not in x and 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'clear' not in x and 'hand' not in x]
+
+    # Calculate incorrect placements
+    incorrect_placements = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Penalty for blocks that need to be moved directly from the table to their final position
+    table_to_final_penalty = sum(1 for b in final_blocks if 'on the table' in b and b not in initial_blocks)
+
+    # Penalty for blocks that need to move from one stack to another
+    stack_to_stack_penalty = sum(1 for b in final_blocks if 'on top of' in b and b not in initial_blocks)
+
+    heuristic_val = incorrect_placements + table_to_final_penalty + stack_to_stack_penalty
+    return heuristic_val
+Accuracy: 0.9555555555555556 
+Test the best heuristic in all the generations: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_blocks = initial_state.split(', ')
+    final_blocks = final_state.split(', ')
+
+    # Remove the part about 'hand' state for comparison
+    initial_blocks = [x for x in initial_blocks if 'hand' not in x]
+    final_blocks = [x for x in final_blocks if 'hand' not in x]
+
+    # Calculate number of moves required to match the final state
+    move_count = sum(1 for b in initial_blocks if b not in final_blocks)
+
+    # Determine penalty based on misplaced blocks
+    misplaced_penalty = sum(1 for b in initial_blocks if 'clear' not in b and b not in final_blocks)
+
+    # Penalty if hand is not empty
+    hand_penalty = 1 if 'hand is empty' not in initial_state else 0
+
+    heuristic_val = move_count + misplaced_penalty + hand_penalty
+    return heuristic_val
+Accuracy: 0.9777777777777777 

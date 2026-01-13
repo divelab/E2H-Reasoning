@@ -1,0 +1,26 @@
+# conf/algorithm/ppo.yaml
+name: "ppo"
+
+training:
+  learning_rate: 1.4e-5
+  lr_scheduler_type: "cosine"
+  logging_steps: 10
+  max_steps: 300
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 4
+  gradient_checkpointing: true
+  bf16: true
+  # PPO specific parameters
+  num_ppo_epochs: 4
+  kl_coef: 0.2
+  cliprange: 0.2
+  vf_coef: 0.1
+  cliprange_value: 0.2
+  gamma: 1.0
+  lam: 0.95
+  whiten_rewards: false
+  report_to:
+    - tensorboard
+  push_to_hub: true
+  save_strategy: "steps"
+  save_steps: 10

@@ -1,0 +1,1184 @@
+Generation 0: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and ', ',').split(',')
+    final_state = final_state.replace(' and ', ',').split(',')
+    
+    blocks = set()
+    for state in initial_state + final_state:
+        block_name = state.split(' ')[1]
+        blocks.add(block_name)
+    
+    blocks = sorted(list(blocks))
+    
+    block_positions_initial = {}
+    block_positions_final = {}
+    
+    for block in blocks:
+        block_positions_initial[block] = None
+        block_positions_final[block] = None
+    
+    for state in initial_state:
+        if 'on top of' in state:
+            block_name = state.split(' ')[1]
+            other_block_name = state.split('on top of the ')[1]
+            block_positions_initial[block_name] = other_block_name
+        elif 'on the table' in state:
+            block_name = state.split(' ')[1]
+            block_positions_initial[block_name] = 'table'
+        elif 'in the hand' in state:
+            block_name = state.split(' ')[1]
+            block_positions_initial[block_name] = 'hand'
+    
+    for state in final_state:
+        if 'on top of' in state:
+            block_name = state.split(' ')[1]
+            other_block_name = state.split('on top of the ')[1]
+            block_positions_final[block_name] = other_block_name
+        elif 'on the table' in state:
+            block_name = state.split(' ')[1]
+            block_positions_final[block_name] = 'table'
+        elif 'in the hand' in state:
+            block_name = state.split(' ')[1]
+            block_positions_final[block_name] = 'hand'
+    
+    heuristic_val = 0
+    for block in blocks:
+        if block_positions_initial[block] != block_positions_final[block]:
+            heuristic_val += 1
+    
+    # Additional heuristic: count the number of blocks that need to be moved to their correct positions
+    for block in blocks:
+        if block_positions_initial[block] != block_positions_final[block]:
+            other_block_name = block_positions_final[block]
+            if other_block_name != 'table' and other_block_name != 'hand':
+                if block_positions_initial[other_block_name] != block_positions_final[other_block_name]:
+                    heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.split(' and ')
+    final_state = final_state.split(' and ')
+    
+    # Create dictionaries to store block positions
+    initial_pos = {}
+    final_pos = {}
+    
+    for state in initial_state:
+        state = state.split(' is ')
+        if ' on ' in state[1]:
+            block, on_block = state[1].split(' on ')
+            if block not in initial_pos:
+                initial_pos[block] = []
+            initial_pos[block].append(on_block)
+        elif ' in the hand' in state[1]:
+            continue
+        elif ' on the table' in state[1]:
+            initial_pos[state[0]] = ['table']
+    
+    for state in final_state:
+        state = state.split(' is ')
+        if ' on ' in state[1]:
+            block, on_block = state[1].split(' on ')
+            if block not in final_pos:
+                final_pos[block] = []
+            final_pos[block].append(on_block)
+        elif ' in the hand' in state[1]:
+            continue
+        elif ' on the table' in state[1]:
+            final_pos[state[0]] = ['table']
+    
+    heuristic_val = 0
+    # Calculate the total number of misplaced blocks
+    for block in initial_pos:
+        if block not in final_pos or initial_pos[block] != final_pos[block]:
+            heuristic_val += 1
+    
+    # Calculate the number of blocks that are not in the correct order in the stack
+    for block in final_pos:
+        if block in initial_pos and initial_pos[block] != final_pos[block]:
+            stack = initial_pos[block]
+            correct_stack = final_pos[block]
+            for i in range(min(len(stack), len(correct_stack))):
+                if stack[i] != correct_stack[i]:
+                    heuristic_val += len(correct_stack) - i
+                    break
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    # Split the states into individual conditions
+    initial_conditions = initial_state.split(', and ')
+    final_conditions = final_state.split(', and ')
+    
+    # Initialize the heuristic value
+    heuristic_val = 0
+    
+    # Create dictionaries to store the block positions and clearance
+    initial_block_positions = {}
+    initial_block_clearance = {}
+    final_block_positions = {}
+    final_block_clearance = {}
+    
+    # Parse the initial conditions
+    for condition in initial_conditions:
+        if 'is clear' in condition:
+            block = condition.split(' ')[1]
+            initial_block_clearance[block] = True
+        elif 'is on top of' in condition:
+            block1 = condition.split(' ')[1]
+            block2 = condition.split(' ')[5]
+            initial_block_positions[block1] = block2
+        elif 'is on the table' in condition:
+            block = condition.split(' ')[1]
+            initial_block_positions[block] = 'table'
+        elif 'hand is holding' in condition:
+            block = condition.split(' ')[3]
+            initial_block_positions[block] = 'hand'
+    
+    # Parse the final conditions
+    for condition in final_conditions:
+        if 'is clear' in condition:
+            block = condition.split(' ')[1]
+            final_block_clearance[block] = True
+        elif 'is on top of' in condition:
+            block1 = condition.split(' ')[1]
+            block2 = condition.split(' ')[5]
+            final_block_positions[block1] = block2
+        elif 'is on the table' in condition:
+            block = condition.split(' ')[1]
+            final_block_positions[block] = 'table'
+        elif 'hand is empty' in condition:
+            pass
+    
+    # Calculate the heuristic value
+    blocks = set(list(initial_block_positions.keys()) + list(final_block_positions.keys()))
+    for block in blocks:
+        if block not in initial_block_positions or block not in final_block_positions:
+            heuristic_val += 1
+        elif initial_block_positions[block] != final_block_positions[block]:
+            heuristic_val += 1
+        if block in initial_block_clearance and block not in final_block_clearance:
+            heuristic_val += 1
+        elif block in final_block_clearance and block not in initial_block_clearance:
+            heuristic_val += 1
+        if block in initial_block_positions and initial_block_positions[block] == 'hand' and 'hand is empty' in final_conditions:
+            heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and ', ',').split(',')
+    final_state = final_state.replace(' and ', ',').split(',')
+    
+    initial_state_dict = {}
+    final_state_dict = {}
+    
+    for state in initial_state:
+        state = state.strip()
+        if 'is clear' in state or 'is in the hand' in state:
+            continue
+        if 'is on top of' in state:
+            block, on_block = state.split(' is on top of ')
+            initial_state_dict[block] = on_block
+        elif 'is on the table' in state:
+            block = state.split(' is on the table')[0]
+            initial_state_dict[block] = 'table'
+    
+    for state in final_state:
+        state = state.strip()
+        if 'is clear' in state or 'is in the hand' in state or 'is empty' in state:
+            continue
+        if 'is on top of' in state:
+            block, on_block = state.split(' is on top of ')
+            final_state_dict[block] = on_block
+        elif 'is on the table' in state:
+            block = state.split(' is on the table')[0]
+            final_state_dict[block] = 'table'
+    
+    heuristic_val = 0
+    for block, on_block in initial_state_dict.items():
+        if block not in final_state_dict or final_state_dict[block] != on_block:
+            heuristic_val += 1
+    
+    for block, on_block in final_state_dict.items():
+        if block not in initial_state_dict or initial_state_dict[block] != on_block:
+            heuristic_val += 1
+    
+    return heuristic_val
+Accuracy: 0.8235294117647058 
+Generation 1: 
+Generation 0: 
+Generation 0: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    # Parse the initial and final states
+    initial_state = initial_state.replace('and', '').split(', ')
+    final_state = final_state.replace('and', '').split(', ')
+
+    # Extract block information from the states
+    initial_blocks = {}
+    final_blocks = {}
+    for state in initial_state:
+        if 'is clear' in state:
+            block = state.split(' ')[0]
+            initial_blocks[block] = 'clear'
+        elif 'is on the table' in state:
+            block = state.split(' ')[0]
+            initial_blocks[block] = 'table'
+        elif 'is on top of the' in state:
+            block = state.split(' ')[0]
+            under_block = state.split(' ')[-1]
+            initial_blocks[block] = under_block
+        elif 'hand is holding the' in state:
+            block = state.split(' ')[-1]
+            initial_blocks[block] = 'hand'
+    for state in final_state:
+        if 'is clear' in state:
+            block = state.split(' ')[0]
+            final_blocks[block] = 'clear'
+        elif 'is on the table' in state:
+            block = state.split(' ')[0]
+            final_blocks[block] = 'table'
+        elif 'is on top of the' in state:
+            block = state.split(' ')[0]
+            under_block = state.split(' ')[-1]
+            final_blocks[block] = under_block
+        elif 'hand is holding the' in state:
+            block = state.split(' ')[-1]
+            final_blocks[block] = 'hand'
+
+    # Calculate the heuristic value
+    heuristic_val = 0
+    for block, position in initial_blocks.items():
+        if block not in final_blocks or position != final_blocks[block]:
+            heuristic_val += 1
+    if 'hand' in initial_blocks.values() and 'hand' not in final_blocks.values():
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    block_positions = {}
+    for state in initial_state:
+        state = state.split(' is ')
+        if len(state) > 1:
+            block_positions[state[0]] = state[1]
+
+    block_order = {}
+    for i, state in enumerate(final_state):
+        if ' is on top of ' in state:
+            state = state.split(' is on top of ')
+            block_order[state[0]] = i
+
+    heuristic_val = 0
+    for state in final_state:
+        if ' is on top of ' in state:
+            state = state.split(' is on top of ')
+            if state[0] not in block_positions or block_positions[state[0]] != 'on top of ' + state[1]:
+                heuristic_val += 1
+        elif ' is clear' in state:
+            state = state.split(' is clear')
+            if state[0] not in block_positions or block_positions[state[0]] != 'clear':
+                heuristic_val += 1
+        elif ' is on the table' in state:
+            state = state.split(' is on the table')
+            if state[0] not in block_positions or block_positions[state[0]] != 'on the table':
+                heuristic_val += 1
+
+    if 'hand is empty' not in initial_state and 'hand is empty' in final_state:
+        heuristic_val += 1
+    elif 'hand is holding' in initial_state and 'hand is empty' in final_state:
+        heuristic_val += 1
+
+    for block in block_order:
+        if block in block_positions and block_positions[block] != 'on top of ' + final_state[block_order[block]].split(' is on top of ')[1]:
+            blocks_below = 0
+            for i in range(block_order[block] + 1, len(final_state)):
+                if ' is on top of ' in final_state[i] and final_state[i].split(' is on top of ')[1] == block:
+                    blocks_below += 1
+            heuristic_val += blocks_below
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    blocks_in_initial = [s.split(' is ')[0] for s in initial_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+    blocks_in_final = [s.split(' is ')[0] for s in final_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+
+    blocks_in_hand_initial = any('the hand is holding' in s for s in initial_state)
+    blocks_in_hand_final = any('the hand is holding' in s for s in final_state)
+
+    heuristic_val = 0
+
+    for block in blocks_in_initial:
+        if block not in blocks_in_final:
+            heuristic_val += 1
+
+    for block in blocks_in_final:
+        if block not in blocks_in_initial:
+            heuristic_val += 1
+
+    if blocks_in_hand_initial and not blocks_in_hand_final:
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Generation 1: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    block_positions = {}
+    for state in initial_state:
+        state = state.split(' is ')
+        if len(state) > 1:
+            block_positions[state[0]] = state[1]
+
+    block_order = {}
+    for i, state in enumerate(final_state):
+        if ' is on top of ' in state:
+            state = state.split(' is on top of ')
+            block_order[state[0]] = i
+
+    heuristic_val = 0
+    for state in final_state:
+        if ' is on top of ' in state:
+            state = state.split(' is on top of ')
+            if state[0] not in block_positions or block_positions[state[0]] != 'on top of ' + state[1]:
+                heuristic_val += len(final_state) - block_order[state[0]]
+        elif ' is clear' in state:
+            state = state.split(' is clear')
+            if state[0] not in block_positions or block_positions[state[0]] != 'clear':
+                heuristic_val += 1
+        elif ' is on the table' in state:
+            state = state.split(' is on the table')
+            if state[0] not in block_positions or block_positions[state[0]] != 'on the table':
+                heuristic_val += 1
+
+    if 'hand is empty' not in initial_state and 'hand is empty' in final_state:
+        heuristic_val += 1
+    elif 'hand is holding' in initial_state and 'hand is empty' in final_state:
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    blocks_in_initial = [s.split(' is ')[0] for s in initial_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+    blocks_in_final = [s.split(' is ')[0] for s in final_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+
+    blocks_in_hand_initial = any('the hand is holding' in s for s in initial_state)
+    blocks_in_hand_final = any('the hand is holding' in s for s in final_state)
+
+    stack_initial = [s.split(' is on top of ')[0] for s in initial_state if ' is on top of ' in s]
+    stack_final = [s.split(' is on top of ')[0] for s in final_state if ' is on top of ' in s]
+
+    heuristic_val = 0
+
+    for block in blocks_in_initial:
+        if block not in blocks_in_final:
+            heuristic_val += 1
+
+    for block in blocks_in_final:
+        if block not in blocks_in_initial:
+            heuristic_val += 1
+
+    if blocks_in_hand_initial and not blocks_in_hand_final:
+        heuristic_val += 2
+
+    for block in stack_initial:
+        if block not in stack_final:
+            heuristic_val += 1
+
+    for block in stack_final:
+        if block not in stack_initial:
+            heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.35294117647058826 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    blocks_in_initial = [s.split(' is ')[0] for s in initial_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+    blocks_in_final = [s.split(' is ')[0] for s in final_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+
+    blocks_on_initial = [(s.split(' is ')[0], s.split(' on ')[1]) for s in initial_state if ' is ' in s and ' on ' in s]
+    blocks_on_final = [(s.split(' is ')[0], s.split(' on ')[1]) for s in final_state if ' is ' in s and ' on ' in s]
+
+    blocks_in_hand_initial = any('the hand is holding' in s for s in initial_state)
+    blocks_in_hand_final = any('the hand is holding' in s for s in final_state)
+
+    heuristic_val = 0
+
+    for block in blocks_in_initial:
+        if block not in blocks_in_final:
+            heuristic_val += 1
+
+    for block in blocks_in_final:
+        if block not in blocks_in_initial:
+            heuristic_val += 1
+
+    for block, on in blocks_on_initial:
+        if (block, on) not in blocks_on_final:
+            heuristic_val += 1
+
+    for block, on in blocks_on_final:
+        if (block, on) not in blocks_on_initial:
+            heuristic_val += 1
+
+    if blocks_in_hand_initial and not blocks_in_hand_final:
+        heuristic_val += 1
+    elif not blocks_in_hand_initial and blocks_in_hand_final:
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.8823529411764706 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Generation 2: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    initial_stack = []
+    final_stack = []
+    for state in initial_state:
+        if ' is on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is on ')[1]
+            initial_stack.append((block, position))
+    for state in final_state:
+        if ' is on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is on ')[1]
+            final_stack.append((block, position))
+
+    initial_stack.sort(key=lambda x: x[0])
+    final_stack.sort(key=lambda x: x[0])
+
+    heuristic_val = 0
+    i, j = 0, 0
+    while i < len(initial_stack) and j < len(final_stack):
+        if initial_stack[i][0] == final_stack[j][0]:
+            if initial_stack[i][1] != final_stack[j][1]:
+                heuristic_val += abs(len(initial_stack) - i - 1) + abs(len(final_stack) - j - 1)
+            i += 1
+            j += 1
+        elif initial_stack[i][0] < final_stack[j][0]:
+            heuristic_val += len(initial_stack) - i
+            i += 1
+        else:
+            heuristic_val += len(final_stack) - j
+            j += 1
+
+    heuristic_val += len(initial_stack) - i
+    heuristic_val += len(final_stack) - j
+
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += len(initial_stack) + 1
+
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    # Add penalty for blocks that are stacked incorrectly
+    for block in initial_positions:
+        if ' on ' in initial_positions[block]:
+            base_block = initial_positions[block].split(' on ')[1]
+            if base_block in final_positions and ' on ' in final_positions[base_block]:
+                base_block_final = final_positions[base_block].split(' on ')[1]
+                if base_block_final != initial_positions[block].split(' on ')[1]:
+                    heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Calculate number of pairs of blocks that need to be swapped
+    initial_blocks = list(initial_positions.keys())
+    final_blocks = list(final_positions.keys())
+    for i in range(len(initial_blocks)):
+        for j in range(i+1, len(initial_blocks)):
+            if (initial_blocks[i] in final_positions and 
+                initial_blocks[j] in final_positions and 
+                initial_positions[initial_blocks[i]] != final_positions[initial_blocks[i]] and 
+                initial_positions[initial_blocks[j]] != final_positions[initial_blocks[j]]):
+                if (final_positions[initial_blocks[i]].split(' on ')[0] == initial_blocks[j] and 
+                    final_positions[initial_blocks[j]].split(' on ')[0] == initial_blocks[i]):
+                    heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    # Add penalty for blocking blocks
+    for block in final_positions:
+        if block not in initial_positions or initial_positions[block] != final_positions[block]:
+            for b in initial_positions:
+                if 'the ' + block in initial_positions[b]:
+                    heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Generation 3: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            # Count the number of layers that need to be rearranged
+            if 'the ' + block in initial_positions[block]:
+                layers = initial_positions[block].count('the ')
+                heuristic_val += layers
+            if 'the ' + block in final_positions[block]:
+                layers = final_positions[block].count('the ')
+                heuristic_val += layers
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    # Add penalty for non-clear blocks
+    for state in initial_state:
+        if ' is clear' not in state and 'the hand is empty' not in state:
+            heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    initial_levels = {}
+    final_levels = {}
+    for block in initial_positions:
+        level = 0
+        pos = initial_positions[block]
+        while ' on ' in pos:
+            pos = pos.split(' on ')[1]
+            level += 1
+        initial_levels[block] = level
+    for block in final_positions:
+        level = 0
+        pos = final_positions[block]
+        while ' on ' in pos:
+            pos = pos.split(' on ')[1]
+            level += 1
+        final_levels[block] = level
+
+    # Calculate number of misplaced block levels
+    for block in initial_levels:
+        if block not in final_levels or initial_levels[block] != final_levels[block]:
+            heuristic_val += 1
+    for block in final_levels:
+        if block not in initial_levels:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.058823529411764705 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks that need to be moved to a different table or block position
+    for block in initial_positions:
+        if block in final_positions and ' on ' in initial_positions[block] and ' on ' in final_positions[block]:
+            initial_table = initial_positions[block].split(' on ')[1]
+            final_table = final_positions[block].split(' on ')[1]
+            if initial_table != final_table:
+                heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.5882352941176471 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 2
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 2
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 3
+
+    # Add penalty for blocking blocks
+    for block in final_positions:
+        if block not in initial_positions or initial_positions[block] != final_positions[block]:
+            for b in initial_positions:
+                if 'the ' + block in initial_positions[b]:
+                    heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Generation 4: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Define the positions as a list
+    positions = ['the hand', 'the table'] + [f'the {b}' for b in initial_positions.keys()]
+
+    # Create a dictionary to map positions to indices
+    position_indices = {pos: i for i, pos in enumerate(positions)}
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        initial_position = initial_positions[block]
+        final_position = final_positions.get(block, 'the table')  # default to table if not found
+        initial_index = position_indices.get(initial_position, position_indices['the hand'])
+        final_index = position_indices.get(final_position, position_indices['the hand'])
+        heuristic_val += abs(final_index - initial_index)
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    initial_pairs = set()
+    final_pairs = set()
+    for block in initial_positions:
+        pos = initial_positions[block]
+        if ' on ' in pos:
+            base_block = pos.split(' on ')[1]
+            initial_pairs.add(tuple(sorted([block, base_block])))
+    for block in final_positions:
+        pos = final_positions[block]
+        if ' on ' in pos:
+            base_block = pos.split(' on ')[1]
+            final_pairs.add(tuple(sorted([block, base_block])))
+
+    # Calculate number of incorrect block pairs
+    for pair in initial_pairs:
+        if pair not in final_pairs:
+            heuristic_val += 1
+    for pair in final_pairs:
+        if pair not in initial_pairs:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Check for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    # Check for blocks in the wrong order
+    for block in initial_positions:
+        pos = initial_positions[block]
+        while ' on ' in pos:
+            block_below = pos.split(' on ')[1].split(' ')[1]
+            if block_below in final_positions and final_positions[block] != ' on the ' + block_below:
+                heuristic_val += 1
+            pos = pos.split(' on ')[1]
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    initial_clear = set()
+    final_clear = set()
+    for state in initial_state:
+        if ' is clear' in state:
+            initial_clear.add(state.split(' is ')[0])
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is clear' in state:
+            final_clear.add(state.split(' is ')[0])
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks that are not clear
+    for block in initial_clear.symmetric_difference(final_clear):
+        heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.7058823529411765 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 2
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 2
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 3
+
+    # Add penalty for blocking blocks
+    for block in final_positions:
+        if block not in initial_positions or initial_positions[block] != final_positions[block]:
+            for b in initial_positions:
+                if 'the ' + block in initial_positions[b]:
+                    heuristic_val += 1
+
+    # Add penalty for blocks not in correct stack order
+    for block in final_positions:
+        if block in initial_positions and 'the ' + block in initial_positions[block]:
+            below_block = initial_positions[block].split('the ')[-1].split(' is')[0]
+            if below_block not in final_positions or final_positions[below_block] != ' on the ' + block:
+                heuristic_val += 2
+
+    return heuristic_val
+Accuracy: 0.47058823529411764 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    for state in initial_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+            if ' on ' in initial_positions[block] and ' on ' in final_positions[block]:
+                initial_stack = initial_positions[block].split(' on ')
+                final_stack = final_positions[block].split(' on ')
+                heuristic_val += abs(len(initial_stack) - len(final_stack))
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.6470588235294118 
+Test the best heuristic in the last generation: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    # Parse block positions from initial and final states
+    initial_positions = {}
+    final_positions = {}
+    initial_clear = set()
+    final_clear = set()
+    for state in initial_state:
+        if ' is clear' in state:
+            initial_clear.add(state.split(' is ')[0])
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            initial_positions[block] = position
+    for state in final_state:
+        if ' is clear' in state:
+            final_clear.add(state.split(' is ')[0])
+        if ' is ' in state and ' on ' in state:
+            block, position = state.split(' is ')[0], state.split(' is ')[1]
+            final_positions[block] = position
+
+    # Calculate heuristic value
+    heuristic_val = 0
+    for block in initial_positions:
+        if block not in final_positions or initial_positions[block] != final_positions[block]:
+            heuristic_val += 1
+    for block in final_positions:
+        if block not in initial_positions:
+            heuristic_val += 1
+
+    # Add penalty for blocks that are not clear
+    for block in initial_clear.symmetric_difference(final_clear):
+        heuristic_val += 1
+
+    # Add penalty for blocks in the hand
+    if any('the hand is holding' in s for s in initial_state) and not any('the hand is holding' in s for s in final_state):
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.9777777777777777 
+Test the best heuristic in all the generations: 
+Function: 
+def calc_heuristic(initial_state, final_state):
+    initial_state = initial_state.replace(' and', '').split(', ')
+    final_state = final_state.replace(' and', '').split(', ')
+
+    blocks_in_initial = [s.split(' is ')[0] for s in initial_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+    blocks_in_final = [s.split(' is ')[0] for s in final_state if ' is ' in s and ' on ' not in s and ' the hand' not in s]
+
+    blocks_on_initial = [(s.split(' is ')[0], s.split(' on ')[1]) for s in initial_state if ' is ' in s and ' on ' in s]
+    blocks_on_final = [(s.split(' is ')[0], s.split(' on ')[1]) for s in final_state if ' is ' in s and ' on ' in s]
+
+    blocks_in_hand_initial = any('the hand is holding' in s for s in initial_state)
+    blocks_in_hand_final = any('the hand is holding' in s for s in final_state)
+
+    heuristic_val = 0
+
+    for block in blocks_in_initial:
+        if block not in blocks_in_final:
+            heuristic_val += 1
+
+    for block in blocks_in_final:
+        if block not in blocks_in_initial:
+            heuristic_val += 1
+
+    for block, on in blocks_on_initial:
+        if (block, on) not in blocks_on_final:
+            heuristic_val += 1
+
+    for block, on in blocks_on_final:
+        if (block, on) not in blocks_on_initial:
+            heuristic_val += 1
+
+    if blocks_in_hand_initial and not blocks_in_hand_final:
+        heuristic_val += 1
+    elif not blocks_in_hand_initial and blocks_in_hand_final:
+        heuristic_val += 1
+
+    return heuristic_val
+Accuracy: 0.9555555555555556 

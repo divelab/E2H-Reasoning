@@ -1,0 +1,1 @@
+python -m torch.distributed.run --nproc_per_node 1 --master_port=25673 methods/IO/aqua/inference.py --temperature 0.8 --base_lm openai

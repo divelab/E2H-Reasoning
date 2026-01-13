@@ -1,0 +1,1026 @@
+{"question": "What is the greatest common factor of 648 and 48?", "answer": "24", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let x(u) = -12*u**2 + 3*u**3 - 2*u**3 + 16 - 5 + 11*u. Let f = 36 + -25. What is the units digit of x(f)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is the greatest common factor of 13590 and 360?", "answer": "90", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let r = 564 - 327. Suppose 2*c - c = 3*j - 129, -j = 2*c + r. List the prime factors of c/(-55) - 2/11.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Let j(k) = 14*k + 1. Let q be j(3). Let n = -17 + q. Suppose -8 - n = -2*l. What is the tens digit of l?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is the highest common factor of 2368 and 148?", "answer": "148", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Suppose -t - 33 = 4*z, -2 = 4*z - 14. Let x be t/2*4/5. Let o = x + 33. What is the units digit of o?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Suppose -3*o = -4*l + 116, 63 + 3 = 3*l + 3*o. What is the units digit of l?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate the highest common divisor of 714 and 63.", "answer": "21", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate the remainder when 208 is divided by 38.", "answer": "18", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let l(b) be the second derivative of -b**5/20 - b**4/4 - 2*b**3/3 - b**2/2 + b. What is the units digit of l(-3)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Let j be -9 - -17 - (2 + 1). Suppose -77 = -3*b + t, 0*t + 121 = j*b + 2*t. What is the units digit of b?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let k(c) = -40*c**3 - 2*c**2 - 4*c - 3. What is the remainder when k(-1) is divided by 22?", "answer": "17", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Work out 136 - 0.3.", "answer": "135.7", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Subtract -0.4 from -108.9.", "answer": "-108.5", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Put together -0.3 and 504066.", "answer": "504065.7", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Let t = 96 + -96.0000134. What is t rounded to 6 decimal places?", "answer": "-0.000013", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let x(l) = l**3 - 9*l**2 + l + 7. Let f be x(9). Suppose -3*v - v = -f. Suppose 0*q - v*q = -28. Calculate the remainder when q is divided by 4.", "answer": "3", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Let b = 7228 - -7071. Suppose -3*i + b = 37099. Round i to the nearest 1000.", "answer": "-8000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Convert 30 (base 7) to base 13.", "answer": "18", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is 10/7 of a week in minutes?", "answer": "14400", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Let m = 71738345.9999979 + -71738340. Let d = 6.02 + -0.02. Let v = d - m. What is v rounded to 6 decimal places?", "answer": "0.000002", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 190 is divided by 25.", "answer": "15", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let i be 3 - -6 - (0 + -1). Let s be (-2)/(-3) + i/(-6). Let y = s - -14. List the prime factors of y.", "answer": "13", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Let c(b) be the third derivative of b**5/60 - b**4/12 - b**3/2 - 3*b**2. List the prime factors of c(4).", "answer": "5", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Convert 9.941945 centuries to decades.", "answer": "99.41945", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 2936 to the power of 1/5, to the nearest integer?", "answer": "5", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "How many litres are there in 86242.68ml?", "answer": "86.24268", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Round -0.00000178 to six dps.", "answer": "-0.000002", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate the greatest common factor of 19162 and 143.", "answer": "143", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let a = 14 + 14. Let x = a - 30.8. Round x to the nearest integer.", "answer": "-3", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let k(h) = -h**3 + 6*h**2 + 4*h - 1. Let f be k(3). Suppose 2*r - 104 = -3*g + f, -g + 2*r = -34. What is the tens digit of g?", "answer": "4", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate the common denominator of -7 + 7 + 121/(-10) and -39/2.", "answer": "10", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Let u = 0.12 + 3.88. Let d = -4.000125 + u. What is d rounded to 5 dps?", "answer": "-0.00013", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Suppose -t = 65 - 81. What is the remainder when t is divided by 9?", "answer": "7", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is 52261.74 litres in millilitres?", "answer": "52261740", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Multiply -0.2262 and -0.3.", "answer": "0.06786", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "What is the seventh root of 1197 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Convert -4 (base 12) to base 7.", "answer": "-4", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is 258500 rounded to the nearest 100000?", "answer": "300000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let l = 5 + -14. Let x = 18 + l. Suppose o + 6 = 2*o. Calculate the least common multiple of x and o.", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is 1575 to the power of 1/8, to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "In base 14, what is -4 - -a?", "answer": "6", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "812 divided by 28", "answer": "29", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is 75 (base 16) in base 10?", "answer": "117", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Let b = -8 - -10. Let w = 11 + -7. Suppose -19 = -c - w*c + 2*j, -j = b*c - 13. What are the prime factors of c?", "answer": "5", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "What is 23 - 689.3?", "answer": "-666.3", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Calculate 0.4 - -2138.", "answer": "2138.4", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Add together 239895 and -5.", "answer": "239890", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Suppose b - 3*t = 3, 2*t + t + 15 = 3*b. Calculate the smallest common multiple of 12 and b.", "answer": "12", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Let o(d) = d**2 - d - 3. Let g be o(-2). Let n(t) = -t**2 - 5*t + 30. Let b be n(-8). Suppose -g*m = -0*m - b. What are the prime factors of m?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Convert 683243.6 micrograms to grams.", "answer": "0.6832436", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Work out 567 * -0.8.", "answer": "-453.6", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Let h = 9 + 22. Let x = h - 31.065. What is x rounded to two decimal places?", "answer": "-0.07", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Suppose -3*g - 2*g + 7000000 = 0. What is g rounded to the nearest one million?", "answer": "1000000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 487 is divided by 124.", "answer": "115", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Suppose 0 = -5*k + 4*j + 164, 3*k - 4*j = 4*k - 28. What is the tens digit of k?", "answer": "3", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Let t(y) = -y**3 - 24*y**2 + y + 29. Calculate the lowest common multiple of t(-24) and 1.", "answer": "5", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is the units digit of (-3 + (-1276)/(-12))*(-6)/(-4)?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is 6016 to the power of 1/10, to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let v = -171 - -176. Suppose 0 = -4*j + 5*p + 36, p + 0 + 4 = 0. What is the remainder when v is divided by j?", "answer": "1", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is 0.113302 rounded to 3 dps?", "answer": "0.113", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 93 and 4929.", "answer": "93", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "In base 10, what is -5 + -264?", "answer": "-269", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Suppose 78 = -0*f + 3*f. Calculate the remainder when 75 is divided by f.", "answer": "23", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 5979 is divided by 1992.", "answer": "3", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "What is 0.6396436 decades in years?", "answer": "6.396436", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "In base 4, what is 1213 + 0?", "answer": "1213", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "Subtract 28529 from 0.02.", "answer": "-28528.98", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is -0.0000067216 rounded to six dps?", "answer": "-0.000007", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate the remainder when 407 is divided by 30.", "answer": "17", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let r be 1/(2 - (-9)/(-6)). Suppose -4*q = -10 - r. Let c = 2 + q. What is the units digit of c?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Convert 6.428279ml to litres.", "answer": "0.006428279", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Suppose 22 = 3*p - 2*p. Suppose -2*y + 3*y = p. Let k(w) = -w**2 - 6*w - 1. Calculate the remainder when y is divided by k(-3).", "answer": "6", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Suppose -3*d + 5*w = 55, 4*d + 2*w + 58 = w. Let r = -8 - d. What is the remainder when 13 is divided by r?", "answer": "6", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is -0.000131109 rounded to 6 decimal places?", "answer": "-0.000131", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the highest common factor of 5335 and 22.", "answer": "11", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Calculate the common denominator of -67/396 and -61/24.", "answer": "792", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Calculate the highest common factor of 192 and 24.", "answer": "24", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "-1 (base 5) to base 7", "answer": "-1", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Round -0.02133 to four decimal places.", "answer": "-0.0213", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "5*3/(-45)*(-21)/(-1)", "answer": "-7", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "What is -0.97 less than 33?", "answer": "33.97", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the eighth root of 12799 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "-1.6 * 15", "answer": "-24", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "In base 4, what is 100020 - 10?", "answer": "100010", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Multiply -0.19 and -0.07.", "answer": "0.0133", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Round -0.00115257 to four dps.", "answer": "-0.0012", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Divide 660 by -3.", "answer": "-220", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Suppose 0 = -5*m + 96 + 84. Suppose -2*b + 2 = -3*b + 5*u, 4*b = -2*u + m. What is the units digit of b?", "answer": "8", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is -3 (base 5) in base 6?", "answer": "-3", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Round -264.08 to the nearest 100.", "answer": "-300", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let h(z) = 32*z - 4. Let f be h(-7). Let o be (-2)/(-7) - f/(-14). Let w = -10 - o. What is the units digit of w?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is -1174000 rounded to the nearest 100000?", "answer": "-1200000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "How many nanometers are there in 6/5 of a micrometer?", "answer": "1200", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is -2919 rounded to the nearest one hundred?", "answer": "-2900", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let i = 0.18 - -7.82. Let v = i + -8.0001. What is v rounded to 4 dps?", "answer": "-0.0001", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is the remainder when 1025 is divided by 174?", "answer": "155", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "What is -0.0114845 rounded to 4 dps?", "answer": "-0.0115", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Subtract -0.6 from -1280569.", "answer": "-1280568.4", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is -0.00058525 rounded to four dps?", "answer": "-0.0006", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the smallest common multiple of 18 and 30?", "answer": "90", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Let j be (1/(-1))/((-1)/2). Suppose 37 + 88 = 5*p. Suppose -5*z = p, -24 = -j*a - 5*z + 1. Calculate the remainder when a is divided by 13.", "answer": "12", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the sixth root of 323 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Work out 0.37 * -5.", "answer": "-1.85", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Evaluate -4 - (2 + (-3 - -2)).", "answer": "-5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let s = 65 + -63. Let i(k) = 1 - 21*k. Let w be i(-1). Suppose 0 = 2*d - w - 6. Calculate the least common multiple of d and s.", "answer": "14", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Find the common denominator of 91/6 and -109/242.", "answer": "726", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "704.3 + 7", "answer": "711.3", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate -2335 - -489.", "answer": "-1846", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "-9 - 2 - -1 - -5", "answer": "-5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Calculate the smallest common multiple of 15 and 370.", "answer": "1110", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "What is the remainder when 107 is divided by 22?", "answer": "19", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is the remainder when 169 is divided by 54?", "answer": "7", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Suppose 4*m - 23 = -4*v - 7, -4 = 2*m - v. Let h be ((-2)/(-3))/((-6)/(-45)). Suppose h*g + 19 - 54 = m. List the prime factors of g.", "answer": "7", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "What is the third root of 718 to the nearest integer?", "answer": "9", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is the tens digit of 13808?", "answer": "0", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "What is the value of -5 + -1 + 2 + (0 - -2)?", "answer": "-2", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "What is the square root of 46216 to the nearest integer?", "answer": "215", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Convert -1 (base 8) to base 5.", "answer": "-1", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Let y = -30.981 - -31. Let i = 0.018 + y. Round i to 2 dps.", "answer": "0.04", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is 1236 to the power of 1/6, to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is -7.398 rounded to 0 dps?", "answer": "-7", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "List the prime factors of (258/8 + -4)/(2/8).", "answer": "113", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "What is the greatest common divisor of 43 and 2537?", "answer": "43", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Round -0.000005549 to 7 dps.", "answer": "-0.0000055", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the remainder when 202 is divided by 69.", "answer": "64", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is -12 (base 11) in base 10?", "answer": "-13", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is 14267 to the power of 1/2, to the nearest integer?", "answer": "119", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is the value of -4 - (1 + 2 - (-17 + 20))?", "answer": "-4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is the cube root of 257 to the nearest integer?", "answer": "6", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let s(x) = -33*x**2 - 2 + 7*x - 2 + 32*x**2. List the prime factors of s(4).", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Let n be (-11 - -291)*(-40000)/(-2). What is n rounded to the nearest 1000000?", "answer": "6000000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is the common denominator of -15/488 and -37/61?", "answer": "488", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Suppose -32 = -2*m - 2*m. Let z(o) = 15*o - 61. Calculate the remainder when z(5) is divided by m.", "answer": "6", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Evaluate 18/(-18) - (2 - 3).", "answer": "0", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let f be 0 - (3 + -3) - -3. Suppose 2*h = 2*m - 48, m - f*h = 4*m - 78. List the prime factors of m.", "answer": "5", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Calculate the highest common divisor of 37 and 3589.", "answer": "37", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let n = -793/2 + 412. Let l = -2 - -4. What is the common denominator of -2 + -2 + l + 47 and n?", "answer": "2", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Sum -4 and -7045.", "answer": "-7049", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Evaluate (1 - (5 - 11)) + 0.", "answer": "7", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is 0.009385 rounded to four decimal places?", "answer": "0.0094", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Suppose 2*p + 16 = 2*t, 2*t - 6 = -3*p + 10. What is the highest common divisor of t and 1?", "answer": "1", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Let i(u) = -u**2 - 4*u + 2. Let h be i(-4). Let n be (-1)/h + 177/6. Suppose -4*v - 4*b = -48, b = -0*v - 2*v + n. What is the tens digit of v?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate 318 - 1153.", "answer": "-835", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Convert 7 (base 12) to base 5.", "answer": "12", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Round 0.000002174 to 6 dps.", "answer": "0.000002", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let p = 17 + -10. Let y = p - 4. Suppose 4*o - c = 41, 5*o - y - 62 = 4*c. List the prime factors of o.", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Divide -165 by 11.", "answer": "-15", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Suppose -21 + 101 = 2*i. Let a be (-2)/((-23)/(-8) - 3). Calculate the highest common factor of a and i.", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Find the common denominator of 83/186 and 36/5.", "answer": "930", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Round -8270 to the nearest one thousand.", "answer": "-8000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "How many minutes are there between 3:31 PM and 10:59 PM?", "answer": "448", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Calculate (-20)/(-30)*(-42)/(-4).", "answer": "7", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Convert 110100 (base 2) to base 3.", "answer": "1221", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is the value of -10 + (4 - -2) - (-2 + -6)?", "answer": "4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let r = 5293/4 + -1334. What is the common denominator of -19/6 and r?", "answer": "12", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Suppose -2*z + 0 = 4*i - 20, -2*i = 5*z - 18. Let m = z + 12. What is the tens digit of m?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is the seventh root of 10796 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let n be 4/14 - (166/(-7) - 0). What is the greatest common divisor of n and 8?", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Calculate -2 + (3 - -1) - (-1 + 7).", "answer": "-4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "In base 10, what is -2504 + 8?", "answer": "-2496", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "-2 + (-3 - (4 - 10 - -4))", "answer": "-3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let j = 59 - 36. Let s = 43 - j. Calculate the lowest common multiple of s and 8.", "answer": "40", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 1798 is divided by 225.", "answer": "223", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Calculate 56/24*-3*-1.", "answer": "7", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Suppose -4*s + 28 = -c - 14, 3*c + 26 = 2*s. Suppose q = -8*q + 225. What is the greatest common divisor of q and s?", "answer": "5", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the square root of 8683 to the nearest integer?", "answer": "93", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Calculate ((-8)/10)/(8/(-60)).", "answer": "6", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Let r = 12 + -26. Let h = r + 13.99999905. What is h rounded to seven decimal places?", "answer": "-0.000001", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Calculate the highest common divisor of 96 and 2550.", "answer": "6", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Suppose 0 = -4*k + 4*t, 3*t = 2*t - 1. Let z = 5 + k. Suppose -3*f = 3*y - 15, -z*y + 10 = -2*y - 3*f. What is the units digit of y?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let q be ((-10)/(-15))/(4/30). Suppose q*l - 29 = -9. What are the prime factors of l?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Suppose -22*z + 25*z - 60 = 0. What is the smallest common multiple of 10 and z?", "answer": "20", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Let u(d) = -d**3 + 6*d**2 + 7*d - 2. Let s be u(7). Let t = 4 - s. What is the lowest common multiple of t and 6?", "answer": "6", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is 3 + -1 + -16 + 22 + -2?", "answer": "6", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Work out 0.008 - -0.3.", "answer": "0.308", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "How many minutes are there between 5:32 AM and 8:47 AM?", "answer": "195", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 496 and 32.", "answer": "16", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "How many minutes are there between 4:18 PM and 4:43 PM?", "answer": "25", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Divide 9 by -1.", "answer": "-9", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Multiply -0.3 and 0.42.", "answer": "-0.126", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Evaluate (-9 - -5) + (3 - 8 - -14).", "answer": "5", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "-2 + (-2 - -9) - 8", "answer": "-3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is -0.00000888 rounded to six decimal places?", "answer": "-0.000009", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Round 0.0000069196 to 7 dps.", "answer": "0.0000069", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Simplify (-1*sqrt(833)*-2)**2*-5.", "answer": "-16660", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "Divide 98 by -1.", "answer": "-98", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Calculate 1 - (-5 - (-5 - -4)).", "answer": "5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is the third root of 109897 to the nearest integer?", "answer": "48", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Suppose 0*j - 16 = -c - j, 5*c + 2*j - 71 = 0. What is the greatest common divisor of c and 26?", "answer": "13", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is the thousands digit of 13591?", "answer": "3", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "Let f(d) = 3*d**3 - d**2 - 3*d. Let n be f(2). Calculate the highest common factor of n and 70.", "answer": "14", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What are the prime factors of 751?", "answer": "751", "module": "numbers__list_prime_factors", "difficulty_score": 3}
+{"question": "Suppose 2*w - 2 = 0, 5*w - 4 = -n + 2. Suppose -5*f - 4 = -9. Suppose 5*d = -2*j + 5, -j - 4 + f = -3*d. Calculate the greatest common factor of n and d.", "answer": "1", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "In base 10, what is -330 + -5?", "answer": "-335", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Suppose -t - 5*z = -0*z + 13, -3*t + 37 = -4*z. Let c = 14 - t. Suppose 3*i + v - 12 = c, 4*i - 3*v - 21 = 0. What is the remainder when 15 is divided by i?", "answer": "3", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Evaluate -12 - -16 - ((-2 - -4) + 2).", "answer": "0", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Round -19525000 to the nearest 1000000.", "answer": "-20000000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Suppose -2*w - q - 2*q = -18, w - 9 = -3*q. Suppose -3*z + 12 = -w. Calculate the least common multiple of 7 and z.", "answer": "7", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Suppose -4*f - 2*y = -12, -y + 0*y = f - 3. Suppose -c - 18 = -x - f*x, -3*x + 22 = -5*c. Calculate the greatest common divisor of 8 and x.", "answer": "4", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Suppose -t - 5*q + 16 = 0, -9 = q - 4*q. Let u be t + -1 - (-3 + -1). Let m be (-1)/(7/(-2) + 3). Calculate the highest common factor of u and m.", "answer": "2", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the remainder when 37 is divided by 156/(-8)*(-2)/3?", "answer": "11", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Suppose -4*f + 0 = -4, 4*i - 21 = -f. Suppose 3*r + 0*r - 24 = 3*p, -i*p = -2*r + 31. Calculate the least common multiple of 1 and r.", "answer": "3", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is 0.00000435 rounded to 6 dps?", "answer": "0.000004", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "In base 9, what is 321 + 0?", "answer": "321", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "-1 + 0 + (4 - 0) + -6", "answer": "-3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let d = 3 + -4. Let x = d - -7. Calculate the smallest common multiple of 2 and (-40)/x*(-12)/8.", "answer": "10", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Let z = -158.9 + 166. Round z to 0 dps.", "answer": "7", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is -1.2 times 4.35?", "answer": "-5.22", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is the square root of 319 to the nearest integer?", "answer": "18", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is -12.8908 plus 0.5?", "answer": "-12.3908", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let c(z) = -z**3 - 2*z**2 + z - 4. Let h be c(-3). List the prime factors of (0 + 7)*2/h.", "answer": "7", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Calculate the highest common divisor of 3585 and 120.", "answer": "15", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let k = -4 + 26. Suppose 5*g - 48 = k. Calculate the least common multiple of g and 16.", "answer": "112", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "978 divided by -326", "answer": "-3", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is the remainder when 257 is divided by 57?", "answer": "29", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Calculate the lowest common multiple of 280 and 20.", "answer": "280", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Suppose -2*p + 1 = -5. Suppose 5*h + 2*k = 51, p*h - 5*k = 4*h - 1. What is the tens digit of h?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is the remainder when 216 is divided by 32?", "answer": "24", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "What is the cube root of 97805 to the nearest integer?", "answer": "46", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is 30776 to the power of 1/2, to the nearest integer?", "answer": "175", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is the value of -5 - -6 - (-2 - -3 - 2)?", "answer": "2", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Suppose -4*k + 180 = 2*d, k + 0*d = -d + 43. Suppose k + 53 = 5*l. What is the units digit of l?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Simplify (1 + -3 + (sqrt(320) - (0 + sqrt(320))))**2.", "answer": "4", "module": "arithmetic__simplify_surd", "difficulty_score": 4}
+{"question": "Let w = 12 + -7. Suppose -h - 12 = -w*h. What are the prime factors of h?", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Let i be ((-52)/6)/(1/(-3)). Let y = 159 + -94. Calculate the highest common divisor of i and y.", "answer": "13", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Evaluate (-8)/(-4 - -6) - -3.", "answer": "-1", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Let g(t) = t**2 + 6*t + 9. Suppose 4 = -r + 2, -l = -3*r + 1. What is the units digit of g(l)?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate 5 - (6 + -1 + -3).", "answer": "3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Work out -4.86 * 0.4.", "answer": "-1.944", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is -0.3 - -8982?", "answer": "8981.7", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the highest common divisor of 66 and 308?", "answer": "22", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let j(z) = -z**3 + 6*z**2 - 6*z + 5. Let w be j(5). Let t = 9 - 5. List the prime factors of -2 + w - (-44)/t.", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Suppose 4*y - 10 = -3*b, 10*y - 5*b = 5*y - 5. What is the units digit of 25 - -3*y/3?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 437 and 46.", "answer": "23", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Suppose 16 = 4*y, -2*b + 7*b = -5*y + 20. Suppose d + 4*d - 445 = b. Suppose 5*i - 41 = d. Calculate the remainder when i is divided by 14.", "answer": "12", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "-124 divided by 31", "answer": "-4", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Calculate ((-12)/(-14))/(36/(-126)).", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the third root of 2260 to the nearest integer?", "answer": "13", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let a be (-1)/3 - (-43)/3. Let r(l) = -5*l + 4*l + a + 2*l. What is the units digit of r(-8)?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let m(x) be the third derivative of -x**6/120 - x**5/10 + x**4/4 - 3*x**3/2 + 7*x**2. Let n be m(-9). What is the greatest common factor of n and 20?", "answer": "20", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is 74937 rounded to the nearest ten thousand?", "answer": "70000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate 8424 divided by 6.", "answer": "1404", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "What is (1/(-3))/(10/30)?", "answer": "-1", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the value of 3 - (1 - -2 - -4)?", "answer": "-4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Round 0.00099396 to six decimal places.", "answer": "0.000994", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is 0.007695 rounded to 3 dps?", "answer": "0.008", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the smallest common multiple of 307 and 3.", "answer": "921", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Simplify (sqrt(112) - -2*sqrt(112)*2)**2.", "answer": "2800", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "2 - -2 - (-2 + (5 - -7))", "answer": "-6", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is 9795.137ng in micrograms?", "answer": "9.795137", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is the common denominator of 115/24 and -47/164?", "answer": "984", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Suppose -3*a + 523 - 5203 = 0. Let f = a + 6760. What is f rounded to the nearest 1000?", "answer": "5000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is the eighth root of 24509 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Calculate the remainder when 700 is divided by 58.", "answer": "4", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate 1 + -8 - ((2 - 4) + 0).", "answer": "-5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Calculate the highest common factor of 6939 and 27.", "answer": "27", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let r(s) = -2*s**2 - s + 5. Let v be r(17). What is v rounded to the nearest one hundred?", "answer": "-600", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Calculate -0.37 - -0.51.", "answer": "0.14", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the sixth root of 1927 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Evaluate 7 - (-7 + 3 + 8).", "answer": "3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Convert -2 (base 3) to base 4.", "answer": "-2", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is 2640 to the power of 1/10, to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let z(i) = 8 - i**2. Let x(p) = -p**2 - p + 1. Let n(t) = -2*x(t) + z(t). What is the units digit of n(-6)?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is (10 + (-312)/32)*-4?", "answer": "-1", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Multiply 106 and 3.", "answer": "318", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "How many minutes are there between 9:16 AM and 8:00 PM?", "answer": "644", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let u be -12*(1 + (-13)/4). Suppose u = 4*z + 3*q, -2*z + 1 = -0*z - q. Suppose -z*p + 75 = -0*p. What is the greatest common divisor of 10 and p?", "answer": "5", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Sum -0.07 and -132.", "answer": "-132.07", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "-188 divided by 2", "answer": "-94", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Let z(d) = 12*d + 1. Let s be z(2). Suppose 4*t - 13 = 7. Suppose 3*m = -t*h + 44 - 4, 30 = 3*m + 3*h. What is the highest common factor of m and s?", "answer": "5", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Product of 0.3 and -591.", "answer": "-177.3", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "How many minutes are there between 5:42 AM and 9:06 AM?", "answer": "204", "module": "measurement__time", "difficulty_score": 3}
+{"question": "What is the remainder when 3803 is divided by 27?", "answer": "23", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "How many months are there in 10/3 of a century?", "answer": "4000", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Round -0.040017 to 3 decimal places.", "answer": "-0.04", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Suppose -3*y - 4 = y, 0 = 2*c + 4*y - 24. Suppose 8*g + 25 = 3*g, 0 = 5*v + g - 20. Calculate the remainder when c is divided by v.", "answer": "4", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Let j = -2 + 4. Suppose j*g = -3*n + 3*g - 5, 5*n + 1 = -2*g. Let p = 3 + n. What is the units digit of p?", "answer": "2", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is -0.1 times 25.3?", "answer": "-2.53", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Suppose 0*h = h - 45. Let n(p) = 3*p - 3. Let s be n(-2). Let l be (-1 + 28)*(-6)/s. What is the greatest common divisor of h and l?", "answer": "9", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is -0.2 times -2.067?", "answer": "0.4134", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Let h = -38 - -89. What is the highest common factor of h and 17?", "answer": "17", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Let j(b) = -b**3 + 2*b**2 + b + 4. Let d be j(-2). What is the greatest common factor of d and 72?", "answer": "18", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the difference between 0.1024892 and -6?", "answer": "6.1024892", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the highest common factor of 113 and 31979?", "answer": "113", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Suppose -c - 43 = -2*o + 11, 5*c + 9 = o. What are the prime factors of o?", "answer": "29", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "What is the cube root of 22380 to the nearest integer?", "answer": "28", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 128 and 12.", "answer": "4", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "How many months are there in five quarters of a year?", "answer": "15", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Round 0.00045 to four dps.", "answer": "0.0005", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the common denominator of -95/72 and -3/200.", "answer": "1800", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "In base 10, what is -22 - 7?", "answer": "-29", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "What is 28 less than -15458?", "answer": "-15486", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Round -170.77 to the nearest integer.", "answer": "-171", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate the smallest common multiple of 520 and 160.", "answer": "2080", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the highest common factor of 7209 and 162?", "answer": "81", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Work out -0.1 - 9.5.", "answer": "-9.6", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate the least common multiple of 138 and 336.", "answer": "7728", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Calculate the remainder when 321 is divided by 14.", "answer": "13", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Let h(d) = 7*d. Let s be 1 + (1 - 2) - -2. Suppose 27 = 4*w - w - 3*t, -2*w - 5*t = 3. Calculate the least common multiple of h(s) and w.", "answer": "42", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Let t(n) = 6 - 8*n. Calculate the lowest common multiple of 18 and t(-2).", "answer": "198", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Suppose 0 = -5*g + 69 + 686. What is the hundreds digit of g?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is -0.00035365 rounded to six dps?", "answer": "-0.000354", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let y(l) = -56000*l. Let u = 5 + 10. Suppose -3*b = -0 + u. Let k be y(b). What is k rounded to the nearest one hundred thousand?", "answer": "300000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is the tenth root of 14087 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "4 - 0 - (2 + -2 - -7)", "answer": "-3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Suppose 2*c = -c + 3*t - 4224, 2*c + 2816 = -2*t. Let a be -3 - (c + 4 - -1). Round a to the nearest one hundred.", "answer": "1400", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let f(i) = -5 - 3*i + 12*i + 5. Let a be f(5). Calculate the highest common divisor of 30 and a.", "answer": "15", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Simplify -4*(sqrt(475) - (sqrt(475) + -2))**2.", "answer": "-16", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "Suppose 0 = -x + 12 - 2. Suppose -p + 56 = -x. Calculate the highest common factor of p and 6.", "answer": "6", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is 110.9694 centuries in decades?", "answer": "1109.694", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Round -55.637 to the nearest 10.", "answer": "-60", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "In base 10, what is -1379 - 4?", "answer": "-1383", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "Suppose 0 = 2*i - 5*i + 6. Suppose 36 = i*v + v. What is the remainder when 33 is divided by v?", "answer": "9", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Calculate (10 - 9) + (4 - -6 - 3).", "answer": "8", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "-1368 divided by 342", "answer": "-4", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Let m(u) = 1 + 0*u + 0*u + 0 + 5*u**2. Let r(o) = o + 4. Let n be r(-5). Calculate the remainder when 11 is divided by m(n).", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is the greatest common factor of 21230 and 110?", "answer": "110", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "How many minutes are there between 9:05 AM and 10:04 AM?", "answer": "59", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 3345 and 195.", "answer": "15", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "What is 1366 to the power of 1/5, to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is the thousands digit of 18498?", "answer": "8", "module": "numbers__place_value", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 460 and 299.", "answer": "23", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is 67940 to the power of 1/3, to the nearest integer?", "answer": "41", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let s = -10 + 9. Let u be (s - -3)/(6/1590). Round u to the nearest one hundred.", "answer": "500", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is the value of 4/((-64)/(-8))*4/(-2)?", "answer": "-1", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Calculate the lowest common multiple of 176 and 220.", "answer": "880", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the cube root of 8416 to the nearest integer?", "answer": "20", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Evaluate 7 + -5 + 10/(3 + -5).", "answer": "-3", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let d be 5/(-25) - 18/10. Let j(q) = 3*q**2 - 2*q - 1. What is the tens digit of j(d)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Suppose -17 = t + 3*w + 9, 4*t + 56 = 4*w. Let u = t - -30. List the prime factors of u.", "answer": "13", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "In base 10, what is -1243 - 3?", "answer": "-1246", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "What is the highest common factor of 27 and 837?", "answer": "27", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is the tens digit of 21899?", "answer": "9", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "What is the eighth root of 6042 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is -0.0000001633 rounded to seven dps?", "answer": "-0.0000002", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "16+-57256", "answer": "-57240", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "-28*120", "answer": "-3360", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What are the prime factors of 1741?", "answer": "1741", "module": "numbers__list_prime_factors", "difficulty_score": 4}
+{"question": "What is -6957 + -811?", "answer": "-7768", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "-290 divided by -29", "answer": "10", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is the highest common factor of 202 and 12928?", "answer": "202", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let o(p) = 2 - 4 + 19*p + 3. Let g be o(1). What is the greatest common divisor of g and 40?", "answer": "20", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 1 - 3 - -51*3 is divided by 39.", "answer": "34", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is -0.002236 rounded to four decimal places?", "answer": "-0.0022", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 936 and 18.", "answer": "18", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Suppose -5*f + 2*t + 12 = -14, -3*f = -3*t - 21. What is the least common multiple of f and 9?", "answer": "36", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Convert -3 (base 11) to base 8.", "answer": "-3", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "0.012 times 2", "answer": "0.024", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Suppose 83 = 5*v - 3*t, 5*v - t = 133 - 52. Suppose z - 5*z = -v. What is the lowest common multiple of z and 4?", "answer": "4", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 7 is divided by (-3)/(-6*(-1)/(-4)).", "answer": "1", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is 0.003898 rounded to four dps?", "answer": "0.0039", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let m = 0.317 + -3.327. Let x = -3 - m. Let l = x - -0.39. What is l rounded to the nearest integer?", "answer": "0", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "117 divided by 9", "answer": "13", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "What is 3077 to the power of 1/4, to the nearest integer?", "answer": "7", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Calculate -3160 divided by 790.", "answer": "-4", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Round -0.19186 to two dps.", "answer": "-0.19", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the remainder when 476 is divided by 165.", "answer": "146", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is the thousands digit of 17605?", "answer": "7", "module": "numbers__place_value", "difficulty_score": 4}
+{"question": "How many minutes are there between 1:10 AM and 3:05 AM?", "answer": "115", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Let o be 273/12 - (-3)/(-24)*-2. What is the greatest common divisor of 184 and o?", "answer": "23", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Suppose -2*f - 16 = z, 0 = 2*z + 5*f - 0*f + 36. Let j = z - -14. Suppose -2*o + j - 2 = 0. What are the prime factors of o?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "0 (base 12) to base 5", "answer": "0", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Convert 7 (base 9) to base 2.", "answer": "111", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Calculate the highest common divisor of 273 and 117.", "answer": "39", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is 278 to the power of 1/2, to the nearest integer?", "answer": "17", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is 25/4 of a millennium in years?", "answer": "6250", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let g(k) = -2*k**2 - 5*k - 3. Let q be g(-3). What is the units digit of (-165)/q + 2/(-4)?", "answer": "7", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "-39 divided by 13", "answer": "-3", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Let q(t) = t**3 + 6*t**2 - 2*t - 7. What is the remainder when 22 is divided by q(-6)?", "answer": "2", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is -2849000 rounded to the nearest 100000?", "answer": "-2800000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the greatest common divisor of 105 and 455?", "answer": "35", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Multiply -8 and 149.", "answer": "-1192", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Let l = 3.20035 + -3.2. What is l rounded to 4 decimal places?", "answer": "0.0004", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "3 (base 13) to base 14", "answer": "3", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is ((-9)/2 + 6)*20/6?", "answer": "5", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Round 8280000 to the nearest 100000.", "answer": "8300000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "How many minutes are there between 2:36 PM and 4:18 PM?", "answer": "102", "module": "measurement__time", "difficulty_score": 4}
+{"question": "In base 12, what is 0 - -92?", "answer": "92", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Let b be ((-2)/6)/(11/(-33)). Suppose a + b - 17 = 0. List the prime factors of a.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "What is -18.74 times 0.3?", "answer": "-5.622", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Calculate the smallest common multiple of 936 and 14.", "answer": "6552", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Calculate ((-18)/21)/(12/56).", "answer": "-4", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Let m = -18 + 26. Let z = 45 - 13. Let d = z - 18. Calculate the lowest common multiple of d and m.", "answer": "56", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Simplify ((-1*4*sqrt(121))/sqrt(11))**2.", "answer": "176", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "Calculate the common denominator of -101/342 and 113/114.", "answer": "342", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Calculate the greatest common factor of 8 and 472.", "answer": "8", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "What is 3/40 of a litre in millilitres?", "answer": "75", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let g be 3/((-3)/(-21)*1). Suppose 0 = -4*z + 5*k + g, z - 1 - 2 = -k. Suppose -6 = -z*r + r. Calculate the highest common divisor of 16 and r.", "answer": "2", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is ((-66)/(-110))/(9/75)?", "answer": "5", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is 13/4 of a gram in milligrams?", "answer": "3250", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Round -0.000000781 to 7 decimal places.", "answer": "-0.0000008", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is (-1 - (3 + -1)) + 0 - -5?", "answer": "2", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Suppose -760 = -5*i + 160. Calculate the greatest common factor of i and 23.", "answer": "23", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Calculate the common denominator of -27/217 and 121/42.", "answer": "1302", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Let h = 0.5 - 0.83. Let i = h - -0.311. Round i to three dps.", "answer": "-0.019", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Round 0.29821 to two dps.", "answer": "0.3", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the remainder when 162 is divided by 78?", "answer": "6", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is 84059.11l in millilitres?", "answer": "84059110", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Round -0.1799 to one decimal place.", "answer": "-0.2", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is the thousands digit of 9187?", "answer": "9", "module": "numbers__place_value", "difficulty_score": 4}
+{"question": "What is 22.7 less than 2.33?", "answer": "-20.37", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let l be (-3 + 4)/((-2)/(-8)). Let f be 2/(-1*l/(-14)). Suppose -2*m = -m - f. What is the units digit of m?", "answer": "7", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Evaluate ((-8)/6)/(4/(-6)).", "answer": "2", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "How many months are there in thirty-two fifths of a millennium?", "answer": "76800", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Suppose 2*g + 49 + 13 = -2*v, -33 = g + 3*v. Let b = g + 70. Calculate the greatest common divisor of b and 8.", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is the third root of 696 to the nearest integer?", "answer": "9", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let h(v) = v**3 + 25*v**2 - 2*v - 48. What is the least common multiple of h(-25) and 8?", "answer": "8", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Calculate 10545 divided by 57.", "answer": "185", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "How many minutes are there between 5:12 PM and 11:39 PM?", "answer": "387", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let y be ((-5)/15)/(2/(-18)). Let q be (-1 + y)*-1 - -11. Suppose 6*z - 5*z - q = 0. What are the prime factors of z?", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Let i = 2 - -7. Let z = i + -3. Let u be (-20)/z*54/(-4). What is the highest common divisor of 9 and u?", "answer": "9", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Divide -10585 by 73.", "answer": "-145", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Calculate the highest common divisor of 12467 and 91.", "answer": "91", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate the lowest common multiple of 220 and 7.", "answer": "1540", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Let q = 59.85 + 0.15. Let c = 60.0000205 - q. What is c rounded to six dps?", "answer": "0.000021", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Calculate ((-6)/(-1))/((-17)/102*12).", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the value of (4/(-5))/(-3*8/60)?", "answer": "2", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the value of (-21)/35 - (-24)/15 - 0?", "answer": "1", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Suppose 3*a - 24 = -4*g, -2*g - 8 = -a - 5*g. What are the prime factors of a?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Let s = 30 - -22. Let h = -31 + s. Let w be 8/3*h/4. What is the highest common divisor of 28 and w?", "answer": "14", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the ninth root of 808 to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Suppose 0 = -7*m + 32*m - 600. What is the remainder when 142 is divided by m?", "answer": "22", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is 786900 rounded to the nearest 10000?", "answer": "790000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is the third root of 1506 to the nearest integer?", "answer": "11", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is the common denominator of 83/300 and 103/150?", "answer": "300", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Convert 2 (base 4) to base 2.", "answer": "10", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is 21/8 of a meter in millimeters?", "answer": "2625", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 0.01264 less than -0.2?", "answer": "-0.21264", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "(8/(-12))/(3/18)", "answer": "-4", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let r = -0.061 - -0.06174. What is r rounded to four decimal places?", "answer": "0.0007", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let q be (4/10)/((-3)/(-15)). Let g = q - -2. List the prime factors of g.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Calculate 3/(-4*9/24).", "answer": "-2", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Calculate 0 - 104435.", "answer": "-104435", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Add -1.03 and 33.", "answer": "31.97", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Calculate 9 + -9 + (3 - -6).", "answer": "9", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Calculate 2 - (-4 - (-6 - 1 - -1)).", "answer": "0", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Divide -1120 by 20.", "answer": "-56", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Suppose -5*a + 55 = 5*f, -2*f + 6*f = 16. What is the remainder when 124 is divided by a?", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Let s = 186 + -185.99999838. Round s to seven decimal places.", "answer": "0.0000016", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 345 is divided by 101.", "answer": "42", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate -0.1*0.128.", "answer": "-0.0128", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "How many minutes are there between 3:14 PM and 3:26 PM?", "answer": "12", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Suppose -2*g = -0*g + 4*t - 24, -4*g = -4*t. What is the smallest common multiple of g and 28/5 + (-4)/(-10)?", "answer": "12", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "In base 8, what is 2702 + 4?", "answer": "2706", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Round 4707000 to the nearest 1000000.", "answer": "5000000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "-244+17", "answer": "-227", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Calculate -285 divided by -95.", "answer": "3", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "0.01 + -0.092", "answer": "-0.082", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the lowest common multiple of 123 and 27?", "answer": "1107", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Suppose 130 = 4*q + 442. Calculate the remainder when (q/(-4))/(6/8) is divided by (-9)/(-6)*(7 + -1).", "answer": "8", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the tens digit of 11729?", "answer": "2", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "Suppose 16 = 2*y - 2*m, -m = 5*y - 2*y - 24. Let w = y + -5. What is the remainder when 5 is divided by w?", "answer": "2", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "((-10)/(-20))/(-1*(-2)/(-20))", "answer": "-5", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "How many minutes are there between 3:35 AM and 11:35 AM?", "answer": "480", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Calculate the highest common divisor of 3845 and 2.", "answer": "1", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Round -274.65 to the nearest ten.", "answer": "-270", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the remainder when 483 is divided by 155.", "answer": "18", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "How many hours are there in 15/4 of a week?", "answer": "630", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Evaluate (-1 - -4) + 15/(-15).", "answer": "2", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Let z = 16 + 8. Let h(r) = -2*r**3 + r**2 - 2*r. Let v be h(-2). Suppose 0 = -5*f + v + 41. What is the remainder when z is divided by f?", "answer": "11", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Find the common denominator of 121/70 and -125/168.", "answer": "840", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the remainder when 234 is divided by 45?", "answer": "9", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is 90.8 + 2534?", "answer": "2624.8", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Work out 0.03 + 0.0105.", "answer": "0.0405", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Round -2355400 to the nearest one hundred thousand.", "answer": "-2400000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the remainder when 662 is divided by 105?", "answer": "32", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is the greatest common factor of 135 and 2889?", "answer": "27", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 24 and 20988.", "answer": "12", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "In base 5, what is 1 + 41?", "answer": "42", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "What is 0.027342 rounded to 3 decimal places?", "answer": "0.027", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "How many minutes are there between 3:06 AM and 10:15 AM?", "answer": "429", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let y be 41/3 - (-3)/9. Suppose 5*h + y + 8 = a, -3*a = -h - 10. What are the prime factors of a?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Suppose 2*t + 3*d = -1, -5*t - 3*d + 4*d + 6 = 0. Let j be (3 - 0) + 71/t. Let x be (-6)/24 + j/8. What is the greatest common factor of x and 6?", "answer": "3", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Calculate the smallest common multiple of 78 and 8.", "answer": "312", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Round 103313000 to the nearest one million.", "answer": "103000000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "How many minutes are there between 1:29 PM and 2:05 PM?", "answer": "36", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Calculate the least common multiple of 144 and 68.", "answer": "2448", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "In base 8, what is -3 + 101?", "answer": "76", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Calculate (5 - (-4 + 5)) + -3.", "answer": "1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Calculate 0.4 - 4.22.", "answer": "-3.82", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Suppose 0 = -3*t + 2*a + 299, 3*t = 2*a - 4*a + 307. What is the tens digit of t?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is -0.18 minus 180?", "answer": "-180.18", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is -1 - (4 + -8) - 4?", "answer": "-1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Suppose -p + 8 = -2. Let q = -7 - -11. Suppose q*w = -0*w + 40. Calculate the highest common divisor of p and w.", "answer": "10", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Suppose g = 4*q + 44, 0*g - 3*g = -4*q - 100. Calculate the highest common factor of g and 7.", "answer": "7", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is -0.1464 less than -76?", "answer": "-75.8536", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the cube root of 8500 to the nearest integer?", "answer": "20", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let i = 2 - -2. Suppose 0 = i*n - 2*t - 40, -5 + 3 = t. Suppose 4*h - 6 - 6 = 0. What is the smallest common multiple of n and h?", "answer": "9", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is the thousands digit of 10452?", "answer": "0", "module": "numbers__place_value", "difficulty_score": 4}
+{"question": "What is 4854 to the power of 1/2, to the nearest integer?", "answer": "70", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "In base 7, what is -2104 - 1?", "answer": "-2105", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Calculate the remainder when 346 is divided by 113.", "answer": "7", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is -780523 - 0.04?", "answer": "-780523.04", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate 22145 divided by -5.", "answer": "-4429", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Add together 0.07 and 3189.33.", "answer": "3189.4", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "How many minutes are there between 5:36 AM and 7:20 AM?", "answer": "104", "module": "measurement__time", "difficulty_score": 4}
+{"question": "Suppose -50 = -9*o + 4*o. Suppose -3*v - 2*v = o. Let i be v/(-8) - (-1518)/8. Round i to the nearest 100.", "answer": "200", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is 2333 to the power of 1/5, to the nearest integer?", "answer": "5", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let i be 3 + 2/((-6)/(-9)). Suppose 3*y + 60 = i*y. What is the remainder when y is divided by (-2)/(-3)*21/2?", "answer": "6", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is the tenth root of 2637 to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "-0.4 - -746187", "answer": "746186.6", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "How many litres are there in 70.81508 millilitres?", "answer": "0.07081508", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "What is -13131 minus 9?", "answer": "-13140", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate (-10 - -5 - 0) + (7 - -3).", "answer": "5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is 3540 divided by 118?", "answer": "30", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Let a be 16/10*40/16. Suppose -a*i + 5*c = -347, 3*i = 2*c + 199 + 63. What is the highest common divisor of i and 11?", "answer": "11", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Calculate the greatest common divisor of 81 and 351.", "answer": "27", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Calculate (12/(-18))/(6/90).", "answer": "-10", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Calculate -3*3.7.", "answer": "-11.1", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Round 10066 to the nearest 1000.", "answer": "10000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the least common multiple of 75 and 16?", "answer": "1200", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "What is 7/4 of a litre in millilitres?", "answer": "1750", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is the common denominator of -87/11660 and 69/530?", "answer": "11660", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let g(t) = t**2 + 5*t - 5. Let d be g(-6). Let h be d/(1/(-4)*-2). Let j(y) = 13*y. Calculate the remainder when j(h) is divided by 7.", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Round -2544400 to the nearest 10000.", "answer": "-2540000", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "How many litres are there in 5.588546 millilitres?", "answer": "0.005588546", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is the third root of 22820 to the nearest integer?", "answer": "28", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Evaluate 0/(18*(51/18)/17).", "answer": "0", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "List the prime factors of 11329.", "answer": "11329", "module": "numbers__list_prime_factors", "difficulty_score": 3}
+{"question": "Let q = -3.4 - -3.3987. What is q rounded to three dps?", "answer": "-0.001", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Suppose 0 = -4*d + d + 36. Suppose w = -5*h + 5*w + 36, -2*w = -h + d. What are the prime factors of h?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "In base 5, what is 10 - -420?", "answer": "430", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Round 27097.5 to the nearest one thousand.", "answer": "27000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "-1+-32460", "answer": "-32461", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the third root of 858 to the nearest integer?", "answer": "10", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "How many years are there in 1702.99 centuries?", "answer": "170299", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let p(y) be the first derivative of y**3 - 3*y**2/2 - y + 2. Let w(m) = -m**2 + m + 1. Let k(x) = 2*p(x) + 5*w(x). What are the prime factors of k(3)?", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Let t be -8*(-3)/(-4)*3. What is t rounded to the nearest 10?", "answer": "-20", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Suppose 0 = 5*u - 11 + 1. Suppose u*h + 3*h - 80 = 0. Calculate the greatest common divisor of 80 and h.", "answer": "16", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the value of 0 + 5 + (1 - 7 - -4)?", "answer": "3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Simplify -4*(sqrt(45)*-2*5 + sqrt(1125)*-2)**2.", "answer": "-72000", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "What is 9/10 of a century in decades?", "answer": "9", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 1324.917 micrometers in meters?", "answer": "0.001324917", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is the common denominator of 107/10 and ((-4)/(-10))/((-11)/((-2255)/10))?", "answer": "10", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "How many microseconds are there in 44/5 of a millisecond?", "answer": "8800", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Convert 8907.14 years to centuries.", "answer": "89.0714", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Calculate the common denominator of 1/63 and 127/6.", "answer": "126", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let j be (9 - 0)*32/3. Suppose -3*t = 3*k - j, 2*k - 7*k - t + 156 = 0. Let o be 2 - 1 - k/(-1). What is the greatest common factor of 8 and o?", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is 9802 to the power of 1/2, to the nearest integer?", "answer": "99", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "-7 (base 9) to base 16", "answer": "-7", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Evaluate (-15)/(-21)*(-7)/(-1).", "answer": "5", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Let j = 3677 + -6107. Let d be 4/(-10) + (-952)/j. Let n = d + 14345/972. What is the common denominator of -51/8 and n?", "answer": "8", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Put together -1.21 and -11657.", "answer": "-11658.21", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the greatest common divisor of 146 and 7592?", "answer": "146", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is the thousands digit of 29666?", "answer": "9", "module": "numbers__place_value", "difficulty_score": 4}
+{"question": "Let r = -6351/47 - -314423/1786. Let o = -11/19 - r. Let c = -448/11 - o. What is the common denominator of c and -59/22?", "answer": "22", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Let c = 0 - -6. Let i be 3*c/(-9)*-2. Suppose -5*s - i*p = -36, -2*s - 2*s + 4*p = 0. What are the prime factors of s?", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "What is the tens digit of 19509?", "answer": "0", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "What is the value of 7 - 12 - (-7 + 2)?", "answer": "0", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Simplify ((1*sqrt(2178) - sqrt(2178)) + sqrt(18) - sqrt(18))/sqrt(9).", "answer": "0", "module": "arithmetic__simplify_surd", "difficulty_score": 4}
+{"question": "Calculate the remainder when 201 is divided by 31.", "answer": "15", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate the remainder when 2927 is divided by 29.", "answer": "27", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "How many minutes are there between 4:51 AM and 10:36 AM?", "answer": "345", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Subtract 11.21 from -5.", "answer": "-16.21", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Let i = 1 - -4. Suppose -i*b = 2*d - 3*d - 20, d - 5 = 0. Suppose -2*u + b*u = 12. List the prime factors of u.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Convert 19988.45 nanometers to micrometers.", "answer": "19.98845", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Let l be -11799998 + -3 - (4 + -5). What is l rounded to the nearest one million?", "answer": "-12000000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let l(g) = g**3 + 12*g**2 + 10. What is the tens digit of l(-12)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is the highest common factor of 2652 and 4212?", "answer": "156", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "What is 38119 to the power of 1/6, to the nearest integer?", "answer": "6", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Calculate the remainder when 2025 is divided by 673.", "answer": "6", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let n(m) = m**3 - 5*m**2 + 6*m - 5. Let u be n(4). Suppose 2*a - 60 = -u*a. What is the highest common divisor of 60 and a?", "answer": "12", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Suppose 2*i + t - 3*t - 2 = 0, 4*t = 16. Suppose 6*s - i*s = 4. Suppose 7*z - s*z = 18. Calculate the remainder when 11 is divided by z.", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Suppose 4*w + w - 154 = 3*k, 0 = -4*w + 5*k + 118. What is the units digit of w?", "answer": "2", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Round 0.00051257 to 5 dps.", "answer": "0.00051", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate -52 - -0.082.", "answer": "-51.918", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "How many minutes are there between 12:41 PM and 3:00 PM?", "answer": "139", "module": "measurement__time", "difficulty_score": 3}
+{"question": "What is 17819000 rounded to the nearest 1000000?", "answer": "18000000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let c be 16/9 + 4/18. Suppose -12 = -0*t - c*t. Calculate the smallest common multiple of 11 and (-4)/t + (-105)/(-9).", "answer": "11", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is 10913 to the power of 1/4, to the nearest integer?", "answer": "10", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Suppose -5*k - 3*s = -185, 5*k + 2*s = 2*k + 112. Let t = k + -2. What is the tens digit of t?", "answer": "3", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate ((-3)/5)/(11/55).", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Let p = -20050985 + 20050985.10300049. Let t = 0.103 - p. Round t to 7 decimal places.", "answer": "-0.0000005", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let q = -7922905/94 - -84287. What is the common denominator of 97/20 and q?", "answer": "940", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Suppose 35 = -4*y + 5*y. Calculate the greatest common factor of y and 5.", "answer": "5", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Let c be (-4)/(-14) + (-164)/(-14). Let i = -9 + 16. Let u = c - i. What is the units digit of u?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is the third root of 3860 to the nearest integer?", "answer": "16", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Suppose -t + 7 + 1 = 0. Suppose -d + t = v + 2*v, -5*d - 20 = 0. What is the remainder when (-45)/(-6) + 1/(-2) is divided by v?", "answer": "3", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Suppose -3*s + 2*s = -2*z + 121, 4*s = -3*z + 165. Calculate the remainder when z is divided by 5.", "answer": "4", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the tenth root of 138727 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is 72 divided by -12?", "answer": "-6", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Let u(m) = m - 1. Let t be u(1). Suppose -f - 10 = -2*f + q, t = -2*f - 2*q. What is the units digit of f?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is 5393 to the power of 1/7, to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is 701.6689ml in litres?", "answer": "0.7016689", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "What is -2015 divided by 155?", "answer": "-13", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "How many minutes are there between 2:05 PM and 4:44 PM?", "answer": "159", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Convert 202 (base 5) to base 8.", "answer": "64", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Let z = -3 - -5.5. Let d = 2.555 - z. Round d to 2 decimal places.", "answer": "0.06", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Calculate the common denominator of -15/34 and 61/22.", "answer": "374", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Calculate the lowest common multiple of 315 and 140.", "answer": "1260", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let f = -49.885 - -50. Let m = -4.985 - f. Round m to the nearest integer.", "answer": "-5", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is the square root of 2172 to the nearest integer?", "answer": "47", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "How many minutes are there between 2:17 PM and 8:59 PM?", "answer": "402", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Round 0.37359 to two decimal places.", "answer": "0.37", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Round -52.63 to zero dps.", "answer": "-53", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the smallest common multiple of 392 and 1176?", "answer": "1176", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Let y(b) = b**3 + 7*b**2 + b - 3. Let v be y(-7). Let l = 21 + v. Calculate the highest common divisor of l and 22.", "answer": "11", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Suppose 3*d - 2*b = d - 6, 3*d + 15 = 5*b. Let l = 1 + d. Suppose l + 9 = y. What is the units digit of y?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Convert 59.95688ng to grams.", "answer": "0.00000005995688", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Round 0.000424 to 5 dps.", "answer": "0.00042", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 270 and 18495.", "answer": "135", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let f(r) = -r**3 - 7*r**2 - r + 13. Let w be f(-7). What is the highest common divisor of 8 and w?", "answer": "4", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is -2 (base 14) in base 13?", "answer": "-2", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Let i = 0.57 + 0.03. Let b = -1.9 + 2.17. Let f = b - i. Round f to one decimal place.", "answer": "-0.3", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let z = 563/4 - 407/3. Calculate the common denominator of z and -11/24.", "answer": "24", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Calculate the highest common divisor of 39125 and 125.", "answer": "125", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Convert -2 (base 6) to base 3.", "answer": "-2", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Round -5.577 to one decimal place.", "answer": "-5.6", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let w = 0.6 + -0.5986. What is w rounded to three dps?", "answer": "0.001", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "How many micrograms are there in twenty-five halves of a milligram?", "answer": "12500", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let b be (6 - 4) + (-3 - -1). What is b rounded to the nearest 1000?", "answer": "0", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Suppose -5 = -y - 1. Let g be (-25)/(-10) - 2/y. Suppose -16 = -2*l + l + g*a, 5*l - 5*a - 55 = 0. What is the least common multiple of 18 and l?", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "((-6)/18)/(2/(-6))", "answer": "1", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the ninth root of 3341 to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Product of 0.0396 and -0.1.", "answer": "-0.00396", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Round 4880 to the nearest 100.", "answer": "4900", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is the highest common factor of 13 and 40755?", "answer": "13", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Calculate 0.07778 - -0.02.", "answer": "0.09778", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let n = -71 + 371. Let q be (n/9 - 0)*30. Round q to the nearest one thousand.", "answer": "1000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Divide -13264 by 3316.", "answer": "-4", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Suppose -14*t + 129 + 11 = 0. Suppose 3*n = 5*a + 8*n + 15, -4*n = 4. What is the remainder when t is divided by 18/a*2/(-3)?", "answer": "4", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Put together 30382.3 and -0.3.", "answer": "30382", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is -0.0769 rounded to 2 decimal places?", "answer": "-0.08", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "1725 divided by -15", "answer": "-115", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Round 0.0004119 to 4 dps.", "answer": "0.0004", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is -1.2926 rounded to one dp?", "answer": "-1.3", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "In base 5, what is 3 + 342?", "answer": "400", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "2 - (-1 - -1 - (-1 + 2))", "answer": "3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let q = 0 - -2. Suppose -12 - 4 = -r + s, 0 = 2*s - q. What is the remainder when r is divided by 3*-3*(-2)/3?", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is -2 (base 15) in base 10?", "answer": "-2", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is -2 plus -764?", "answer": "-766", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate the least common multiple of 10 and 9.", "answer": "90", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let k(f) = f**2 + 5*f + 5. Suppose 0 = 4*o + 3 + 13. Let p be k(o). Let l = 4 - p. Calculate the remainder when l is divided by 2.", "answer": "1", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is the value of (1/(-2))/((-5)/(-50))?", "answer": "-5", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Work out -23 - -86182.", "answer": "86159", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Let w be (-36)/(-15) + 6/10. Suppose -8 = 4*v, -2*p - 3*v = -w*p + 13. What are the prime factors of p?", "answer": "7", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "0.3 times 1.75", "answer": "0.525", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is the value of (3 - (2 - (-12 - -6))) + 9?", "answer": "4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is the third root of 1171 to the nearest integer?", "answer": "11", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is 32285 to the power of 1/8, to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Calculate -1.1184 - 0.39.", "answer": "-1.5084", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the remainder when 1440 is divided by 85?", "answer": "80", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let m = 446 + -296. Let v be m/(-8)*(-16)/6. What is the greatest common factor of v and 10?", "answer": "10", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is the value of 2/3*9*(-210)/180?", "answer": "-7", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Calculate the greatest common divisor of 53 and 20299.", "answer": "53", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let s(j) = -4*j - 20. Calculate the remainder when s(-21) is divided by 17.", "answer": "13", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is 4604 to the power of 1/3, to the nearest integer?", "answer": "17", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "-17421 + 4", "answer": "-17417", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "5 * 1778", "answer": "8890", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "((-3)/27)/((-14)/63)*-6", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Convert 286.08 litres to millilitres.", "answer": "286080", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let o be (-67 - -1)*(-27)/18. Calculate the highest common factor of o and 11.", "answer": "11", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is -0.0075 take away 118?", "answer": "-118.0075", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is -0.02839 rounded to two decimal places?", "answer": "-0.03", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Suppose -r = 2*r - 18. Calculate the lowest common multiple of (3 + 0)/(9/24) and r.", "answer": "24", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Calculate -1 - -10 - (1 - -5).", "answer": "3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let f = -977976 + 548976. What is f rounded to the nearest one hundred thousand?", "answer": "-400000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let g(r) = r**2 + 3*r - 2. Let y be g(2). Let w be 70 - (0/2 + -2). Let i be (-4)/((-148)/w - -2). What is the greatest common factor of i and y?", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "(4 - (2 + -7 - -9)) + 1", "answer": "1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Calculate the remainder when 11143 is divided by 14.", "answer": "13", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is 116226 rounded to the nearest one thousand?", "answer": "116000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Calculate the greatest common divisor of 34 and 391.", "answer": "17", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Let z(a) = a + 14. Let r be z(-7). Suppose -53 = -5*f + r. Suppose 3*w + 2*w + b = f, 2 = -4*w + 5*b. List the prime factors of w.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "What is the third root of 2979 to the nearest integer?", "answer": "14", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let x = -7908.38 + 7998. Let h = x - 88. Let f = 1.61829 - h. What is f rounded to four decimal places?", "answer": "-0.0017", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "78*3", "answer": "234", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Calculate -525*2.", "answer": "-1050", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Simplify (-5 + (1 + sqrt(1100) - sqrt(1100)) + 4)**2.", "answer": "0", "module": "arithmetic__simplify_surd", "difficulty_score": 4}
+{"question": "Calculate ((-12)/20)/(5/25).", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is 6195.188ng in micrograms?", "answer": "6.195188", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Evaluate -2 + (-4 - -8) + 2 + 1.", "answer": "5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let u = -37 + 50. Calculate the remainder when 34 is divided by u.", "answer": "8", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Let y be (-768)/(-160)*10/12*4. Let k(h) = 23*h + 8. Let o be k(-6). Let f = 226 + o. Calculate the greatest common divisor of y and f.", "answer": "16", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the value of 4 + 6 + 2 - (7 + -2)?", "answer": "7", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let w be (-2)/((-3)/(-6) - 1). Let y = 4 - w. Suppose 2*u - 4*k - 198 = y, 4*u + 4*k = 211 + 137. What is the highest common divisor of 13 and u?", "answer": "13", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "190 * -61", "answer": "-11590", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "What is thirteen fifths of a decade in years?", "answer": "26", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "How many minutes are there between 11:24 AM and 10:08 PM?", "answer": "644", "module": "measurement__time", "difficulty_score": 4}
+{"question": "How many nanometers are there in 1.254244 meters?", "answer": "1254244000", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let n = -32 + 54. What is the units digit of n?", "answer": "2", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is -0.00312019 rounded to 5 dps?", "answer": "-0.00312", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "What is -24 divided by 3?", "answer": "-8", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Divide -48 by 8.", "answer": "-6", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "Let d = -947/9 + 105. What is the common denominator of d and 15/2?", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "(-4)/2 + (10 - (6 - -6))", "answer": "-4", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let g = 20 + -20. Suppose g = 5*r - 5*m - 75, 13 = 2*r + 2*m - 29. What is the remainder when 34 is divided by r?", "answer": "16", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Let v = 20 - 14. What is the units digit of (-52)/(-5) - v/15?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 362 is divided by 73.", "answer": "70", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Round -0.00033352 to six decimal places.", "answer": "-0.000334", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is the ninth root of 524 to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Product of 4.3 and -0.03.", "answer": "-0.129", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Let x(h) = -h**2 + 5*h + 3. Let d be x(5). Suppose -t = d*t - 36. What are the prime factors of t?", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "Round -0.001951 to four dps.", "answer": "-0.002", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate the remainder when 261 is divided by 178.", "answer": "83", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let u = 2 - 7. Let f be (-8)/20 + (-47)/u. Calculate the highest common factor of f and 99.", "answer": "9", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "How many micrometers are there in 3/25 of a centimeter?", "answer": "1200", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Subtract 13 from 0.2.", "answer": "-12.8", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Let b = 18 - 4. Suppose q - 2*p - 18 - b = 0, 0 = 5*q + p - 105. Let m = q - 7. What is the units digit of m?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate the lowest common multiple of 199 and 26.", "answer": "5174", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is 942 to the power of 1/2, to the nearest integer?", "answer": "31", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is the common denominator of 139/48 and 31/2?", "answer": "48", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "What is the sixth root of 2087 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let d = 819485652392948857/418898874110 + -1125/1021704571. Let c = -1956282 + d. Let p = c - -63/41. Calculate the common denominator of p and 121/20.", "answer": "20", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "How many minutes are there between 10:58 AM and 11:57 AM?", "answer": "59", "module": "measurement__time", "difficulty_score": 4}
+{"question": "(2 - 3)*-1 - 2", "answer": "-1", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let k(s) = s**2 + 5*s + 3. Let f be k(-6). Suppose 4*z = f*z - 180. What is the tens digit of z?", "answer": "3", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate the lowest common multiple of 80 and 44.", "answer": "880", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Suppose 5*o - 3*q = -7*q + 395, 0 = -o + q + 79. What is the units digit of o?", "answer": "9", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let h(g) = 2*g**2 - 4*g + 2. Let i be h(3). Let z(s) = -7*s - 3*s**2 + 16*s + 2*s**2. List the prime factors of z(i).", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Calculate the highest common factor of 1575 and 126.", "answer": "63", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "1 - (-13 + -2) - (-72 - -78)", "answer": "10", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is 3 + -2 - (8 + -5)?", "answer": "-2", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "How many minutes are there between 7:40 AM and 6:40 PM?", "answer": "660", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let u(k) = 2*k - 4. Let v be u(8). Suppose -5*p + p = v. What is the tens digit of 62/6 + (-2)/p?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "How many minutes are there between 6:19 AM and 6:46 AM?", "answer": "27", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Calculate -0.07 - -4355.", "answer": "4354.93", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate the remainder when 520 is divided by 87.", "answer": "85", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate the common denominator of 37/53 and 61/5.", "answer": "265", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let v(n) = -n**2 - n. Let c be v(-2). What is the remainder when 8 is divided by ((0 - c) + -1)*5?", "answer": "3", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Evaluate 1*2*(690/(-12))/(-23).", "answer": "5", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Let b be ((-3)/((-27)/6))/(4/102). What is the highest common divisor of b and 34?", "answer": "17", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Convert -4 (base 8) to base 14.", "answer": "-4", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is the common denominator of 13/1500 and -121/24?", "answer": "3000", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let v = 0.3 + -0.29896. What is v rounded to four dps?", "answer": "0.001", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let t be 2/1 + 1 + 5. Suppose 0*d - d = -t. Let b = d + -2. Calculate the least common multiple of b and 12.", "answer": "12", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "In base 10, what is -95 - 20?", "answer": "-115", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "What is -2 - ((-4 - (-5 + 3)) + 1)?", "answer": "-1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 16394 and 14.", "answer": "14", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Let r = 6 - -2. Let s be (2/2)/(-1) + r. Let x be (-7)/2*(-144)/9. What is the highest common factor of s and x?", "answer": "7", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "(-120)/(-20)*(-1)/(-6)", "answer": "1", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Calculate the smallest common multiple of 1092 and 42.", "answer": "1092", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let b(n) = n**2 - n. Let j be b(-1). Suppose -5*z + 3*y = j*y - 28, 3*z = 5*y + 8. What is the units digit of z?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "24 divided by -24", "answer": "-1", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is the greatest common divisor of 480 and 195?", "answer": "15", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "What is the third root of 747 to the nearest integer?", "answer": "9", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Suppose 7*d - 92 = 9*d. Round d to the nearest 10.", "answer": "-50", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let b = 86.2 + 4.8. Let h = -91.051 + b. What is h rounded to two dps?", "answer": "-0.05", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Multiply 0.6 and 0.74.", "answer": "0.444", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is the remainder when 556 is divided by 93?", "answer": "91", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is -881.577 take away -3?", "answer": "-878.577", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Sum -6 and -3984.", "answer": "-3990", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate 10080 divided by -112.", "answer": "-90", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Suppose -h = -5*h + 144. Find the common denominator of 2/9 - 287/h and 2/(-2) - (-10)/(-4).", "answer": "4", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is the highest common factor of 52 and 1625?", "answer": "13", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "What is 13 (base 5) in base 13?", "answer": "8", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "What is -43 minus 285?", "answer": "-328", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let q(b) = b**2 + 3*b - 8. What is the remainder when (11/(-22))/(1/(-34)) is divided by q(-6)?", "answer": "7", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is the ninth root of 63570 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "-267 divided by 267", "answer": "-1", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Let y(l) = 10*l**3 - 1. Let z be y(-1). Let i be 2 + 2 + -1 + z. Let x = i - -15. Calculate the greatest common factor of x and 35.", "answer": "7", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is 46 (base 10) in base 5?", "answer": "141", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "What is 1 - (-5 + 5 + 2)?", "answer": "-1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let m be -1 + 0 + 0 + 27. Suppose 3*i = -5 - 1. Let p be 0 + i + 3 + 285. Calculate the greatest common divisor of m and p.", "answer": "26", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is the square root of 78239 to the nearest integer?", "answer": "280", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Product of -1.402 and -0.2.", "answer": "0.2804", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "-15 - -35 - (2 - -9)", "answer": "9", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is the remainder when 593 is divided by 35?", "answer": "33", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate 1166 divided by 11.", "answer": "106", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "What is the value of -1 - 2 - (-23 + 22)?", "answer": "-2", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Suppose -458 - 82 = -3*q. Calculate the greatest common factor of 10 and q.", "answer": "10", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Convert 9 (base 10) to base 12.", "answer": "9", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Calculate ((-130)/(-15))/13*3.", "answer": "2", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Let f be 7/(-28) + (-99525)/(-4). Suppose -102881 = 3*u - f. What is u rounded to the nearest ten thousand?", "answer": "-30000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let u(v) = 2*v**2 + 6 - v**2 + 8. Let i be 8/36 + (-2)/9. What is the units digit of u(i)?", "answer": "4", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is (-103 - -110) + (1 + 1 - 5)?", "answer": "4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let b(y) = 0*y**3 + 2*y**2 + 3 + y**3 - 10*y + 0*y**3 + 7*y**2. Calculate the remainder when b(-10) is divided by (1 - 2 - 1)/(-2).", "answer": "0", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 774 is divided by 188.", "answer": "22", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Let k be (-5)/(-20) - 30/(-8). Let h be k - (-1 - (-3 + 2)). Suppose h*m + 56 = 5*t - 40, -5*m = -t + 36. What is the units digit of t?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Evaluate 38 + -33 - (11 + -1).", "answer": "-5", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "-2 (base 8) to base 10", "answer": "-2", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Calculate the common denominator of 77/20 and -21/235.", "answer": "940", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Round -0.000511 to 5 decimal places.", "answer": "-0.00051", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Calculate -90 + -10997.", "answer": "-11087", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is -0.00073429 rounded to four decimal places?", "answer": "-0.0007", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Suppose 5*h + 6826 + 1874 = 0. Round h to the nearest one hundred.", "answer": "-1700", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "How many grams are there in 3/32 of a tonne?", "answer": "93750", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Calculate (21 - 20) + (2 + -1 - 5).", "answer": "-3", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Suppose -23 = -2*s - w, -w = -2*s - 0*w + 33. What is the tens digit of s?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "-0.43+-310.5", "answer": "-310.93", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let q = 103 + 36. What is the remainder when q is divided by 28?", "answer": "27", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Suppose 0 = -3*d + 3*y, 4*d + 5*y + 15 = -12. Let q = 11 + d. Calculate the highest common divisor of 32 and q.", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the common denominator of 95/178 and -1/16?", "answer": "1424", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the value of (-4 - (2 - 4)) + -30 + 32?", "answer": "0", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Calculate 0.274 - 367.", "answer": "-366.726", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "How many minutes are there between 9:41 PM and 8:51 AM?", "answer": "670", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let p = 0.39 - -0.1. Let d = p + -0.48926. Round d to four dps.", "answer": "0.0007", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is 55.55479 centimeters in kilometers?", "answer": "0.0005555479", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "12 (base 12) to base 10", "answer": "14", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Suppose -2*p = 2*b + b + 45, b - 51 = 3*p. What is the tens digit of ((-6)/9)/(1/p)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Let g(l) = -l**2 + 3*l - 1. Let o be g(2). Let p be (-2)/10 - 16/(-5). List the prime factors of o*6/2*p.", "answer": "3", "module": "numbers__list_prime_factors_composed", "difficulty_score": 3}
+{"question": "How many minutes are there between 3:52 AM and 4:44 AM?", "answer": "52", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Evaluate (24/51)/(26/221).", "answer": "4", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Calculate the remainder when 571 is divided by 52.", "answer": "51", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is 3/40 of a hour in seconds?", "answer": "270", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "How many litres are there in 0.7834637ml?", "answer": "0.0007834637", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Let l(z) = z**2 - 2*z + 1. Let u be l(6). Suppose 4*b - u = 5*q, 3*b - b = -3*q + 7. Suppose -b*f + 6 = -3*f. What is the highest common divisor of 3 and f?", "answer": "3", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "What is the seventh root of 8472 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Let t = 2.2 + -5.2. Let z = -2.97 - t. What is z rounded to 2 dps?", "answer": "0.03", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is 5444 to the power of 1/2, to the nearest integer?", "answer": "74", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let h = 381 - 380.526. What is h rounded to one dp?", "answer": "0.5", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "0.03 times 0.59", "answer": "0.0177", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Let t = -35057 + 23657. What is t rounded to the nearest 1000?", "answer": "-11000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Calculate the lowest common multiple of (-15)/9*-18*(0 + 1) and 15.", "answer": "30", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is the value of (-2)/3*57/(-38)?", "answer": "1", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "What is the remainder when 446 is divided by 75?", "answer": "71", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Round 0.000000329 to seven dps.", "answer": "0.0000003", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let f be (1 - 2)/(-1)*12. Let z be (f/(-5) + 2)*-5. Suppose -3*i + 45 = z*i. Calculate the smallest common multiple of i and 7.", "answer": "63", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is 3320 to the power of 1/8, to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Calculate -0.0679 + -14.", "answer": "-14.0679", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is 3/(-6)*14 + 12?", "answer": "5", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "What is 130 to the power of 1/3, to the nearest integer?", "answer": "5", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "How many nanograms are there in 6.333449 kilograms?", "answer": "6333449000000", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "In base 9, what is -151 + 0?", "answer": "-151", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 4}
+{"question": "Convert -9 (base 11) to base 12.", "answer": "-9", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "18 divided by -2", "answer": "-9", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "Let z be (1/3)/((-2)/(-24)). Suppose 3*g + 1495 = -4*d + 3*d, 5*d = z*g + 2025. Let c be (1/(-1) - 1)*g. What is c rounded to the nearest 1000?", "answer": "1000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Evaluate (105/(-90))/(4/6)*4.", "answer": "-7", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Suppose -8*s + 10149 = -5*s. Let f be s + 16 + -1 + 2. What is f rounded to the nearest 1000?", "answer": "3000", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let s = 30.88 - -0.12. Let i = -31.38 + s. What is i rounded to one dp?", "answer": "-0.4", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 190 is divided by (4*21/35)/(3/20).", "answer": "14", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Find the common denominator of 101/104 and -67/72.", "answer": "936", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "How many minutes are there between 6:15 PM and 3:32 AM?", "answer": "557", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Let k = -4 - -6. Let r = 2 + k. What is the common denominator of -151/18 and (-190)/r*(-2)/(-10)?", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Calculate (-9)/6*(-3 - 55/(-33)).", "answer": "2", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Suppose 0 = -9*c + 4*c + 35. Let j = -4 + c. Suppose 33 = j*x + 6. What is the smallest common multiple of 6 and x?", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is 210.8 rounded to the nearest 10?", "answer": "210", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let z(u) = u**2 - 9. Let t be z(5). Calculate the highest common divisor of t and 72.", "answer": "8", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Suppose 3*p = 5*i - 705, 3*p + 78 = i - 75. Suppose 3 = -3*s + i. Calculate the highest common factor of 15 and s.", "answer": "15", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "-3 times 10", "answer": "-30", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is -6 (base 13) in base 10?", "answer": "-6", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Let b(g) be the first derivative of -g**3/3 - 9*g**2/2 - g - 5. Suppose -i + 6*i = -40. What are the prime factors of b(i)?", "answer": "7", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Calculate (-5)/9*-3*3.", "answer": "5", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "2299*0.07", "answer": "160.93", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Let i = -1.28 + 0.08. Let g = -904406 + 904404.799983. Let j = g - i. What is j rounded to five decimal places?", "answer": "-0.00002", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is -18.115 rounded to one decimal place?", "answer": "-18.1", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let f = -31 - -46. Suppose 0 = 5*i - f, 2*t + 2*i - 11 = i. Suppose 2*q + 0*d + t*d = 38, 4*d = 2*q - 6. List the prime factors of q.", "answer": "11", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Let p = -96 - -155. Calculate the greatest common divisor of 295 and p.", "answer": "59", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Let b be (-2)/(-4) - (-13)/2. Suppose 2*n - b*n = -75. Calculate the remainder when 42 is divided by n.", "answer": "12", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Round -10.2031 to 0 dps.", "answer": "-10", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let g = -20 + 40. Suppose l = -3*l + 64. Calculate the least common multiple of l and g.", "answer": "80", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Let l be (1 + -9)/(1 - 3). Suppose 2*z - l*z = -136. Suppose 7*j - 3*j - z = 0. What is the remainder when j is divided by 10?", "answer": "7", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the remainder when 4388 is divided by 57?", "answer": "56", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Let k = 1.1 + -0.94. What is k rounded to 1 dp?", "answer": "0.2", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let h be (-3)/(-6)*-10 + 0. Calculate the remainder when (-5)/(-2)*(-68)/h is divided by 9.", "answer": "7", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "-7432 times -4", "answer": "29728", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Let a be 3/2*(-2)/(-1). Suppose 2*o = -a*o + 600. Let u be -2 - -17*1 - (-3)/(-1). What is the greatest common factor of u and o?", "answer": "12", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "Suppose 4*m - p + 0 = 11, m - 14 = -2*p. Let y = -14 - -18. Suppose 0 = -y*q + 10 + 6. Calculate the lowest common multiple of q and m.", "answer": "4", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "What is the fifth root of 1501 to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "1 + -8 + 18 + -2 + -13", "answer": "-4", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is 0.0000003766 rounded to seven decimal places?", "answer": "0.0000004", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "How many millilitres are there in 3/8 of a litre?", "answer": "375", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 37.50305 millennia in years?", "answer": "37503.05", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Let b(c) = -c**3 + 3*c**2 + 9*c - 6. Calculate the remainder when b(4) is divided by 9.", "answer": "5", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Work out -7488 - 0.1.", "answer": "-7488.1", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate the highest common divisor of 1458 and 18.", "answer": "18", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is the highest common factor of 196 and 637?", "answer": "49", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Round -52522 to the nearest 1000.", "answer": "-53000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "What is -6*(663/26)/(-17)?", "answer": "9", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "What is the common denominator of -31/192 and 37/240?", "answer": "960", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is 7/2 of a litre in millilitres?", "answer": "3500", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Round 0.006205 to 3 decimal places.", "answer": "0.006", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Divide 57210 by -6.", "answer": "-9535", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is 2794 divided by -254?", "answer": "-11", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "What is the remainder when 342 is divided by 135?", "answer": "72", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "What is (-11 + 9 - -1) + 1?", "answer": "0", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Let m = -3775/238 + 10/357. What is the common denominator of 2/(-3) + 233/(-6) and m?", "answer": "6", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 2587 is divided by 14.", "answer": "11", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let y(b) = -b + b - 2*b. Let g be y(-3). Let n(c) = c + 4. Calculate the least common multiple of n(g) and 22.", "answer": "110", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "How many minutes are there in fourteeen ninths of a day?", "answer": "2240", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 20 and 250.", "answer": "10", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is 156/234*36/(-4)?", "answer": "-6", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Round -0.0060478 to 4 decimal places.", "answer": "-0.006", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let d(s) be the second derivative of 9*s**4/4 - s**2/2 + 5*s. What is the units digit of d(-1)?", "answer": "6", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is the square root of 8497 to the nearest integer?", "answer": "92", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "-66 - -63 - (-3 + (-2 - -3))", "answer": "-1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is the thousands digit of 67641?", "answer": "7", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "7+5512", "answer": "5519", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is the greatest common factor of 561 and 132?", "answer": "33", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate 0.01 + -194424.", "answer": "-194423.99", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is 3826 to the power of 1/6, to the nearest integer?", "answer": "4", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "What is the remainder when 1308 is divided by 94?", "answer": "86", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Let m = -177.2 - -163. Round m to the nearest integer.", "answer": "-14", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Multiply 899 and 0.3.", "answer": "269.7", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "Convert -1 (base 10) to base 15.", "answer": "-1", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Suppose -4*j - 8 = -20. What is the remainder when 3 is divided by j?", "answer": "0", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Divide 6252 by -1042.", "answer": "-6", "module": "arithmetic__div", "difficulty_score": 4}
+{"question": "What is 897 to the power of 1/8, to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is -2264 + -193?", "answer": "-2457", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let n(w) = -2*w. Let m be n(-1). Suppose 0 = 3*c + 3*z + 3, -z - 11 = -m*c + 2. What is the greatest common factor of c and 20?", "answer": "4", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Let q(n) = 10 - 2*n. Let m be q(8). Let r = m + 12. Round r to the nearest ten.", "answer": "10", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Convert 2811.381 micrometers to millimeters.", "answer": "2.811381", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Let r be (2/(-4))/((-3)/(-90)). Let t = r + 10. Round t to the nearest integer.", "answer": "-5", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Find the common denominator of 55/63 and -28/99.", "answer": "693", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the tens digit of 122074?", "answer": "7", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "What is -2 + 0 - -2 - (-6 - -5)?", "answer": "1", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "What is the difference between -0.0422 and 0.2?", "answer": "0.2422", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Calculate the highest common factor of 47 and 611.", "answer": "47", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "Calculate the greatest common factor of 245 and 1568.", "answer": "49", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Add together -187.4 and -1049.", "answer": "-1236.4", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Simplify (sqrt(13)*6)**2 + 3 + 2.", "answer": "473", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "In base 5, what is 102 - 22?", "answer": "30", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Let h = 112 - 62. What is the tens digit of h?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate the remainder when 1536 is divided by 27.", "answer": "24", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Calculate the common denominator of 51/23 and -79/8.", "answer": "184", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Calculate (-2)/(-1)*15/(-40)*4.", "answer": "-3", "module": "arithmetic__mul_div_multiple", "difficulty_score": 4}
+{"question": "Calculate the remainder when 206 is divided by 43.", "answer": "34", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Calculate the smallest common multiple of 5068 and 7.", "answer": "5068", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let d = -0.19 - -0.14. Round d to one decimal place.", "answer": "-0.1", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Evaluate ((-21)/(-9) - -1)*(-18)/(-15).", "answer": "4", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "What is the common denominator of 53/90 and 109/5850?", "answer": "5850", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "What is the remainder when 86 is divided by 24?", "answer": "14", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Suppose -60 + 3 = 3*t. Let u = t + 33. What is the remainder when 39 is divided by u?", "answer": "11", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "Suppose -3*t - 4*f - f + 60 = 0, -2*f = -6. What is the tens digit of t?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "Calculate 3/(3*2/(-10)).", "answer": "-5", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "How many millilitres are there in 79.40374l?", "answer": "79403.74", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Suppose 9*n - 6*n - 60 = 0. Suppose 5*g + 3*h - n - 12 = 0, 0 = -3*g + 3*h. Calculate the remainder when g is divided by 3.", "answer": "1", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Let a = 10.0000014 + -10. Round a to 6 decimal places.", "answer": "0.000001", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "What is 4/8 - 20/8?", "answer": "-2", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "What is the thousands digit of 52671?", "answer": "2", "module": "numbers__place_value", "difficulty_score": 3}
+{"question": "Let b = 54 + -30. Let c(j) = 5 - j**3 + 5 - 3 - 6*j**2 - 4. Let i be c(-6). Calculate the highest common factor of i and b.", "answer": "3", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is -11 - -8 - (-6 - -9)?", "answer": "-6", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "How many minutes are there between 5:28 AM and 1:41 PM?", "answer": "493", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Sum -8569 and -0.5.", "answer": "-8569.5", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the third root of 38822 to the nearest integer?", "answer": "34", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Simplify -5 + 5 + 1*(sqrt(5)*-2)**2*5.", "answer": "100", "module": "arithmetic__simplify_surd", "difficulty_score": 3}
+{"question": "What is the highest common factor of 62 and 868?", "answer": "62", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is the difference between -2.9881 and -0.6?", "answer": "2.3881", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "What is 6 - (8 + (-8 - -8) - 9)?", "answer": "7", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is the seventh root of 1837 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is 7 - (0 + 3) - (2 + 2)?", "answer": "0", "module": "arithmetic__add_sub_multiple", "difficulty_score": 3}
+{"question": "Calculate 2*-1652.", "answer": "-3304", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "What is 3201 to the power of 1/2, to the nearest integer?", "answer": "57", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Convert 1121 (base 3) to base 10.", "answer": "43", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "What is 5 (base 12) in base 3?", "answer": "12", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "13 (base 15) to base 11", "answer": "17", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Let j(t) = 2*t**2 - 2*t - 9. Let i(q) = 3*q**2 - 3*q - 13. Let n(w) = 5*i(w) - 7*j(w). Let l be n(4). What is the highest common factor of l and 40?", "answer": "10", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "How many minutes are there between 10:05 PM and 11:14 PM?", "answer": "69", "module": "measurement__time", "difficulty_score": 3}
+{"question": "Convert -1 (base 9) to base 5.", "answer": "-1", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "In base 7, what is 1345 + 0?", "answer": "1345", "module": "arithmetic__add_or_sub_in_base", "difficulty_score": 3}
+{"question": "Let x = -12 - -12.31. Let b = 0.3099935 - x. What is b rounded to six dps?", "answer": "-0.000007", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "How many kilograms are there in 0.402973 grams?", "answer": "0.000402973", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Round -1315000 to the nearest 100000.", "answer": "-1300000", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let h = -2591/6 - -430. Calculate the common denominator of h and 40/3.", "answer": "6", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "How many minutes are there between 1:23 PM and 6:50 PM?", "answer": "327", "module": "measurement__time", "difficulty_score": 3}
+{"question": "(16/(-5))/(24/(-60))", "answer": "8", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Let j = 428.15 + -438. What is j rounded to the nearest integer?", "answer": "-10", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is 51/5 of a meter in millimeters?", "answer": "10200", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 7373 to the power of 1/9, to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Calculate -12985 + 0.2.", "answer": "-12984.8", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Round 4635.8 to the nearest 100.", "answer": "4600", "module": "numbers__round_number", "difficulty_score": 3}
+{"question": "Let p(k) = -k**3 - 8*k**2 - 7*k + 7. Let v(m) = 2*m**3 + 3*m**2 + 3*m + 3. Let h be v(-2). What is the units digit of p(h)?", "answer": "7", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Simplify 6*(sqrt(612))**2*-2.", "answer": "-7344", "module": "arithmetic__simplify_surd", "difficulty_score": 4}
+{"question": "What is the value of (5/(-15))/(23/(-690))?", "answer": "10", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "What is the greatest common divisor of 126 and 72?", "answer": "18", "module": "numbers__gcd", "difficulty_score": 4}
+{"question": "What is the square root of 32573 to the nearest integer?", "answer": "180", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "2 - 7969", "answer": "-7967", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "Let a = 156.7 + -106. Round a to zero dps.", "answer": "51", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "What is the third root of 6434 to the nearest integer?", "answer": "19", "module": "arithmetic__nearest_integer_root", "difficulty_score": 3}
+{"question": "Convert 3c (base 13) to base 10.", "answer": "51", "module": "numbers__base_conversion", "difficulty_score": 4}
+{"question": "Work out -292 * 3.", "answer": "-876", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Calculate -1802 divided by 2.", "answer": "-901", "module": "arithmetic__div", "difficulty_score": 3}
+{"question": "What is 455.6363 kilometers in millimeters?", "answer": "455636300", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "Suppose -92 = -5*b + 3*u, 0 = b - 0*u + 3*u - 4. Let a = b + -8. Suppose -5*l = 3*w - 49, -2*l + 7 = w - a. What is the remainder when w is divided by 8?", "answer": "7", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is the least common multiple of 216 and 84?", "answer": "1512", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "How many litres are there in 726.5099 millilitres?", "answer": "0.7265099", "module": "measurement__conversion", "difficulty_score": 3}
+{"question": "What is 0.8 - 461768?", "answer": "-461767.2", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the smallest common multiple of 30 and 810?", "answer": "810", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Suppose 2*o + 28 = -3*v - 2*o, -4*v = 5*o + 38. Let g = v - -20. List the prime factors of g.", "answer": "2", "module": "numbers__list_prime_factors_composed", "difficulty_score": 4}
+{"question": "Multiply 0.2 and -128.", "answer": "-25.6", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "((-2)/(-8))/(((-7)/(-4))/7)", "answer": "1", "module": "arithmetic__mul_div_multiple", "difficulty_score": 3}
+{"question": "Calculate -4 + 1 + -1 + 2.", "answer": "-2", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "What is -19.8 + -2.5?", "answer": "-22.3", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "How many milligrams are there in fifty-two fifths of a gram?", "answer": "10400", "module": "measurement__conversion", "difficulty_score": 4}
+{"question": "What is 2900 rounded to the nearest ten thousand?", "answer": "0", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Work out 0.0886 - 1545.", "answer": "-1544.9114", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "255 * 3", "answer": "765", "module": "arithmetic__mul", "difficulty_score": 4}
+{"question": "Let w = -363 - -528. What is the units digit of w?", "answer": "5", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is the units digit of (-12)/(-16) + (-471)/(-12)?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 3281 is divided by 235.", "answer": "226", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Add together -0.07759 and -0.4.", "answer": "-0.47759", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Round 0.00000994 to six dps.", "answer": "0.00001", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Suppose 3*t - 275 = -2*t. Calculate the greatest common factor of 11 and t.", "answer": "11", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Calculate the highest common divisor of 35 and 4270.", "answer": "35", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate the highest common factor of 95 and 1520.", "answer": "95", "module": "numbers__gcd", "difficulty_score": 3}
+{"question": "Calculate the common denominator of 2/(-2)*1 - 71/(-18) and -44/3.", "answer": "18", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 928 is divided by 184.", "answer": "8", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Let b be 1*(-10)/(-6)*3. Suppose -2*o - 2 = -b*k + k, k - 14 = -4*o. Suppose -w - 17 = -4*w - 2*i, 25 = 3*w - k*i. What is the units digit of w?", "answer": "7", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let j = 2 + -1. Suppose 5 = 2*p - j. Suppose -g - g = -i - 32, g - 6 = p*i. What is the tens digit of g?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 4}
+{"question": "What is the remainder when 68 is divided by 19?", "answer": "11", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "What is -9.929 rounded to zero decimal places?", "answer": "-10", "module": "numbers__round_number", "difficulty_score": 4}
+{"question": "Let c = 127 + -68. Let f = 1 + 14. What is the remainder when c is divided by f?", "answer": "14", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "Suppose 2*v + 4 = 3*v. Suppose -4*u + 3*h + 0*h + 5 = 0, -2*h = -2*u. What is the tens digit of 6 + -7 + v*u?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let n be (-6)/15 - (-9)/(-15). Let v = n + -14. What is the units digit of (6/4)/(v/(-20))?", "answer": "2", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate the remainder when 751 is divided by 58.", "answer": "55", "module": "numbers__div_remainder", "difficulty_score": 3}
+{"question": "Evaluate 13 + (4 - (-7 + 18)).", "answer": "6", "module": "arithmetic__add_sub_multiple", "difficulty_score": 4}
+{"question": "Let o(r) = -262*r - 8. Let g = 14 + 2. Let j be o(g). What is j rounded to the nearest 1000?", "answer": "-4000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let p = -31 + 27.9. Let s = 3.037 + p. Let m = s - -0.07. What is m rounded to three dps?", "answer": "0.007", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Let j(x) = x**3 - 6*x**2 + 6. Let z be j(6). Suppose -112 = -4*v + 4*f, 0 = -v - 2*f - z + 28. What is the greatest common factor of 13 and v?", "answer": "13", "module": "numbers__gcd_composed", "difficulty_score": 4}
+{"question": "Calculate 0.004*-3.2.", "answer": "-0.0128", "module": "arithmetic__mul", "difficulty_score": 3}
+{"question": "What is the distance between -13504 and 4?", "answer": "13508", "module": "arithmetic__add_or_sub", "difficulty_score": 4}
+{"question": "What is the ninth root of 9460 to the nearest integer?", "answer": "3", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "What is -2*5 + 67 + -61?", "answer": "-4", "module": "arithmetic__mixed", "difficulty_score": 4}
+{"question": "Let u be 36/(-27)*(-126)/4. What is the highest common factor of u and 63?", "answer": "21", "module": "numbers__gcd_composed", "difficulty_score": 3}
+{"question": "What is the ninth root of 1350 to the nearest integer?", "answer": "2", "module": "arithmetic__nearest_integer_root", "difficulty_score": 4}
+{"question": "Let f be (5/(-3))/(2/(-24)). Let j = 8 + f. Calculate the smallest common multiple of 14 and j.", "answer": "28", "module": "numbers__lcm_composed", "difficulty_score": 3}
+{"question": "What is the least common multiple of 945 and 441?", "answer": "6615", "module": "numbers__lcm", "difficulty_score": 3}
+{"question": "Let q = 5 + -4.2. Let p = q - 0.5. Let n = 3.3 + p. Round n to zero decimal places.", "answer": "4", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Suppose 2 - 11 = -3*p. Suppose -5*t - c + 5 = 0, -4*t + c + 23 = -2*c. What is the remainder when p is divided by t?", "answer": "1", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the value of 1008/(-120) + -3*6/(-45)?", "answer": "-8", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Let j(p) = p**3 + 12*p**2 + 9*p - 10. What is the hundreds digit of j(-10)?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Suppose 7 + 5 = 4*t. Suppose 5*c = 4*g - g - 55, 0 = g + t*c - 9. What is the tens digit of g?", "answer": "1", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Calculate the lowest common multiple of 22 and 110.", "answer": "110", "module": "numbers__lcm", "difficulty_score": 4}
+{"question": "Let x(w) = 2*w - 13. Let d(j) = j**2 + 3*j - 5. Let v(b) = b**3 + 7*b**2 + 2*b + 9. Let u be v(-7). What is the remainder when x(11) is divided by d(u)?", "answer": "4", "module": "numbers__div_remainder_composed", "difficulty_score": 3}
+{"question": "What is the remainder when 626 is divided by 296?", "answer": "34", "module": "numbers__div_remainder", "difficulty_score": 4}
+{"question": "Work out -9 - 8.4.", "answer": "-17.4", "module": "arithmetic__add_or_sub", "difficulty_score": 3}
+{"question": "Let m = 20 + -14. Let g = 5.948 - m. Round g to 2 dps.", "answer": "-0.05", "module": "numbers__round_number_composed", "difficulty_score": 4}
+{"question": "Let d(i) = 11*i**2 - 2*i + 2. What is the units digit of d(-2)?", "answer": "0", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "Let s(x) = -31626*x**3 - 2*x**2 - 2*x - 4. Let o be s(-2). Round o to the nearest ten thousand.", "answer": "250000", "module": "numbers__round_number_composed", "difficulty_score": 3}
+{"question": "Suppose -42 = -7*a - 0. What is the lowest common multiple of a and 15?", "answer": "30", "module": "numbers__lcm_composed", "difficulty_score": 4}
+{"question": "-1 (base 5) to base 14", "answer": "-1", "module": "numbers__base_conversion", "difficulty_score": 3}
+{"question": "Let n(o) = 133*o**2 + 8*o - 8. What is the tens digit of n(1)?", "answer": "3", "module": "numbers__place_value_composed", "difficulty_score": 3}
+{"question": "What is (3 + -13)*((-33)/5 + 7)?", "answer": "-4", "module": "arithmetic__mixed", "difficulty_score": 3}
+{"question": "Let o = 55 + -31. What is the remainder when 95 is divided by o?", "answer": "23", "module": "numbers__div_remainder_composed", "difficulty_score": 4}
+{"question": "What is 1/24 of a day in hours?", "answer": "1", "module": "measurement__conversion", "difficulty_score": 3}

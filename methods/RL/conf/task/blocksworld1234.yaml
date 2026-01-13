@@ -1,0 +1,28 @@
+# conf/task/blocksworld.yaml
+name: "blocksworld1234"
+data_files:
+  - data/blocksworld/train_set-1-all.json
+  - data/blocksworld/train_set-2-all.json
+  - data/blocksworld/train_set-3-all.json
+  - data/blocksworld/train_set-4-all.json
+icl_examples_file: data/blocksworld/train_set-2-more_with_trace.json
+use_icl_examples: false
+
+training:
+  max_prompt_length: 1600
+  max_completion_length: 512
+
+inference:
+  checkpoint: 300
+  steps: 4
+  temperature: 0.0
+  sc_num: 1
+  use_icl: false
+  icl_num: 2
+  prompt_path: 'prompts/blocksworld/pool_prompt_v1.json'
+  data_path: 'data/blocksworld/split_v1/split_v1_step_{steps}_data.json'
+  config_file: "data/blocksworld/bw_config.yaml"
+  domain_file: "data/blocksworld/generated_domain.pddl"
+  num_shot: 4
+  resume: 0
+  max_new_tokens: 512

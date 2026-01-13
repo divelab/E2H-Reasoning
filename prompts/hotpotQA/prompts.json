@@ -1,0 +1,111 @@
+{
+    "cot_separated": [
+        {
+            "Q": "Jeremy Theobald and Christopher Nolan share what profession?",
+            "A": "Jeremy Theobald is an actor and producer. Christopher Nolan is a director, producer, and screenwriter. Therefore, they both share the profession of being a producer. The answer is producer."
+        },
+        {
+            "Q": "What film directed by Brian Patrick Butler was inspired by a film directed by F.W. Murnau?",
+            "A": "Brian Patrick Butler directed the film 'The Phantom Hour.' 'The Phantom Hour' was inspired by films such as 'Nosferatu' and 'The Cabinet of Dr. Caligari.' Of these, 'Nosferatu' was directed by F.W. Murnau. The answer is The Phantom Hour."
+        },
+        {
+            "Q": "How many episodes were in the South Korean television series in which Ryu Hye-young played Bo-ra?",
+            "A": "The South Korean television series in which Ryu Hye-young played Bo-ra is 'Reply 1988.' The number of episodes 'Reply 1988' has is 20. The answer is 20."
+        },
+        {
+            "Q": "'Vertical Limit' stars which actor who also played astronaut Alan Shepard in 'The Right Stuff'?",
+            "A": "The actor who played astronaut Alan Shepard in 'The Right Stuff' is Scott Glenn. The movie 'Vertical Limit' also starred Scott Glenn. The answer is Scott Glenn."
+        },
+        {
+            "Q": "What was the 2014 population of the city where Lake Wales Medical Center is located?",
+            "A": "Lake Wales Medical Center is located in the city of Polk County, Florida. The population of Polk County in 2014 was 15,140. The answer is 15,140."
+        },
+        {
+            "Q": "Who was born first, Jan de Bont or Raoul Walsh?",
+            "A": "Jan de Bont was born on 22 October 1943. Raoul Walsh was born on March 11, 1887. Thus, Raoul Walsh was born first. The answer is Raoul Walsh."
+        },
+        {
+            "Q": "In what country was Lost Gravity manufactured?",
+            "A": "The Lost Gravity roller coaster was manufactured by Mack Rides. Mack Rides is a German company. The answer is Germany."
+        },
+        {
+            "Q": "Which of the following had a debut album entitled 'We Have an Emergency': Hot Hot Heat or The Operation M.D.?",
+            "A": "The debut album of the band Hot Hot Heat was 'Make Up the Breakdown.' The debut album of the band The Operation M.D. was 'We Have an Emergency.' The answer is The Operation M.D."
+        },
+        {
+            "Q": "In which country did this Australian, who was detained in Guantanamo Bay detention camp and published 'Guantanamo: My Journey,' receive paramilitary training?",
+            "A": "The Australian who was detained in Guantanamo Bay detention camp and published 'Guantanamo: My Journey' is David Hicks. David Hicks received his paramilitary training in Afghanistan. The answer is Afghanistan."
+        },
+        {
+            "Q": "Does The Border Surrender or Unsane have more members?",
+            "A": "The Border Surrender band has the following members: Keith Austin, Simon Shields, Johnny Manning, and Mark Austin. That is, it has 4 members. Unsane is a trio of 3 members. Thus, The Border Surrender has more members. The answer is The Border Surrender."
+        },
+        {
+            "Q": "Which band formed first, Sponge Cola or Hurricane No. 1?",
+            "A": "Sponge Cola band was formed in 1998. Hurricane No. 1 was formed in 1996. Thus, Hurricane No. 1 band formed first. The answer is Hurricane No. 1."
+        },
+        {
+            "Q": "James Paris Lee is best known for inventing the Lee-Metford rifle and another rifle often referred to by what acronym?",
+            "A": "James Paris Lee is best known for inventing the Lee-Metford rifle and Lee-Enfield series of rifles. Lee-Enfield is often referred to by the acronym SMLE. The answer is SMLE."
+        },
+        {
+            "Q": "Who was born first, James D. Grant (who uses the pen name of Lee Child) or Bernhard Schlink?",
+            "A": "James D. Grant, who uses the pen name of Lee Child, was born in 1954. Bernhard Schlink was born in 1944. Thus, Bernhard Schlink was born first. The answer is Bernhard Schlink."
+        },
+        {
+            "Q": "Which American neo-noir science fiction has Pierce Gagnon starred in?",
+            "A": "Pierce Gagnon has starred in 'One Tree Hill,' 'Looper,' 'Wish I Was Here,' and 'Extant.' Of these, 'Looper' is an American neo-noir science fiction. The answer is Looper."
+        },
+        {
+            "Q": "What year did Edburga of Minster-in-Thanet's father die?",
+            "A": "The father of Edburga of Minster-in-Thanet is King Centwine. Centwine died after 685. The answer is after 685."
+        },
+        {
+            "Q": "Were Lonny and Allure both founded in the 1990s?",
+            "A": "Lonny magazine was founded in 2009. Allure magazine was founded in 1991. Thus, of the two, only Allure was founded in the 1990s. The answer is no."
+        },
+        {
+            "Q": "The actor that stars as Joe Proctor on the series 'Power' also played a character on 'Entourage' that has what last name?",
+            "A": "The actor that stars as Joe Proctor on the series 'Power' is Jerry Ferrara. Jerry Ferrara also played a character on 'Entourage' named Turtle Assante. Thus, Turtle Assante's last name is Assante. The answer is Assante."
+        },
+        {
+            "Q": "'Nobody Loves You' was written by John Lennon and released on what album that was issued by Apple Records and was written, recorded, and released during his 18-month separation from Yoko Ono?",
+            "A": "The album issued by Apple Records and written, recorded, and released during John Lennon's 18-month separation from Yoko Ono is 'Walls and Bridges.' 'Nobody Loves You' was written by John Lennon on the 'Walls and Bridges' album. The answer is Walls and Bridges."
+        },
+        {
+            "Q": "How many awards did the 'A Girl Like Me' singer win at the American Music Awards of 2012?",
+            "A": "The singer of 'A Girl Like Me' is Rihanna. In the American Music Awards of 2012, Rihanna won one award. The answer is one."
+        },
+        {
+            "Q": "Who is older, Jeremy Horn or Renato Sobral?",
+            "A": "Jeremy Horn was born on August 25, 1975. Renato Sobral was born on September 7, 1975. Thus, Jeremy Horn is older. The answer is Jeremy Horn."
+        }
+    ],
+    "cot_pool": [
+        "Q: Jeremy Theobald and Christopher Nolan share what profession?\nA: Jeremy Theobald is an actor and producer. Christopher Nolan is a director, producer, and screenwriter. Therefore, they both share the profession of being a producer. The answer is producer.",
+        "Q: What film directed by Brian Patrick Butler was inspired by a film directed by F.W. Murnau?\nA: Brian Patrick Butler directed the film 'The Phantom Hour.' 'The Phantom Hour' was inspired by films such as 'Nosferatu' and 'The Cabinet of Dr. Caligari.' Of these, 'Nosferatu' was directed by F.W. Murnau. The answer is The Phantom Hour.",
+        "Q: How many episodes were in the South Korean television series in which Ryu Hye-young played Bo-ra?\nA: The South Korean television series in which Ryu Hye-young played Bo-ra is 'Reply 1988.' The number of episodes 'Reply 1988' has is 20. The answer is 20.",
+        "Q: 'Vertical Limit' stars which actor who also played astronaut Alan Shepard in 'The Right Stuff'?\nA: The actor who played astronaut Alan Shepard in 'The Right Stuff' is Scott Glenn. The movie 'Vertical Limit' also starred Scott Glenn. The answer is Scott Glenn.",
+        "Q: What was the 2014 population of the city where Lake Wales Medical Center is located?\nA: Lake Wales Medical Center is located in the city of Polk County, Florida. The population of Polk County in 2014 was 15,140. The answer is 15,140.",
+        "Q: Who was born first, Jan de Bont or Raoul Walsh?\nA: Jan de Bont was born on 22 October 1943. Raoul Walsh was born on March 11, 1887. Thus, Raoul Walsh was born first. The answer is Raoul Walsh.",
+        "Q: In what country was Lost Gravity manufactured?\nA: The Lost Gravity roller coaster was manufactured by Mack Rides. Mack Rides is a German company. The answer is Germany.",
+        "Q: Which of the following had a debut album entitled 'We Have an Emergency': Hot Hot Heat or The Operation M.D.?\nA: The debut album of the band Hot Hot Heat was 'Make Up the Breakdown.' The debut album of the band The Operation M.D. was 'We Have an Emergency.' The answer is The Operation M.D.",
+        "Q: In which country did this Australian, who was detained in Guantanamo Bay detention camp and published 'Guantanamo: My Journey,' receive paramilitary training?\nA: The Australian who was detained in Guantanamo Bay detention camp and published 'Guantanamo: My Journey' is David Hicks. David Hicks received his paramilitary training in Afghanistan. The answer is Afghanistan.",
+        "Q: Does The Border Surrender or Unsane have more members?\nA: The Border Surrender band has the following members: Keith Austin, Simon Shields, Johnny Manning, and Mark Austin. That is, it has 4 members. Unsane is a trio of 3 members. Thus, The Border Surrender has more members. The answer is The Border Surrender.",
+        "Q: Which band formed first, Sponge Cola or Hurricane No. 1?\nA: Sponge Cola band was formed in 1998. Hurricane No. 1 was formed in 1996. Thus, Hurricane No. 1 band formed first. The answer is Hurricane No. 1.",
+        "Q: James Paris Lee is best known for inventing the Lee-Metford rifle and another rifle often referred to by what acronym?\nA: James Paris Lee is best known for inventing the Lee-Metford rifle and Lee-Enfield series of rifles. Lee-Enfield is often referred to by the acronym SMLE. The answer is SMLE.",
+        "Q: Who was born first, James D. Grant (who uses the pen name of Lee Child) or Bernhard Schlink?\nA: James D. Grant, who uses the pen name of Lee Child, was born in 1954. Bernhard Schlink was born in 1944. Thus, Bernhard Schlink was born first. The answer is Bernhard Schlink.",
+        "Q: Which American neo-noir science fiction has Pierce Gagnon starred in?\nA: Pierce Gagnon has starred in 'One Tree Hill,' 'Looper,' 'Wish I Was Here,' and 'Extant.' Of these, 'Looper' is an American neo-noir science fiction. The answer is Looper.",
+        "Q: What year did Edburga of Minster-in-Thanet's father die?\nA: The father of Edburga of Minster-in-Thanet is King Centwine. Centwine died after 685. The answer is after 685.",
+        "Q: Were Lonny and Allure both founded in the 1990s?\nA: Lonny magazine was founded in 2009. Allure magazine was founded in 1991. Thus, of the two, only Allure was founded in the 1990s. The answer is no.",
+        "Q: The actor that stars as Joe Proctor on the series 'Power' also played a character on 'Entourage' that has what last name?\nA: The actor that stars as Joe Proctor on the series 'Power' is Jerry Ferrara. Jerry Ferrara also played a character on 'Entourage' named Turtle Assante. Thus, Turtle Assante's last name is Assante. The answer is Assante.",
+        "Q: 'Nobody Loves You' was written by John Lennon and released on what album that was issued by Apple Records and was written, recorded, and released during his 18-month separation from Yoko Ono?\nA: The album issued by Apple Records and written, recorded, and released during John Lennon's 18-month separation from Yoko Ono is 'Walls and Bridges.' 'Nobody Loves You' was written by John Lennon on the 'Walls and Bridges' album. The answer is Walls and Bridges.",
+        "Q: How many awards did the 'A Girl Like Me' singer win at the American Music Awards of 2012?\nA: The singer of 'A Girl Like Me' is Rihanna. In the American Music Awards of 2012, Rihanna won one award. The answer is one.",
+        "Q: Who is older, Jeremy Horn or Renato Sobral?\nA: Jeremy Horn was born on August 25, 1975. Renato Sobral was born on September 7, 1975. Thus, Jeremy Horn is older. The answer is Jeremy Horn."
+    ],
+    "prefix": "Q: {QUESTION}\nA:",
+    "decision_prompt": "Review the provided context carefully. If the context allows you to determine the answer, respond exactly with: So the answer is {answer}. If the context does not provide enough information for a definitive answer, respond with two sentences: first, state one relevant fact from the context; second, briefly explain why this fact could help in finding the answer. Please avoid vague responses like 'there is not enough information to solve this question' and follow these instructions precisely.",
+    "final_answer_prompt": "Given the answer so far, propose an answer from the facts. Provide it in the form: So the answer is {answer}.",
+    "rating_prompt": "Given the prompt:\n{input_prompt}\n\nRate the information:\n'{action}'\non a scale from 1 to 10. Provide only a number in response. Reward the actions higher that are concise, factual, and lead to the answer. Do not grade easy.",
+    "o1_instructions": "Here is one example\n{cot_pool_0}\nNow solve the following question\n\n- Your answer must be in the following format:\n    The answer is <Answer>.\n- Do not include any additional formatting, such as markdown code blocks"
+}

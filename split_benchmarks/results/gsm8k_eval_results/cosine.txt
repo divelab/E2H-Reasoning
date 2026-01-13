@@ -1,0 +1,6 @@
+Accuracy by difficulty:
+Trivial: 98.06% (202.0/206)
+Easy  : 96.00% (288.0/300)
+Medium: 87.29% (309.0/354)
+Hard  : 47.28% (217.0/459)
+Unknown: no examples

@@ -1,0 +1,11 @@
+{
+    "cot_prefix": "You are an expert at scheduling meetings. You are given a few constraints on the existing schedule of each participant, the meeting duration, and possibly some preferences on the meeting time. Note there exists a solution that works with existing schedule of every participant.",
+    "vote_prompt": "Given an instruction and several choices, decide which choice is most promising. Analyze each choice in detail, then conclude in the last line \"The best choice is {s}\", where s the integer id of the choice.",
+    "prefix": "TASK: {QUESTION}",
+    "o1_instructions": "-Return only your answer in the format 'Here is the proposed time: <day>, <start_time> - <end_time> \n - Do not include any additional formatting, such as markdown code blocks",
+
+    "tot_plan_generation_prompt": "Please generate exactly 5 candidate plans. Format your response in the following structure: 'Plan 1: <description of plan 1>\nPlan 2: <description of plan 2>\nPlan 3: <description of plan 3>\nPlan 4: <description of plan 4>\nPlan 5: <description of plan 5>'. Ensure each plan is distinct and concise.",
+    "tot_solution_generation_prompt": "Given the prompt and a candidate plan, generate a solution following the plan. Your solution should be formatted as follows: Here is the proposed time: day, start_time - end_time",
+    "tot_rating_prompt_plan": "Given the prompt:\n{input_prompt}\n\nRate the plan:\n'{action}'\non a scale from 1 to 10. Provide only a number in response. Reward the plans higher that are concise, lead to the answer, and have more logical reasoning.",
+    "tot_rating_prompt_solution": "Given the prompt and plan:\n{input_prompt}\n\nRate the solution:\n'{action}'\non a scale from 1 to 10. Provide only a number in response. Reward the solutions higher that are concise, lead to the answer, and have more logical reasoning."
+}

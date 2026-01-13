@@ -1,0 +1,875 @@
+Generation 0: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    target_faces = [0]*4 + [1]*4 + [2]*4 + [3]*4 + [4]*4 + [5]*4
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i*4:(i+1)*4]
+        heuristic_val += 4 - len(set(face))
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    target_colors = [0, 1, 2, 3, 4, 5]
+    heuristic_val = 0
+    
+    for color in target_colors:
+        face_indices = [
+            range(0, 4),  # Upper face
+            range(4, 8),  # Right face
+            range(8, 12), # Front face
+            range(12, 16),# Down face
+            range(16, 20),# Left face
+            range(20, 24) # Back face
+        ]
+        
+        for indices in face_indices:
+            mismatches = sum(1 for i in indices if State[i] != color)
+            heuristic_val += mismatches
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Define the number of squares in each face and target color for each face
+    face_size = 4
+    target_colors = [0, 1, 2, 3, 4, 5]
+    
+    # Count mismatches
+    heuristic_val = 0
+    for i in range(6):
+        face_start_index = i * face_size
+        face_end_index = face_start_index + face_size
+        face = State[face_start_index:face_end_index]
+        target_color = target_colors[i]
+        # Count how many squares are not the target color
+        heuristic_val += sum(1 for color in face if color != target_color)
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    restored_faces = [
+        [0, 0, 0, 0],  # Upper face
+        [1, 1, 1, 1],  # Right face
+        [2, 2, 2, 2],  # Front face
+        [3, 3, 3, 3],  # Down face
+        [4, 4, 4, 4],  # Left face
+        [5, 5, 5, 5]   # Back face
+    ]
+    
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        heuristic_val += sum(1 for j in range(4) if face[j] != restored_faces[i][j])
+    
+    return heuristic_val
+Accuracy: 0.0 
+Generation 1: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Define the number of squares in each face and target color for each face
+    face_size = 4
+    restored_faces = [
+        [0, 0, 0, 0],  # Upper face
+        [1, 1, 1, 1],  # Right face
+        [2, 2, 2, 2],  # Front face
+        [3, 3, 3, 3],  # Down face
+        [4, 4, 4, 4],  # Left face
+        [5, 5, 5, 5]   # Back face
+    ]
+    
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * face_size:(i + 1) * face_size]
+        # Count correctly positioned squares
+        heuristic_val += sum(1 for j in range(face_size) if face[j] == restored_faces[i][j])
+    
+    return heuristic_val
+Accuracy: 0.06666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Define the target colors for each face
+    target_colors = [0, 1, 2, 3, 4, 5]
+    
+    heuristic_val = 0
+    
+    for i in range(6):
+        face_start_index = i * 4
+        face_end_index = face_start_index + 4
+        face = State[face_start_index:face_end_index]
+        target_color = target_colors[i]
+        
+        # Count correctly positioned squares in the face
+        correct_positions = sum(1 for color in face if color == target_color)
+        
+        heuristic_val += correct_positions
+    
+    return heuristic_val
+Accuracy: 0.06666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Define the number of squares in each face and the expected color for each face
+    face_size = 4
+    target_colors = [0, 1, 2, 3, 4, 5]
+    
+    # Count matches
+    heuristic_val = 0
+    for i in range(6):
+        face_start_index = i * face_size
+        face_end_index = face_start_index + face_size
+        face = State[face_start_index:face_end_index]
+        target_color = target_colors[i]
+        # Count how many squares are the target color
+        heuristic_val += sum(1 for color in face if color == target_color)
+    
+    return heuristic_val
+Accuracy: 0.06666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    total_squares = 24
+    matched_squares = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        target_color = face[0]  # Assume the first square is the target color for this face
+        matched_squares += sum(1 for color in face if color == target_color)
+    
+    heuristic_val = total_squares - matched_squares
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        max_aligned = np.max(color_counts)
+        heuristic_val += (4 - max_aligned)  # 4 squares per face minus the max aligned squares
+    
+    return heuristic_val
+Accuracy: 0.6 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Count the number of uniform faces
+    uniform_face_count = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        if len(set(face)) == 1:  # Check if all squares on the face are the same color
+            uniform_face_count += 1
+    
+    # Heuristic value is the total faces (6) minus uniform faces
+    heuristic_val = 6 - uniform_face_count
+    
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Generation 2: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(np.unique(face))
+        heuristic_val += (4 - unique_colors)  # 4 squares per face minus unique colors
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))
+        heuristic_val += (4 - unique_colors)  # Penalize based on the number of unique colors
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        majority_count = np.max(color_counts)
+        heuristic_val += (4 - majority_count)  # Count of squares not matching the majority color
+    
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        pairs = np.sum(color_counts // 2)  # Count pairs of aligned colors
+        heuristic_val += (2 - pairs)  # 2 pairs needed per face
+    
+    return heuristic_val
+Accuracy: 0.0 
+Generation 3: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    target_faces = [State[i * 4:(i + 1) * 4] for i in range(6)]
+    
+    for face in target_faces:
+        for color in range(6):
+            heuristic_val += sum(1 for square in face if square != color)
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        least_frequent_count = np.min(color_counts)
+        heuristic_val += least_frequent_count  # Count of squares that are the least frequent color
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))  # Count unique colors on the face
+        heuristic_val += (4 - unique_colors)  # 4 squares minus unique colors for uniformity
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        correct_color = np.argmax(color_counts)  # Color that occurs the most
+        heuristic_val += np.sum(face != correct_color)  # Count squares not matching the correct color
+    
+    return heuristic_val
+Accuracy: 0.6 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    expected_faces = [
+        [0, 0, 0, 0],  # Upper face
+        [1, 1, 1, 1],  # Right face
+        [2, 2, 2, 2],  # Front face
+        [3, 3, 3, 3],  # Down face
+        [4, 4, 4, 4],  # Left face
+        [5, 5, 5, 5]   # Back face
+    ]
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        heuristic_val += sum(1 for j in range(4) if face[j] != expected_faces[i][j])
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    target_counts = np.array([np.bincount(State[i * 4:(i + 1) * 4], minlength=6) for i in range(6)])
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        expected_color = np.argmax(target_counts[i])  # Most common color in the face
+        heuristic_val += np.sum(face != expected_color)  # Count squares not matching the expected color
+    
+    return heuristic_val
+Accuracy: 0.8 
+Generation 4: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        correct_color = np.argmax(np.bincount(face, minlength=6))  # Most common color in the face
+        heuristic_val += np.sum(face == correct_color)  # Count squares matching the correct color
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        most_frequent_color = np.argmax(color_counts)  # Color that occurs the most
+        heuristic_val += np.sum(face != most_frequent_color)  # Count squares not matching the most frequent color
+    
+    return heuristic_val
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    target_counts = np.array([np.bincount(State[i * 4:(i + 1) * 4], minlength=6) for i in range(6)])
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        expected_color = np.argmax(target_counts[:, i])  # Most common color across all faces
+        heuristic_val += np.sum(face != expected_color)  # Count squares not matching the expected color
+    
+    return heuristic_val
+Accuracy: 0.2 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Check pairs: (0,1), (0,2), (1,3), (2,3)
+        pairs = [(face[0], face[1]), (face[0], face[2]), (face[1], face[3]), (face[2], face[3])]
+        heuristic_val += sum(1 for a, b in pairs if a != b)
+    
+    return heuristic_val
+Accuracy: 0.8666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    target_counts = np.array([np.bincount(State[i * 4:(i + 1) * 4], minlength=6) for i in range(6)])
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        most_common_color = np.argmax(target_counts[i])  # Most common color in the face
+        mismatches = np.sum(face != most_common_color)  # Count squares not matching the most common color
+        heuristic_val += mismatches // 2  # Count misaligned pairs
+    
+    return heuristic_val
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        most_common_count = np.max(color_counts)  # Count of the most common color
+        heuristic_val += 4 - most_common_count  # Total squares minus the most common color count
+    
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        correct_count = np.sum(face == face[0])  # Count squares matching the first square of the face
+        heuristic_val += correct_count  # Accumulate correctly positioned squares
+    
+    return 24 - heuristic_val  # Return the total squares minus the correct ones
+Accuracy: 0.8 
+Generation 5: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        expected_count = 4  # In a fully restored face, we expect all 4 squares to be the same color
+        heuristic_val += np.sum((color_counts - expected_count)**2)
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)
+        most_common_color = np.argmax(color_counts)
+        distances = np.sum(face != most_common_color)
+        heuristic_val += distances
+        
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))  # Count unique colors on the face
+        heuristic_val += unique_colors  # Accumulate the number of unique colors
+    
+    return heuristic_val  # Return the total count of unique colors across all faces
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color_count = np.max(color_counts)  # Find the count of the most frequent color
+        heuristic_val += 4 - dominant_color_count  # Count squares not matching the dominant color
+    
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    target_faces = [State[i * 4] for i in range(6)]  # Target color for each face is the first square
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count squares not matching the target face color
+        heuristic_val += np.sum(face != target_faces[i])
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count transitions on the edges: (0,1), (1,3), (3,2), (2,0)
+        transitions = [(face[0], face[1]), (face[1], face[3]), (face[3], face[2]), (face[2], face[0])]
+        heuristic_val += sum(1 for a, b in transitions if a != b)
+    
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        top_left_color = face[0]
+        mismatches = np.sum(face != top_left_color)  # Count squares not matching the top left color
+        heuristic_val += mismatches  # Accumulate mismatches
+    
+    return heuristic_val
+Accuracy: 0.8666666666666667 
+Generation 6: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    unique_colors = set(State)  # Identify unique colors present in the current state
+    heuristic_val = len(unique_colors) - 1  # The value is the number of unique colors minus one (since we want to minimize distinct colors)
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count matching pairs on the face
+        matching_pairs = sum(face[j] == face[k] for j in range(4) for k in range(j + 1, 4))
+        heuristic_val += (2 - matching_pairs)  # Each face can have a maximum of 2 pairs
+    
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count adjacent squares that are not the same color
+        adjacency_count = 0
+        for j in range(4):
+            if face[j] != face[(j + 1) % 4]:  # Compare current square with the next
+                adjacency_count += 1
+        heuristic_val += adjacency_count
+    return heuristic_val
+Accuracy: 0.6 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color_count = np.max(color_counts)  # Find the count of the most frequent color
+        if dominant_color_count < 4:  # If the dominant color is not occupying all squares
+            heuristic_val += 1  # Increment for this face not being uniform
+            
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Generation 7: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color = np.argmax(color_counts)  # Get the color with the maximum count
+        # Calculate the sum of distances from the dominant color
+        for color in face:
+            heuristic_val += abs(color - dominant_color)
+    return heuristic_val
+Accuracy: 0.6 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count how many squares do not match the expected uniform color of that face
+        expected_color = face[0]  # Assuming the first square's color is the expected color
+        for square in face:
+            if square != expected_color:
+                heuristic_val += 1  # Increment for each square not matching the expected color
+                
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))  # Count the number of unique colors on the face
+        heuristic_val += unique_colors - 1  # Subtract 1 to count non-uniformity
+        
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count the number of squares not matching the dominant color
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color = np.argmax(color_counts)  # Find the dominant color
+        heuristic_val += sum(1 for color in face if color != dominant_color)  # Count mismatches
+        
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    # Define corner positions as per the cube state representation
+    corner_positions = [
+        (0, 1, 2, 3),  # Upper
+        (4, 5, 6, 7),  # Right
+        (8, 9, 10, 11),# Front
+        (12, 13, 14, 15), # Down
+        (16, 17, 18, 19), # Left
+        (20, 21, 22, 23)  # Back
+    ]
+    
+    for corners in corner_positions:
+        # Check if all corners have the same color (0, 1, 2, 3, 4, or 5)
+        unique_colors = set(State[i] for i in corners)
+        if len(unique_colors) > 1:
+            heuristic_val += len(unique_colors) - 1  # Count how many corners are incorrectly oriented
+
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Count how many pieces are not in their correct position
+        correct_color = face[0]  # Assume the first piece's color represents the correct face color
+        for j in range(4):
+            if face[j] != correct_color:
+                heuristic_val += 1
+    return heuristic_val
+Accuracy: 0.8666666666666667 
+Generation 8: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    unique_colors = set(State)
+    heuristic_val = len(unique_colors) - 1  # Subtract 1 since we want to count distinct colors minus one
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    unique_colors = len(set(State))
+    heuristic_val = unique_colors - 1  # Subtract 1 because a fully restored cube has only 1 unique color per face
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    unique_colors = len(set(State))  # Count the number of unique colors in the cube state
+    heuristic_val = 6 - unique_colors  # Maximum unique colors is 6, so subtract from 6
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Check if all pieces on the face match
+        if np.all(face == face[0]):
+            heuristic_val += 1
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))  # Count unique colors on the face
+        heuristic_val += unique_colors - 1  # Subtract 1 since a face can be fully restored with 1 unique color
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        unique_colors = len(set(face))  # Count unique colors on the face
+        heuristic_val += unique_colors - 1  # Subtract 1 to reflect disorder; 0 means all matching
+        
+    return heuristic_val
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color = np.argmax(color_counts)  # Find the dominant color
+        mismatches = sum(1 for color in face if color != dominant_color)
+        
+        # Count pairs of mismatched squares
+        heuristic_val += mismatches // 2  # Each pair of mismatches can be resolved with one swap
+        
+    return heuristic_val
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        # Check if all squares on the face are the same color
+        if len(set(face)) == 1:  # If all elements are the same
+            heuristic_val += 1
+            
+    return heuristic_val
+Accuracy: 0.0 
+Generation 9: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    positions = [
+        [0, 1, 4, 5],  # Top-left corner
+        [0, 2, 4, 6],  # Top-right corner
+        [1, 2, 5, 6],  # Bottom-left corner
+        [1, 3, 5, 7],  # Bottom-right corner
+    ]
+    
+    for i in range(4):  # Check for each corner
+        corner = [State[idx] for idx in positions[i]]
+        if len(set(corner)) == 2:  # If 2 colors are present
+            heuristic_val += 1  # Count this corner as misplaced
+            
+    return heuristic_val
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        max_color_count = np.max(color_counts)  # Find the maximum count of a single color
+        moves_needed = 4 - max_color_count  # Moves needed to make all squares the same color
+        heuristic_val += moves_needed
+        
+    return heuristic_val
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_count = np.bincount(face, minlength=6)  # Count occurrences of each color
+        max_color_count = np.max(color_count)  # Maximum number of squares of any single color
+        heuristic_val += 4 - max_color_count  # 4 total squares, subtract max to find misplaced squares
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color = np.argmax(color_counts)  # Find the dominant color
+        correct_positions = sum(1 for color in face if color == dominant_color)
+        
+        # Calculate misplaced squares
+        heuristic_val += 4 - correct_positions  # Each face has 4 squares
+    
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        color_counts = np.bincount(face, minlength=6)  # Count occurrences of each color
+        dominant_color = np.argmax(color_counts)  # Find the dominant color
+        misplaced_count = sum(1 for color in face if color != dominant_color)  # Count misplaced squares
+        heuristic_val += misplaced_count  # Sum up misplaced squares
+    return heuristic_val
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    expected_colors = [State[i * 4] for i in range(6)]  # Assume each face should ideally match its first square
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        for square in face:
+            if square != expected_colors[i]:
+                heuristic_val += 1  # Count the number of squares not matching the expected color
+    return heuristic_val
+Accuracy: 0.8666666666666667 
+Test the best heuristic in the last generation: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    expected_colors = [State[i * 4] for i in range(6)]  # Assume each face should ideally match its first square
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        for square in face:
+            if square != expected_colors[i]:
+                heuristic_val += 1  # Count the number of squares not matching the expected color
+    return heuristic_val
+Accuracy: 0.6557377049180327 
+Test the best heuristic in all the generations: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    # Count the number of uniform faces
+    uniform_face_count = 0
+    
+    for i in range(6):
+        face = State[i * 4:(i + 1) * 4]
+        if len(set(face)) == 1:  # Check if all squares on the face are the same color
+            uniform_face_count += 1
+    
+    # Heuristic value is the total faces (6) minus uniform faces
+    heuristic_val = 6 - uniform_face_count
+    
+    return heuristic_val
+Accuracy: 0.825136612021858 

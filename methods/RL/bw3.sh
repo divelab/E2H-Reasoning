@@ -1,0 +1,11 @@
+# WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12340 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=2 algorithm.training.curriculum_schedule=balanced
+
+WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12346 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=1 algorithm.training.curriculum_schedule=classic
+
+WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12346 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=1 algorithm.training.curriculum_schedule=cosine
+
+WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12346 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=1 algorithm.training.curriculum_schedule=gaussian algorithm.training.scheduler_params.mu_exp=0.25 algorithm.training.scheduler_params.sigma=0.75
+
+WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12346 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=1 algorithm.training.curriculum_schedule=gaussian algorithm.training.scheduler_params.mu_exp=0.5 algorithm.training.scheduler_params.sigma=0.5
+
+WANDB_PROJECT=BW2 CUDA_VISIBLE_DEVICES=0,1,6 accelerate launch --num_processes 2 --main_process_port 12346 --config_file methods/RL/deep_speed.yaml methods/RL/main.py mode=train task=blocksworld1246 algorithm=sgrpo model=qwen algorithm.training.per_device_train_batch_size=1 algorithm.training.curriculum_schedule=gaussian algorithm.training.scheduler_params.mu_exp=0.75 algorithm.training.scheduler_params.sigma=0.25

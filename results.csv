@@ -1,0 +1,3 @@
+model,task,steps,pass_at_k,accuracy
+Qwen/Qwen2.5-1.5B-Instruct,blocksworld,2,4,0.044444444444444446
+Qwen/Qwen2.5-1.5B-Instruct,blocksworld,2,16,0.044444444444444446

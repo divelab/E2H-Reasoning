@@ -1,0 +1,1063 @@
+Generation 0: 
+Function: 
+# Heuristic Description: The heuristic calculates the absolute difference between the sum of all numbers and 24, with a penalty added for each number beyond the first to account for complexity in achieving the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = abs(sum(numbers) - 24) + (len(numbers) - 1) * 5
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the absolute difference between the sum of the numbers and 24, as a simple measure of distance from achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    return abs(sum(numbers) - 24)
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: The heuristic calculates the absolute difference between the sum of the numbers and the goal (24), divided by the number of elements in the list, reflecting how close the sum of current numbers is to the goal per element.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    sum_numbers = sum(numbers)
+    heuristic_val = abs(sum_numbers - 24) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the absolute difference between the sum of all possible results from pairwise operations and the goal, emphasizing closer states to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+
+    from itertools import permutations
+    from operator import add, sub, mul, truediv
+
+    def safe_div(x, y):
+        return x / y if y != 0 else float('inf')
+
+    operators = [add, sub, mul, truediv, safe_div]
+    
+    potential_values = set()
+    for a, b in permutations(numbers, 2):
+        for op in operators:
+            try:
+                potential_values.add(op(a, b))
+            except ZeroDivisionError:
+                pass
+
+    heuristic_val = min(abs(24 - val) for val in potential_values)
+    return heuristic_val
+
+Accuracy: 0.375 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between the product of the numbers in the current state and the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    product = 1
+    for num in numbers:
+        product *= num
+    heuristic_val = abs(product - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Generation 1: 
+Function: 
+# Heuristic Description: The heuristic calculates the difference between the maximum and minimum numbers in the list, reflecting the potential to scale the numbers to reach the goal by maximizing operation diversity.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    max_num = max(numbers)
+    min_num = min(numbers)
+    heuristic_val = max_num - min_num
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, divided by the number of elements, to assess average individual closeness to 24.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the average of the absolute differences between each number in the current state and the goal (24), aiming to minimize these differences through operations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the average absolute difference between each number in the current state and a target partition value, derived by dividing 24 by the number of elements, aiming to distribute the target evenly across numbers.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    target = 24 / len(numbers)
+    heuristic_val = sum(abs(num - target) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the average of the absolute differences between each number and the goal, which reflects the average closeness of each number to the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between the sum of the numbers in the current state and the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_sum = sum(numbers)
+    heuristic_val = abs(total_sum - 24)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the average of absolute differences between each number in the current state and the goal (24), aiming to minimize these differences by applying operations.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: The heuristic calculates the absolute difference between the product of the numbers and the goal (24), divided by the number of elements in the list, reflecting how close the product of current numbers is to the goal per element.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    product_numbers = 1
+    for num in numbers:
+        product_numbers *= num
+    heuristic_val = abs(product_numbers - 24) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Common Idea: The provided heuristics evaluate the proximity of the current state to the goal (24) by calculating numerical differences, either through summation or multiplication.
+
+# Heuristic Description: Calculate the average of absolute differences between each number and the goal (24), providing an indication of how each number individually deviates from the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_difference = 0
+    for num in numbers:
+        total_difference += abs(num - 24)
+    heuristic_val = total_difference / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: The heuristic calculates the average of the absolute differences between each number and the goal (24), reflecting the average closeness of individual numbers to the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = sum(abs(n - 24) for n in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Compute the sum of absolute differences between each number and the goal, aiming to minimize this sum by applying operations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the minimum number of operations needed to reduce the list to a single number that is closest to 24, using a greedy approach to select operations that minimize this distance at each step.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+
+    from itertools import combinations
+    min_operations = float('inf')
+
+    def calculate_operations(num_list):
+        if len(num_list) == 1:
+            return abs(num_list[0] - 24)
+        min_ops = float('inf')
+        for (a, b) in combinations(num_list, 2):
+            results = [
+                a + b,
+                a - b,
+                b - a,
+                a * b,
+                a / b if b != 0 else float('inf'),
+                b / a if a != 0 else float('inf')
+            ]
+            for result in results:
+                new_list = [result] + [x for x in num_list if x != a and x != b]
+                min_ops = min(min_ops, 1 + calculate_operations(new_list))
+        return min_ops
+
+    heuristic_val = calculate_operations(numbers)
+    return heuristic_val
+
+Accuracy: 0.75 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between the sum of the inverses of the numbers in the current state and the inverse of the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    inverse_sum = sum(1/num for num in numbers if num != 0)
+    heuristic_val = abs(inverse_sum - 1/24)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between the sum of the numbers in the current state and the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_sum = sum(numbers)
+    heuristic_val = abs(total_sum - 24)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between the sum of the numbers in the current state and the goal, focusing on minimizing this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_sum = sum(numbers)
+    heuristic_val = abs(total_sum - 24)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the minimum difference between any pair of numbers when combined with any operation (+, -, *, /), compared to the goal, to estimate how close the current state can get to the goal with one operation.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    min_difference = float('inf')
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            a, b = numbers[i], numbers[j]
+            possible_results = [a + b, a - b, b - a, a * b]
+            if b != 0:
+                possible_results.append(a / b)
+            if a != 0:
+                possible_results.append(b / a)
+            for result in possible_results:
+                min_difference = min(min_difference, abs(result - 24))
+    heuristic_val = min_difference
+    return heuristic_val
+
+Accuracy: 0.75 
+Function: 
+# Heuristic Description: The heuristic calculates the minimum absolute difference between each number in the list and the goal (24), reflecting the closest individual number to the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = min(abs(number - 24) for number in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: The heuristic calculates the average deviation of each number from the target divided by the number of elements, reflecting the individual proximity of each number to the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    deviations = [abs(num - 24) for num in numbers]
+    heuristic_val = sum(deviations) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: The heuristic evaluates the average of the absolute differences between each number in the list and half of the goal (12), divided by the number of elements, reflecting how close individual numbers are to a midpoint of the goal.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    heuristic_val = sum(abs(n - 12) for n in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: The heuristic evaluates the average of differences between each number and its nearest factor of 24, aiming to minimize these differences as we approach a solution.
+
+def calc_heuristic(numbers):
+    if len(numbers) == 1 and numbers[0] == 24:
+        return 0
+    factors = [1, 2, 3, 4, 6, 8, 12, 24]
+    total_diff = 0
+    for num in numbers:
+        closest_factor = min(factors, key=lambda x: abs(num - x))
+        total_diff += abs(num - closest_factor)
+    heuristic_val = total_diff / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Generation 2: 
+Function: 
+# Heuristic Description: Evaluate the potential of each number in the current state to reach the goal by computing the average of all numbers and comparing it to the goal, prioritizing reaching the goal through scaling or direct transformations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    avg_value = sum(numbers) / len(numbers)
+    heuristic_val = abs(avg_value - 24)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Estimate how many operations are required to reach the goal by counting the current numbers and subtracting one, as each operation reduces the number of numbers by one.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = len(numbers) - 1
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the variance of all possible results from combining pairs of numbers using basic operations (+, -, *, /), and use this as an indicator of proximity to achieving a stable solution reaching the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    possible_results = []
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            a, b = numbers[i], numbers[j]
+            results = [a + b, a - b, b - a, a * b]
+            if b != 0:
+                results.append(a / b)
+            if a != 0:
+                results.append(b / a)
+            possible_results.extend(results)
+    mean_result = sum(possible_results) / len(possible_results)
+    variance = sum((x - mean_result) ** 2 for x in possible_results) / len(possible_results)
+    heuristic_val = variance
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the average of the numbers, focusing on minimizing this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    avg = sum(numbers) / len(numbers)
+    heuristic_val = sum(abs(num - avg) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Evaluate the average deviation of each number from the goal, adjusted by a penalty for the number of operations needed, to estimate how far the current state is from achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    avg_deviation = sum(abs(num - 24) for num in numbers) / len(numbers)
+    operation_penalty = len(numbers) - 1
+    heuristic_val = avg_deviation + operation_penalty
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the average distance of each number from the goal, considering that multiple operations might be needed to incrementally move the current state towards the final goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_distance = sum(abs(num - 24) for num in numbers)
+    heuristic_val = total_distance / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of all numbers and compare it to the goal, aiming to minimize the absolute difference, which reflects the potential to reach the goal through multiplication.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    product = 1
+    for number in numbers:
+        product *= number
+    heuristic_val = abs(product - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between the product of the numbers in the current state and the goal, focusing on minimizing this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_product = 1
+    for num in numbers:
+        total_product *= num
+    heuristic_val = abs(total_product - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Evaluate the variance of the numbers in the current state, aiming to minimize it as lower variance suggests a more balanced state closer to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    mean_value = sum(numbers) / len(numbers)
+    variance = sum((x - mean_value) ** 2 for x in numbers) / len(numbers)
+    heuristic_val = variance
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and the goal, focusing on minimizing this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for number in numbers:
+        heuristic_val *= abs(number - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and the number 24, focusing on minimizing these products as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    product_diff = 1
+    for num in numbers:
+        product_diff *= abs(num - 24)
+    heuristic_val = product_diff
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, focusing on minimizing the average of these differences as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_diff = sum(abs(number - 24) for number in numbers)
+    heuristic_val = total_diff / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between the product of the numbers in the current state and the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    product_val = 1
+    for num in numbers:
+        product_val *= num
+    heuristic_val = abs(product_val - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between the product of the numbers in the current state and the goal, focusing on minimizing this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    total_product = 1
+    for num in numbers:
+        total_product *= num
+    heuristic_val = abs(total_product - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, focusing on minimizing these differences as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Common idea: Evaluate the proximity to the target number, 24, by considering possible operations on the numbers in the current state.
+
+# Heuristic Description: Evaluate the average of differences between all possible pair combinations with operations and the goal, considering each operation's feasibility to estimate closeness to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    differences = []
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            a, b = numbers[i], numbers[j]
+            possible_results = [a + b, a - b, b - a, a * b]
+            if b != 0:
+                possible_results.append(a / b)
+            if a != 0:
+                possible_results.append(b / a)
+            for result in possible_results:
+                differences.append(abs(result - 24))
+    heuristic_val = sum(differences) / len(differences) if differences else float('inf')
+    return heuristic_val
+
+Accuracy: 0.375 
+Function: 
+# Heuristic Description: Calculate the product of the absolute differences between each number in the current state and the goal, prioritizing states where the product is closer to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for number in numbers:
+        heuristic_val *= abs(number - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the maximum achievable number from the current state using one operation and measure its absolute difference from the goal, to assess potential proximity to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    max_achievable = float('-inf')
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            a, b = numbers[i], numbers[j]
+            possible_results = [a + b, a - b, b - a, a * b]
+            if b != 0:
+                possible_results.append(a / b)
+            if a != 0:
+                possible_results.append(b / a)
+            max_achievable = max(max_achievable, max(possible_results))
+    heuristic_val = abs(max_achievable - 24)
+    return heuristic_val
+
+Accuracy: 0.375 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and the goal, aiming to minimize this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Generation 3: 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the average of numbers, aiming to measure the overall deviation towards potential balanced operations that could lead to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    avg_val = sum(numbers) / len(numbers)
+    heuristic_val = sum(abs(num - avg_val) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the average, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    average_val = sum(numbers) / len(numbers)
+    heuristic_val = sum(abs(num - average_val) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the sum of squares of differences between each number in the current state and the goal divided by the number of elements, to evaluate how balanced the numbers are towards achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    goal = 24
+    sum_of_squares = sum((num - goal / len(numbers)) ** 2 for num in numbers)
+    heuristic_val = sum_of_squares / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the minimum number of operations needed to reduce the current state list to a single number while prioritizing operations that produce results closer to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    return len(numbers) - 1
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and a target average value derived from dividing the goal by the number of elements, to estimate proximity to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    target_average = 24 / len(numbers)
+    heuristic_val = sum(abs(num - target_average) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the minimum absolute difference between any two numbers in the current state and 24 to estimate the closeness to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    min_difference = float('inf')
+    for num in numbers:
+        min_difference = min(min_difference, abs(num - 24))
+    return min_difference
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the number 6, which is a factor of 24, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 6) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of squared differences between each number in the current state and the goal, aiming to minimize these differences as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24)**2 for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and a factor of the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 0
+    for num in numbers:
+        heuristic_val += abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the target goal, aiming to minimize this sum by applying operations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of squares of differences between each number in the current state and a target intermediate value that could lead towards the goal of 24, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    target_intermediate = 6  # Chosen as a number that can lead to 24 using multiplication
+    heuristic_val = sum((num - target_intermediate) ** 2 for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the goal, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the goal, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Estimate the feasibility of reaching the goal by calculating the sum of absolute differences between each number in the current state and the goal, to gauge how close the numbers are collectively to achieving the target.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the goal divided by the number of elements, to estimate the closeness to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and 24, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the goal, aiming to minimize this sum as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of absolute differences between each number in the current state and the goal, aiming to reduce these differences as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num - 24) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Generation 4: 
+Function: 
+# Heuristic Description: Calculate the sum of the reciprocals of the absolute differences between each number in the current state and 24, highlighting how close any single number is to achieving the goal on its own.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(1 / abs(num - 24) for num in numbers if num != 24)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the average of the squared differences between each number in the current state and the goal to estimate how far the state is from reaching 24.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of the absolute differences between each number in the current state and the average of all numbers, aiming to minimize this difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    avg_value = sum(numbers) / len(numbers)
+    heuristic_val = sum(abs(num - avg_value) for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+# Heuristic Description: Calculate the average of the squared differences between each number in the current state and the goal to estimate proximity to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of the squares of differences between each number in the current state and 24, aiming to emphasize larger deviations and guide operations towards minimizing these differences.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and the goal, incorporating the impact of multiplicative divergence from the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the sum of squares of differences between each number in the current state and 24, aiming to minimize this squared difference as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of the squares of the differences between each number in the current state and the goal divided by the number of elements, to provide a measure of deviation from achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the sum of the differences between the square roots of each number in the current state and the square root of the goal, divided by the number of elements, to estimate the closeness to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum(abs(num**0.5 - 24**0.5) for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the average of squared differences between each number in the current state and the goal to estimate the closeness to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = sum((num - 24) ** 2 for num in numbers) / len(numbers)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of differences between each number in the current state and the goal, to assess the feasibility of reaching the goal through multiplicative operations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and 24, aiming to minimize this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and 24, aiming to minimize this difference through operations.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of the absolute differences between each number in the current state and 24, providing a measure of the multiplicative distance to the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of all numbers in the current state and find the absolute difference from 24, aiming to minimize this difference to reach the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    product = 1
+    for num in numbers:
+        product *= num
+    heuristic_val = abs(product - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of the differences between each number in the current state and 24, aiming to minimize this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of the absolute differences between each number in the current state and the goal, aiming to minimize this product as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the product of differences between each number in the current state and the goal, aiming to maximize the product's closeness to zero as operations are applied.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = abs(24 - numbers[0])
+    for num in numbers[1:]:
+        heuristic_val *= abs(24 - num)
+    return heuristic_val
+
+Accuracy: 0.25 
+Function: 
+# Heuristic Description: Calculate the average of the absolute differences between pairwise products of numbers in the current state and the goal, to estimate the closeness to achieving the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    from itertools import combinations
+    pairwise_products = [a * b for a, b in combinations(numbers, 2)]
+    heuristic_val = sum(abs(product - 24) for product in pairwise_products) / len(pairwise_products)
+    return heuristic_val
+
+Accuracy: 0.125 
+Function: 
+# Heuristic Description: Calculate the product of differences between each number in the current state and the goal, divided by the number of elements, to estimate the effort needed to achieve the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = abs(24 - numbers[0])
+    for num in numbers[1:]:
+        heuristic_val *= abs(24 - num)
+    heuristic_val /= len(numbers)
+    return heuristic_val
+
+Accuracy: 0.25 
+Test the best heuristic in the last generation: 
+Function: 
+# Heuristic Description: Calculate the product of absolute differences between each number in the current state and the goal, incorporating the impact of multiplicative divergence from the goal.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+    heuristic_val = 1
+    for num in numbers:
+        heuristic_val *= abs(num - 24)
+    return heuristic_val
+
+Accuracy: 0.07 
+Test the best heuristic in all the generations: 
+Function: 
+# Heuristic Description: Calculate the minimum number of operations needed to reduce the list to a single number that is closest to 24, using a greedy approach to select operations that minimize this distance at each step.
+
+def calc_heuristic(numbers):
+    if numbers == [24]:
+        return 0
+
+    from itertools import combinations
+    min_operations = float('inf')
+
+    def calculate_operations(num_list):
+        if len(num_list) == 1:
+            return abs(num_list[0] - 24)
+        min_ops = float('inf')
+        for (a, b) in combinations(num_list, 2):
+            results = [
+                a + b,
+                a - b,
+                b - a,
+                a * b,
+                a / b if b != 0 else float('inf'),
+                b / a if a != 0 else float('inf')
+            ]
+            for result in results:
+                new_list = [result] + [x for x in num_list if x != a and x != b]
+                min_ops = min(min_ops, 1 + calculate_operations(new_list))
+        return min_ops
+
+    heuristic_val = calculate_operations(numbers)
+    return heuristic_val
+
+Accuracy: 0.7 

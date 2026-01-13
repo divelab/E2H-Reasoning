@@ -1,0 +1,42 @@
+# conf/config.yaml
+defaults:
+  - _self_
+  - model: qwen
+  - task: blocksworld  # or countdown
+  - algorithm: grpo    # or ppo
+
+# Mode: either "train" or "inference"
+mode: "train"
+
+experiment:
+  dataset_size: 6000
+  dataset_seed: 1234
+  test_size: 0.1
+  hf_token: ${oc.env:HF_TOKEN,null}
+
+output:
+  root_path: ${oc.env:ROOT_PATH}
+  run_name: ${model.trim}_${task.name}_${algorithm.name}_${algorithm.training.curriculum_schedule}_${algorithm.training.scheduler_params.mu_exp}_${algorithm.training.scheduler_params.sigma}_SEC${algorithm.training.scheduler_params.vrex_adds.sec}DRO${algorithm.training.scheduler_params.vrex_adds.groupdro}G${algorithm.training.scheduler_params.vrex_adds.gaussian}_minp${algorithm.training.scheduler_params.min_prob}${ckpt2short:${algorithm.training.resume_from_checkpoint}}_${algorithm.training.max_steps}  # This will dynamically set the model name based on task and algorithm
+
+lora:
+  r: 32
+  alpha: 64
+  dropout: 0.1
+  target_modules:
+    - "q_proj"
+    - "v_proj"
+  task_type: "CAUSAL_LM"
+
+# Optional GPU memory management
+occupy_gpu_memory: false
+occupy_gpu_memory_gb: 50
+gpu_device: "cuda:0"
+
+hydra:
+  run:
+    dir: ${output.root_path}/outputs/${mode2name:${mode},${output.run_name},${model.trim}} #_${now:%Y%m%d%H%M%S}
+  sweep:
+    dir: ${output.root_path}/multirun/${now:%Y%m%d}
+    subdir: ${hydra.job.override_dirname}
+  job:
+    chdir: false

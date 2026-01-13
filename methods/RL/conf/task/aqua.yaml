@@ -1,0 +1,19 @@
+name: "aqua"
+
+training:
+  data_files:
+    - datasets/aqua/trivial
+    - datasets/aqua/easy
+    - datasets/aqua/medium
+    - datasets/aqua/hard
+  max_prompt_length: 512
+  max_completion_length: 512
+
+inference:
+  data_files:
+    - datasets/aqua/trivial
+    - datasets/aqua/easy
+    - datasets/aqua/medium
+    - datasets/aqua/hard
+  temperature: 0
+  n: 1

@@ -1,0 +1,24 @@
+# conf/task/countdown.yaml
+name: "countdown345"
+data_files:
+  - citrinegui/countdown_n3t100_1-100
+  - citrinegui/countdown_n4t100_1-100
+  - citrinegui/countdown_n5t100_1-100
+#  - citrinegui/countdown_n6t100_1-100
+test_file: citrinegui/countdown_n5t100_1-100
+force_redownload: false
+train_size: 327680
+test_size: 1024
+
+training:
+  max_prompt_length: 1000
+  max_completion_length: 512
+
+inference:
+  checkpoint: ${algorithm.training.max_steps}
+  temperature: 0.0
+  sc_num: 1
+  pass_at_k: 1
+  resume: 0
+  max_new_tokens: 512
+  batch_size: 32

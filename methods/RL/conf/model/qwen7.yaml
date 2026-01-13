@@ -1,0 +1,6 @@
+family: "Qwen"
+trim: "Qwen2.5-7B-Instruct"
+name: ${model.family}/${model.trim}
+trust_remote_code: true
+torch_dtype: "bfloat16"
+attn_implementation: "flash_attention_2"

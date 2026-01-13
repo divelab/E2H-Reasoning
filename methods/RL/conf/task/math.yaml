@@ -1,0 +1,20 @@
+name: "math"
+
+training:
+  data_files:
+    - datasets/math/level1
+    - datasets/math/level2
+    - datasets/math/level3
+    - datasets/math/level4
+  max_prompt_length: 1600
+  max_completion_length: 1600
+
+inference:
+  data_files:
+    - datasets/math/level1
+    - datasets/math/level2
+    - datasets/math/level3
+    - datasets/math/level4
+    - datasets/math/level5
+  temperature: 0.0
+  n: 1

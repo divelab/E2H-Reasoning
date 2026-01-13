@@ -1,0 +1,932 @@
+Generation 0: 
+Function: 
+import numpy as np
+
+def calc_heuristic(state):
+    heuristic_val = 0
+    # Define face indices
+    face_indices = [(0, 3), (4, 7), (8, 11), (12, 15), (16, 19), (20, 23)]
+    for face in face_indices:
+        start, end = face
+        # Calculate corner difference
+        for i in [start, end - 1]:
+            if state[i] != state[i % 4 + 1] or state[i] != state[(i // 4) * 4 + ((i % 4) + 2) % 4]:
+                heuristic_val += 2
+        # Calculate edge difference
+        for i in [(start + 1) % 4 + (start // 4) * 4, (end - 2) % 4 + (end // 4) * 4]:
+            if state[i] != state[(i // 4) * 4 + ((i % 4) + 1) % 4]:
+                heuristic_val += 1
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    faces = [State[i:i+4] for i in range(0, len(State), 4)]
+    
+    for face in faces:
+        counts = np.bincount(face)
+        max_count = np.max(counts)
+        heuristic_val += 4 - max_count
+        
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        heuristic_val += np.sum(face != most_common_color)
+        if np.sum(face != most_common_color) > 0:
+            heuristic_val += 2
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    """
+    Calculate the heuristic value for the given state of the 2x2 Cube.
+
+    Parameters:
+    State (numpy array): The current state of the 2x2 Cube.
+
+    Returns:
+    heuristic_val (int): The heuristic value calculated for the current state of the 2x2 Cube.
+    """
+    heuristic_val = 0
+    # Define the face indices
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    
+    # Calculate the heuristic value for each face
+    for start, end in face_indices:
+        face_colors = np.unique(State[start:end])
+        heuristic_val += len(face_colors) - 1
+    
+    return heuristic_val
+
+Accuracy: 0.9333333333333333 
+Generation 1: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    """
+    Calculate the heuristic value for the given state of the 2x2 Cube.
+
+    Parameters:
+    State (numpy array): The current state of the 2x2 Cube.
+
+    Returns:
+    heuristic_val (int): The heuristic value calculated for the current state of the 2x2 Cube.
+    """
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    
+    # Calculate the heuristic value for each face
+    for start, end in face_indices:
+        face = State[start:end]
+        for i in range(len(face)):
+            for j in range(i+1, len(face)):
+                if face[i] != face[j]:
+                    heuristic_val += 1
+    
+    # Calculate the heuristic value across adjacent faces
+    for i in range(len(face_indices)):
+        face1 = State[face_indices[i][0]:face_indices[i][1]]
+        if i < len(face_indices) - 1:
+            face2 = State[face_indices[i+1][0]:face_indices[i+1][1]]
+        else:
+            face2 = State[face_indices[0][0]:face_indices[0][1]]
+        for j in range(len(face1)):
+            if face1[j] != face2[j]:
+                heuristic_val += 1
+    
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    """
+    Calculate the heuristic value for the given state of the 2x2 Cube.
+
+    Parameters:
+    State (numpy array): The current state of the 2x2 Cube.
+
+    Returns:
+    heuristic_val (int): The heuristic value calculated for the current state of the 2x2 Cube.
+    """
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    
+    max_aligned_squares = 0
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        aligned_squares = 0
+        for color in unique_colors:
+            aligned_squares = max(aligned_squares, np.sum(face == color))
+        max_aligned_squares = max(max_aligned_squares, aligned_squares)
+    
+    heuristic_val = 8 - max_aligned_squares
+    
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+from itertools import permutations
+
+def calc_heuristic(State):
+    """
+    Calculate the heuristic value for the given state of the 2x2 Cube.
+
+    Parameters:
+    State (numpy array): The current state of the 2x2 Cube.
+
+    Returns:
+    heuristic_val (int): The heuristic value calculated for the current state of the 2x2 Cube.
+    """
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        min_swaps = float('inf')
+        for perm in permutations(face):
+            swaps = 0
+            for i in range(len(face)):
+                if perm[i] != face[i]:
+                    swaps += 1
+            min_swaps = min(min_swaps, swaps)
+        heuristic_val += min_swaps
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    faces = [State[start:end] for start, end in face_indices]
+    
+    for i in range(len(faces)):
+        for j in range(i + 1, len(faces)):
+            face1 = faces[i]
+            face2 = faces[j]
+            colors1 = np.unique(face1)
+            colors2 = np.unique(face2)
+            common_colors = np.intersect1d(colors1, colors2)
+            if len(common_colors) == 0:
+                heuristic_val += 4
+            elif len(common_colors) == 1:
+                heuristic_val += 2
+            else:
+                heuristic_val += 1
+                
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    """
+    Calculate the heuristic value for the given state of the 2x2 Cube.
+
+    Parameters:
+    State (numpy array): The current state of the 2x2 Cube.
+
+    Returns:
+    heuristic_val (int): The heuristic value calculated for the current state of the 2x2 Cube.
+    """
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    faces = [State[start:end] for start, end in face_indices]
+    
+    # Calculate the heuristic value for each pair of adjacent faces
+    for i in range(len(faces)):
+        face1 = faces[i]
+        face2 = faces[(i+1) % len(faces)]
+        common_colors = np.intersect1d(face1, face2)
+        heuristic_val += len(face1) - len(common_colors)
+        heuristic_val += len(face2) - len(common_colors)
+    
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares
+        if misaligned_squares > 1:
+            heuristic_val += 3
+    return heuristic_val
+
+Accuracy: 0.4666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares
+        if misaligned_squares > 1:
+            heuristic_val += 3
+    return heuristic_val
+
+Accuracy: 0.4666666666666667 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    misaligned_faces = 0
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares
+        if misaligned_squares > 0:
+            misaligned_faces += 1
+    heuristic_val += misaligned_faces * 3
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares + (misaligned_squares * 0.5)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    max_misaligned_squares = 0
+    total_misaligned_squares = 0
+    num_misaligned_faces = 0
+    
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        total_misaligned_squares += misaligned_squares
+        if misaligned_squares > 0:
+            num_misaligned_faces += 1
+        max_misaligned_squares = max(max_misaligned_squares, misaligned_squares)
+    
+    heuristic_val = max_misaligned_squares * num_misaligned_faces + total_misaligned_squares
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares + (misaligned_squares > 1)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares
+        if misaligned_squares > 1:
+            heuristic_val += misaligned_squares - 1
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        heuristic_val += np.sum(np.abs(np.array([most_common_color]*4) - face))
+    return heuristic_val
+
+Accuracy: 0.6 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        for i in range(start, end):
+            if State[i] != most_common_color:
+                heuristic_val += np.min([abs(i - j) for j in range(start, end) if State[j] == most_common_color])
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        heuristic_val += np.sum(face != most_common_color)
+        unique_colors = len(np.unique(face))
+        heuristic_val += unique_colors - 1
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    
+    misaligned_faces = 0
+    max_misaligned_squares = 0
+    
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        
+        if misaligned_squares > 0:
+            misaligned_faces += 1
+            max_misaligned_squares = max(max_misaligned_squares, misaligned_squares)
+    
+    heuristic_val = misaligned_faces + max_misaligned_squares
+    
+    return heuristic_val
+
+Accuracy: 1.0 
+Generation 2: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    target_state = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
+    for i in range(len(State)):
+        heuristic_val += np.abs(i // 4 - target_state.index(State[i]) // 4) + np.abs(i % 4 - target_state.index(State[i]) % 4)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    faces = [State[start:end] for start, end in face_indices]
+    
+    # Calculate the minimum number of swaps needed to align each pair of adjacent faces
+    for i in range(len(faces)):
+        for j in range(i+1, len(faces)):
+            face1 = faces[i]
+            face2 = faces[j]
+            common_colors = np.intersect1d(face1, face2)
+            heuristic_val += len(face1) - len(common_colors)
+    
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    target_face = np.array([State[0], State[0], State[0], State[0]])
+    
+    for start, end in face_indices:
+        face = State[start:end]
+        diff = np.abs(face - target_face)
+        swaps = np.sum(diff > 0) // 2
+        heuristic_val += swaps
+    
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        for i in range(len(face)):
+            for j in range(i+1, len(face)):
+                heuristic_val += abs(face[i] - face[j])
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    faces = [State[start:end] for start, end in face_indices]
+    for face in faces:
+        similarities = [np.sum(np.equal(face, other_face)) / 4 for other_face in faces]
+        heuristic_val += 1 / np.max(similarities)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        for i in range(len(face)):
+            for j in range(i+1, len(face)):
+                if face[i] != face[j]:
+                    heuristic_val += 1
+    adjacent_faces = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24), (0, 16), (4, 20), (8, 12), (12, 16)]
+    for pair in adjacent_faces:
+        start1, end1 = pair
+        start2, end2 = (pair[1], pair[1] + 4)
+        face1 = State[start1:end1]
+        face2 = State[start2:end2]
+        for i in range(len(face1)):
+            if face1[i] != face2[i]:
+                heuristic_val += 1
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    misaligned_squares_list = []
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares ** 2
+        misaligned_squares_list.append(misaligned_squares)
+    heuristic_val += np.var(misaligned_squares_list)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        heuristic_val += np.var(face)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += len(unique_colors) - 1
+        if len(unique_colors) > 2:
+            heuristic_val += len(unique_colors) - 2
+    return heuristic_val
+
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    target_distribution = [1, 1, 1, 1]
+    for start, end in face_indices:
+        face = State[start:end]
+        face_distribution = np.bincount(face)
+        face_distribution = np.pad(face_distribution, (0, 6 - len(face_distribution)), 'constant')
+        misaligned_squares = np.sum(face != face[0])
+        distribution_penalty = np.sum(np.abs(face_distribution - target_distribution))
+        heuristic_val += misaligned_squares + distribution_penalty
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        permutations = np.sum(np.sort(face) != np.array([face[0], face[0], face[1], face[1]]))
+        heuristic_val += misaligned_squares + (misaligned_squares > 1) * (misaligned_squares - 1) + permutations
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        color_counts = np.bincount(face)
+        dominant_color_count = np.max(color_counts)
+        heuristic_val += 4 - dominant_color_count
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares**2 + (misaligned_squares**3 * 0.5)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares + (misaligned_squares ** 2)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares + (misaligned_squares ** 2)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        heuristic_val += misaligned_squares + (misaligned_squares ** 2)
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Generation 3: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        for color in unique_colors:
+            color_indices = np.where(face == color)[0]
+            distances = np.abs(np.diff(color_indices))
+            heuristic_val += np.sum(distances) + len(color_indices) * (len(color_indices) - 1) * 0.5
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for color in np.unique(State):
+        indices = np.where(State == color)[0]
+        for i in range(len(indices)):
+            for j in range(i + 1, len(indices)):
+                heuristic_val += abs(indices[i] // 4 - indices[j] // 4) + abs(indices[i] % 4 - indices[j] % 4)
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        target_colors = np.array([0, 1])
+        cost_matrix = np.abs(np.tile(unique_colors, (len(target_colors), 1)) - np.tile(target_colors, (len(unique_colors), 1)).T)
+        row_ind, col_ind = linear_sum_assignment(cost_matrix)
+        heuristic_val += cost_matrix[row_ind, col_ind].sum()
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+def calc_heuristic(State):
+    heuristic_val = 0
+    edge_pairs = [(0, 4), (0, 8), (0, 16), (0, 20), (4, 8), (4, 12), (4, 16), (8, 12), (12, 8), (12, 16), (12, 20), (16, 20)]
+    for pair in edge_pairs:
+        if State[pair[0]] != State[pair[1]]:
+            heuristic_val += 1
+    return heuristic_val
+
+Accuracy: 0.0 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        color_permutations = np.sum(face != most_common_color)
+        heuristic_val += color_permutations * (color_permutations + 1) // 2
+    return heuristic_val
+
+Accuracy: 0.6666666666666666 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        target_face = np.array([face[0]] * 4)
+        permutation_distance = np.sum(np.abs(np.argsort(face) - np.argsort(target_face)))
+        misaligned_squares = np.sum(face != face[0])
+        heuristic_val += permutation_distance + (misaligned_squares * 0.5)
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        misaligned_edges = 0
+        if face[0] != face[1]:
+            misaligned_edges += 1
+        if face[1] != face[2]:
+            misaligned_edges += 1
+        if face[2] != face[3]:
+            misaligned_edges += 1
+        if face[3] != face[0]:
+            misaligned_edges += 1
+        heuristic_val += misaligned_edges
+        if misaligned_edges > 2:
+            heuristic_val += (misaligned_edges - 2) * 2
+    return heuristic_val
+
+Accuracy: 0.3333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        if len(unique_colors) == 1:
+            continue
+        max_similarity = 0
+        for color in unique_colors:
+            similarity = np.sum(face == color) / 4
+            max_similarity = max(max_similarity, similarity)
+        heuristic_val += 1 - max_similarity
+    return heuristic_val
+
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors, counts = np.unique(face, return_counts=True)
+        max_count_color = unique_colors[np.argmax(counts)]
+        heuristic_val += np.sum(face != max_count_color)
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        if len(unique_colors) > 1:
+            heuristic_val += len(unique_colors) - 1 + np.var(face)
+    return heuristic_val
+
+Accuracy: 0.7333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        num_misaligned_pairs = len(unique_colors) - 1
+        if len(unique_colors) > 2:
+            num_misaligned_pairs += 1
+        heuristic_val += num_misaligned_pairs
+    return heuristic_val
+
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += len(unique_colors) - 1
+        
+        # Count the number of unique pairs of adjacent colors
+        unique_pairs = set()
+        for i in range(len(face) - 1):
+            pair = tuple(sorted([face[i], face[i+1]]))
+            unique_pairs.add(pair)
+        heuristic_val += len(unique_pairs) - 1
+    return heuristic_val
+
+Accuracy: 0.9333333333333333 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += len(unique_colors) - 1
+        if len(unique_colors) > 2:
+            heuristic_val += 2 * (len(unique_colors) - 2)
+    return heuristic_val
+
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += len(unique_colors) - 1
+        if len(unique_colors) > 2:
+            heuristic_val += len(unique_colors) - 2
+        if len(unique_colors) > 1 and (face[0] != face[3] or face[1] != face[2]):
+            heuristic_val += 1
+    return heuristic_val
+
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += (len(unique_colors) - 1) * len(unique_colors)
+    return heuristic_val
+
+Accuracy: 0.8 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+    for start, end in face_indices:
+        face = State[start:end]
+        unique_colors = np.unique(face)
+        heuristic_val += len(unique_colors) - 1
+        if len(unique_colors) > 1:
+            color_counts = {color: np.sum(face == color) for color in unique_colors}
+            heuristic_val += sum(count - 1 for count in color_counts.values())
+    return heuristic_val
+
+Accuracy: 1.0 
+Test the best heuristic in all the generations: 
+Function: 
+import numpy as np
+
+def calc_heuristic(State):
+    heuristic_val = 0
+    face_indices = [(0, 4), (4, 8), (8, 12), (12, 16), (16, 20), (20, 24)]
+
+    misaligned_faces = 0
+    max_misaligned_squares = 0
+
+    for start, end in face_indices:
+        face = State[start:end]
+        most_common_color = np.bincount(face).argmax()
+        misaligned_squares = np.sum(face != most_common_color)
+        
+        if misaligned_squares > 0:
+            misaligned_faces += 1
+            max_misaligned_squares = max(max_misaligned_squares, misaligned_squares)
+
+    heuristic_val = misaligned_faces + max_misaligned_squares
+    return heuristic_val
+Accuracy:  0.8469945355191257

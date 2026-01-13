@@ -1,0 +1,4 @@
+{
+  "instructions": "You are an expert at planning trips. You are given a few constraints regarding the cities to visit and the durations of staying at each city. You are also given the flight information between the cities. \n\nINSTRUCTION:\nMake an appropriate plan by considering all constraints.\n\nACTION:\nYou can take either of the 2 actions. \n1. Stay in current_city: You can stay in the current_city from Current Day to Final Day. Format the action as:\n**Day {current_day}-{final_day}** - Stay in {current_city}\n\n2. Fly from current_cty to new_city: You can fly from current_cty to new_city on current_day, this day would be counted for both cities. Format the actions as:\n**Day {current_day}** - Fly from {current_city} to {new_city}. The number of days you visit a city is {final_day} - {currnet_day} + 1. For example, **Day 5-10:** Would be 6 days visited.\n\n",
+  "prefix": "\n\nTASK: {Question}\nSOLUTION:"
+}

@@ -1,0 +1,2 @@
+echo 'To RAP run locally, uncomment and provide model path for the command.'
+# CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.run --nproc_per_node 1 --master_port 12345 methods/RAP/AQuA/inference.py --base_lm hf --model_dir /path/to/model --n_action 5 --n_iters 10 --depth_limit 10  
