@@ -150,7 +150,8 @@ def test(cfg):
         reward_fn(
             completions=dataset['output'],
             answer=dataset['answer'],
-            question=dataset['question']
+            question=dataset['question'],
+            solution=dataset['solution']
         )
     )
     dataset = dataset.add_column('reward', rewards.tolist())
