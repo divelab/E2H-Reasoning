@@ -127,8 +127,8 @@ config/
 ### Default Args
 If want to just run our code without modifying any args.
 ```bash
-bash runs.sh \
---model=<qwen1.5b,qwen3b,llama3b> \
+bash run.sh \
+--model=qwen1.5b,qwen3b,llama3b \
 --task=<aqua,blocksworld,countdown,gsm8k,math> \
 --curriculum_schedule=<classic,balanced,cosine,gaussian>
 ```
