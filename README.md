@@ -2,6 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2506.06632-b31b1b.svg)](https://arxiv.org/abs/2506.06632)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![HuggingFace Page](https://huggingface.co/papers/2506.06632)](https://huggingface.co/papers/2506.06632)
 
 Official implementation of the paper **"Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning"**.
 
