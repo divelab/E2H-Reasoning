@@ -184,6 +184,10 @@ task=blocksworld \
 <ARG Overides>
 ```
 
+#### Models and Checkpoints
+
+We release our models on HuggingFace- https://huggingface.co/divelab/E2H-Reasoning
+
 ## Citation
 
 If you use this code in your research, please cite:
